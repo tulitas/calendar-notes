@@ -2,6 +2,7 @@ package name.alexkosarev.tutorials.controllers;
 
 import java.util.Collections;
 import java.util.Date;
+
 import name.alexkosarev.tutorials.entities.Review;
 import name.alexkosarev.tutorials.repositories.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,14 @@ public class SiteController {
     @Autowired
     private ReviewRepository reviewRepository;
 
-    @RequestMapping
+    @RequestMapping("/")
     public ModelAndView index() {
         return new ModelAndView("site/index", Collections.singletonMap("reviews", reviewRepository.findAll()));
+    }
+
+    @RequestMapping("/")
+    public ModelAndView year2019() {
+        return new ModelAndView("site/year2019", Collections.singletonMap("reviews", reviewRepository.findAll()));
     }
 
     @RequestMapping(method = RequestMethod.POST)
