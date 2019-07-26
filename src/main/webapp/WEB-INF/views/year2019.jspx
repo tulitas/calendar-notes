@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: SergejK
+  Date: 25-Jul-19
+  Time: 15:46
+  To change this template use File | Settings | File Templates.
+-->
+
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
+    <html>
+    <head><title>year2019</title></head>
+    <head>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Month list</h1>
+    <table>
+        <tr>
+            <th>2019</th>
+
+        </tr>
+        <tr>
+            <!--            ssilka na janvar-->
+            <td><strong><a href="January">January</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="February">February</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="March">March</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="April">April</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="May">May</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="June">June</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="July">July</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="August">August</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="September">September</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="October">October</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="November">Novenber</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="December">Decenber</a></strong></td>
+
+        </tr>
+    </table>
+    <strong><a href="/">Back to first page</a></strong>
+    </body>
+    </html>
+</jsp:root>
