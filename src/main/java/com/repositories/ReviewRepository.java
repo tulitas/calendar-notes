@@ -1,6 +1,6 @@
-package name.alexkosarev.tutorials.repositories;
+package com.repositories;
 
-import name.alexkosarev.tutorials.entities.Review;
+import com.entities.Review;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

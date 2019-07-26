@@ -1,4 +1,4 @@
-package name.alexkosarev.tutorials.entities;
+package com.entities;
 
 import java.io.Serializable;
 import java.util.Date;
