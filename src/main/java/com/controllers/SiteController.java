@@ -23,17 +23,24 @@ public class SiteController {
     public ModelAndView index() {
         return new ModelAndView("site/index", Collections.singletonMap("reviews", reviewRepository.findAll()));
     }
+
     @RequestMapping("/year2019")
-    public String next() {
+    public String year2019() {
 
         return "year2019";
     }
 
+//    @RequestMapping("/january2019")
+//    public String january2019() {
+//
+//        return "january2019";
+//    }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String createReview(@RequestParam String reviewText) {
-        reviewRepository.save(new Review(reviewText, new Date()));
 
-        return "redirect:/";
-    }
+//    @RequestMapping(method = RequestMethod.POST)
+//    public String createReview(@RequestParam String reviewText) {
+//        reviewRepository.save(new Review(reviewText, new Date()));
+//
+//        return "redirect:/";
+//    }
 }

@@ -1,0 +1,68 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: SergejK
+  Date: 27-Jul-19
+  Time: 22:30
+  To change this template use File | Settings | File Templates.
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
+
+    <html>
+    <head>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 15px;
+                text-align: left;
+            }
+
+            table#t01 {
+                width: 100%;
+                background-color: #f1f1c1;
+            }
+
+            b {
+                background-color: #FF0000;
+            }
+        </style>
+    </head>
+
+    <body>
+    <h1>January 2019</h1>
+    <table >
+        <tr>
+            <th>01 Wednesday</th>
+            <th>02 Thursday</th>
+            <th>03 Friday</th>
+            <th><b><a href="/style"/>04 Saturday</b></th>
+             <th><b> 05 Sunday</b></th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+
+    <strong><a href="/">Years list</a></strong> <br></br>
+    <strong><a href="/year2019">Month list</a></strong>
+    </body>
+    </html>
+</jsp:root>
