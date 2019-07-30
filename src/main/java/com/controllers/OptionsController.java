@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/")
-public class ModeWindowController {
-    @RequestMapping("/style")
-    public String style() {
+public class OptionsController {
+    @RequestMapping("/options")
+    public String options() {
 
-        return "style";
+        return "options";
     }
 }

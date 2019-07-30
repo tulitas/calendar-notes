@@ -1,0 +1,183 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: SergejK
+  Date: 28-Jul-19
+  Time: 09:06
+  To change this template use File | Settings | File Templates.
+-->
+<!--Vsplivajusee menu-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+        <style>
+            .navbar {
+                overflow: hidden;
+                background-color: #333;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .navbar a {
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                cursor: pointer;
+                font-size: 16px;
+                border: none;
+                outline: none;
+                color: white;
+                padding: 14px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+                background-color: red;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #ddd;
+            }
+
+            .show {
+                display: block;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+        </style>
+
+        <title>Title</title>
+    </head>
+    <body>
+
+    <h1>help</h1>
+
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#news">News</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">Dropdown
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">Agnese</a>
+                <a href="#">Kristine</a>
+                <a href="#">Aigars</a>
+                <a href="#">Inese</a>
+                <a href="#">Sergejs</a>
+                <a href="#">Vitalijs</a>
+                <a href="#">Svetlana</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+        <script>
+            /* When the user clicks on the button,
+            toggle between hiding and showing the dropdown content */
+            function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            // Close the dropdown if the user clicks outside of it
+            window.onclick = function (e) {
+                if (!e.target.matches('.dropbtn')) {
+                    var myDropdown = document.getElementById("myDropdown");
+                    if (myDropdown.classList.contains('show')) {
+                        myDropdown.classList.remove('show');
+                    }
+                }
+            }
+        </script>
+    </div>
+    <br></br>
+
+    <form>
+        Ievadi AM<br/>
+        <input type="text" id="car" size="40"/><br></br>
+        <br/>
+        Ievadi klientu<br/>
+        <input type="text" size="40"/><br/>
+        <br/>
+
+        <div> Viberi sistemu<br/></div>
+
+        <div><select> size="3" multiple="multiple"
+            <option value="Optimum"/>
+            optimum
+            <option value="mini"/>
+            mini
+            <option value="comfort"/>
+            comfort
+        </select></div>
+        <br/>
+
+        <div>viberi tip raboti</div>
+
+        <div><select> size="3" multiple="multiple"
+            <option value="Montaz"/>
+            montaz
+            <option value="Remont"/>
+            remont
+            <option value="Snjatie"/>
+            snjatie
+        </select></div>
+        <br/>
+        <br/>
+        <br/>
+        <p>
+            <button class="" type="submit">Pievienot</button>
+        </p>
+    </form>
+    <br/>
+    <p>
+        <strong><a href="/">Years list</a></strong> <br></br>
+        <strong><a href="/year2019">Month list</a></strong><br></br>
+        <strong><a href="/january2019">To 2019 year</a></strong>
+    </p>
+
+
+    </body>
+    </html>
+</jsp:root>
