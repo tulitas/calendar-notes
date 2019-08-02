@@ -84,13 +84,49 @@
                 text-align: left;
                 padding: 8px;
             }
+
+            button {
+
+                padding: 15px 25px;
+                font-size: 24px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+                color: #fff;
+                background-color: #00008B;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+            }
+
+            button:hover {
+
+                background-color: #3e8e41
+            }
+
+            button:active {
+
+                background-color: #3e8e41;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+
+            textarea {
+                position: absolute;
+                top: 140px;
+                right: 450px;
+
+
+            }
+
         </style>
 
         <title>Title</title>
     </head>
     <body>
 
-    <h1>help</h1>
+
+    <img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90" height="50"/>
 
     <div class="navbar">
         <a href="#home">Home</a>
@@ -131,19 +167,20 @@
             }
         </script>
     </div>
-    <br></br>
+    <br/>
 
     <form>
-        Ievadi AM<br/>
-        <input type="text" id="car" size="40"/><br></br>
+        <label for="car">Ievadi A/M marku un numuru</label><br/>
+        <input type="text" id="car" size="40"/><br/>
         <br/>
-        Ievadi klientu<br/>
-        <input type="text" size="40"/><br/>
+        <label>Ievadi klientu un tel.</label><br/>
+        <input type="text" size="40"/>
+
+        <br/>
         <br/>
 
-        <div> Viberi sistemu<br/></div>
-
-        <div><select> size="3" multiple="multiple"
+        <label for="sistem">Izvelejies sistemu</label>
+        <div><select id="sistem"> size="3" multiple="multiple"
             <option value="Optimum"/>
             optimum
             <option value="mini"/>
@@ -153,27 +190,43 @@
         </select></div>
         <br/>
 
-        <div>viberi tip raboti</div>
+        <div><label for="work">Izvelejies darba veidu</label><br/>
+            <select id="work"> size="3" multiple="multiple"
+                <option value="Montaz"/>
+                montaz
+                <option value="Remont"/>
+                remont
+                <option value="Snjatie"/>
+                snjatie
+            </select></div>
+        <br/>
 
-        <div><select> size="3" multiple="multiple"
-            <option value="Montaz"/>
-            montaz
-            <option value="Remont"/>
-            remont
-            <option value="Snjatie"/>
-            snjatie
-        </select></div>
+        <div><label for="manager">Kas veic ierakstu</label><br/>
+            <select id="manager">  size="3" multiple="multiple"
+                <option value="Agnese"/>
+                Agnese
+                <option value="Kristine"/>
+                Kristine
+                <option value="Aigars"/>
+                Aigars
+            </select></div>
+
         <br/>
         <br/>
         <br/>
+
         <p>
-            <button class="" type="submit">Pievienot</button>
+            <button class="button" type="submit" >Pievienot</button>
         </p>
+
+        <p><textarea id="info" cols="60" rows="6" name="textarea">Papildus info: </textarea></p>
+
     </form>
+
     <br/>
     <p>
-        <strong><a href="/">Years list</a></strong> <br></br>
-        <strong><a href="/year2019">Month list</a></strong><br></br>
+        <strong><a href="/">Years list</a></strong> <br/>
+        <strong><a href="/year2019">Month list</a></strong><br/>
         <strong><a href="/january2019">To 2019 year</a></strong>
     </p>
 

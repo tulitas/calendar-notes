@@ -1,9 +1,9 @@
 package com.repositories;
 
-import com.entities.Review;
+//import com.entities.Review;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface ReviewRepository extends CrudRepository<Review, Integer> {
-}
+//@Repository
+//public interface ReviewRepository extends CrudRepository<Review, Integer> {
+//}

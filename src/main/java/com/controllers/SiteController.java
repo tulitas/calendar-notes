@@ -4,8 +4,9 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Map;
 
-import com.entities.Review;
-import com.repositories.ReviewRepository;
+import com.entities.JobForm;
+import com.entities.JobForm;
+import com.repositories.JobformDAOImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +17,12 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class SiteController {
 
-    @Autowired
-    private ReviewRepository reviewRepository;
+//    @Autowired
+//    private JobForm jobForm;
 
     @RequestMapping("/")
     public ModelAndView index() {
-        return new ModelAndView("site/index", Collections.singletonMap("reviews", reviewRepository.findAll()));
+        return new ModelAndView("site/index");
     }
 
     @RequestMapping("/year2019")

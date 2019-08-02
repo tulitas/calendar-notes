@@ -20,6 +20,16 @@ public class JobForm {
     @Column(name = "Customer")
     private String client;
 
+    @Column(name = "INFO")
+    private String info;
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
 
     public Long getId() {
         return id;
@@ -61,6 +71,7 @@ public class JobForm {
                 ", manager='" + manager + '\'' +
                 ", car='" + car + '\'' +
                 ", client='" + client + '\'' +
+                ", info='" + info + '\'' +
                 '}';
     }
 }
