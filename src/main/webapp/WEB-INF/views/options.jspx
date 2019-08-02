@@ -216,7 +216,7 @@
         <br/>
         <br/>
         <br/>
-        <input type="submit" value="JobForm"/>
+        <input type="submit" value="Pievienot"/>
         <p>
 
             <button type="submit" class="button" >Pievienot</button>
