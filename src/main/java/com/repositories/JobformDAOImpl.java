@@ -16,17 +16,23 @@ public abstract class JobformDAOImpl implements JobformDAO {
 
     public void addJobform(JobForm jobForm) {
         sessionFactory.getCurrentSession().save(jobForm);
+        System.out.println("hi 1");
     }
 
     @SuppressWarnings("uncheked")
     public List jobFormList() {
+        System.out.println("hi 2");
         return sessionFactory.getCurrentSession().createQuery("from Jobform").list();
+
     }
-    public void removeJobform (Integer id){
+
+    public void removeJobform(Integer id) {
         JobForm jobForm = (JobForm) sessionFactory.getCurrentSession().load(JobForm.class, id);
-        if (null != jobForm){
+        if (null != jobForm) {
             sessionFactory.getCurrentSession().delete(jobForm);
         }
+
     }
+
 
 }

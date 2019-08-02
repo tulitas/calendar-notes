@@ -15,11 +15,14 @@ public abstract class JobformServiceImpl implements JobformService {
     @Transactional
     public void addJobform(JobForm jobForm) {
         jobformDAO.addJobform(jobForm);
+        System.out.println("hi 2");
     }
 
     @Transactional
     public List<JobForm> jobFormList(){
+        System.out.println("hi 3");
         return jobformDAO.listJobform();
+
     }
 
     @Transactional

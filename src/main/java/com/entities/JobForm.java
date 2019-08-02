@@ -15,13 +15,34 @@ public class JobForm {
 
     @Column(name = "Car")
     private String car;
-
+    @Column(name = "sistem")
+    private String sistem;
 
     @Column(name = "Customer")
     private String client;
 
     @Column(name = "INFO")
     private String info;
+
+    @Column(name = "work")
+    private String work;
+
+    public String getWork() {
+        System.out.println(id);
+        return work;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
+
+    public String getSistem() {
+        return sistem;
+    }
+
+    public void setSistem(String sistem) {
+        this.sistem = sistem;
+    }
 
     public String getInfo() {
         return info;
@@ -70,8 +91,10 @@ public class JobForm {
                 "id=" + id +
                 ", manager='" + manager + '\'' +
                 ", car='" + car + '\'' +
+                ", sistem='" + sistem + '\'' +
                 ", client='" + client + '\'' +
                 ", info='" + info + '\'' +
+                ", work='" + work + '\'' +
                 '}';
     }
 }
