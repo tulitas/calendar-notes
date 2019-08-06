@@ -4,29 +4,35 @@ import com.Models.JobformDAO;
 import com.Models.JobformService;
 import com.entities.JobForm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-public abstract class JobformServiceImpl implements JobformService {
+@Service
+public class JobformServiceImpl implements JobformService {
     @Autowired
-    private JobformDAO jobformDAO;
+    private JobformRepository jobformRepository;
 
     @Transactional
-    public void addJobform(JobForm jobForm) {
-        jobformDAO.addJobform(jobForm);
+    public void addContact(JobForm jobForm) {
+        System.out.println("hi 1");
+        jobformRepository.save(jobForm);
         System.out.println("hi 2");
     }
 
     @Transactional
-    public List<JobForm> jobFormList(){
+    public List<JobForm> listContact() {
         System.out.println("hi 3");
-        return jobformDAO.listJobform();
+        return jobformRepository.findAll();
 
     }
 
     @Transactional
-    public void removeJobform(Integer id){
-        jobformDAO.removeJobform(id);
+    public void removeContact(Integer id) {
+        JobForm jobForm = jobformRepository.findOne(id);
+        if (null != jobForm) {
+            jobformRepository.delete(id);
+        }
     }
 }

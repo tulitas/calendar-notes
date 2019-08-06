@@ -2,34 +2,32 @@ package com.repositories;
 
 import com.Models.JobformDAO;
 import com.entities.JobForm;
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public abstract class JobformDAOImpl implements JobformDAO {
+public class JobformDAOImpl implements JobformDAO {
 
     @Autowired
-    private SessionFactory sessionFactory;
+    private JobformRepository jobformRepository;
 
     public void addJobform(JobForm jobForm) {
-        sessionFactory.getCurrentSession().save(jobForm);
-        System.out.println("hi 1");
+        jobformRepository.save(jobForm);
+
     }
 
+    @Override
     @SuppressWarnings("uncheked")
-    public List jobFormList() {
-        System.out.println("hi 2");
-        return sessionFactory.getCurrentSession().createQuery("from Jobform").list();
-
+    public List<JobForm> listJobform() {
+        return jobformRepository.findAll();
     }
 
     public void removeJobform(Integer id) {
-        JobForm jobForm = (JobForm) sessionFactory.getCurrentSession().load(JobForm.class, id);
+        JobForm jobForm = jobformRepository.findOne(id);
         if (null != jobForm) {
-            sessionFactory.getCurrentSession().delete(jobForm);
+            jobformRepository.delete(jobForm);
         }
 
     }
