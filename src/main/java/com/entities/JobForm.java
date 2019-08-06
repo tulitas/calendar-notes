@@ -28,7 +28,7 @@ public class JobForm {
     private String work;
 
     public String getWork() {
-        System.out.println(id);
+//        System.out.println(id);
         return work;
     }
 

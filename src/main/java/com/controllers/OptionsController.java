@@ -15,7 +15,7 @@ public class OptionsController {
 
     @RequestMapping(value = "/options", method = RequestMethod.POST)
     public String options(JobForm jobForm) {
-jobformService.addContact(jobForm);
+        jobformService.addContact(jobForm);
         return "options";
     }
 }
