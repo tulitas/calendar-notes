@@ -1,5 +1,7 @@
 package com.entities;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
 
 @Entity
@@ -15,6 +17,7 @@ public class JobForm {
 
     @Column(name = "Car")
     private String car;
+
     @Column(name = "sistem")
     private String sistem;
 
@@ -68,8 +71,8 @@ public class JobForm {
         this.manager = manager;
     }
 
-    public String getCar() {
-        return car;
+    public String getCar(String car) {
+        return this.car;
     }
 
     public void setCar(String car) {

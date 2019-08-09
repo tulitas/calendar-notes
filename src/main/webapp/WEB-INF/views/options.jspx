@@ -102,7 +102,7 @@
 
             button:hover {
 
-                background-color: #3e8e41
+                background-color: #3e8e41;
             }
 
             button:active {
@@ -115,10 +115,16 @@
             textarea {
 
                 position: absolute;
-                top: 140px;
+                top: 98px;
                 right: 450px;
 
 
+            }
+
+            table {
+                position: absolute;
+                top: 200px;
+                left: 456px;
             }
 
         </style>
@@ -130,48 +136,48 @@
 
     <img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90" height="50"/>
 
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
-        <div class="dropdown">
-            <button class="dropbtn" onclick="myFunction()">Dropdown
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content" id="myDropdown">
-                <a href="#">Agnese</a>
-                <a href="#">Kristine</a>
-                <a href="#">Aigars</a>
-                <a href="#">Inese</a>
-                <a href="#">Sergejs</a>
-                <a href="#">Vitalijs</a>
-                <a href="#">Svetlana</a>
-            </div>
-        </div>
-    </div>
+    <!--    <div class="navbar">-->
+    <!--        <a href="#home">Home</a>-->
+    <!--        <a href="#news">News</a>-->
+    <!--        <div class="dropdown">-->
+    <!--            <button class="dropbtn" onclick="myFunction()">Dropdown-->
+    <!--                <i class="fa fa-caret-down"></i>-->
+    <!--            </button>-->
+    <!--            <div class="dropdown-content" id="myDropdown">-->
+    <!--                <a href="#">Agnese</a>-->
+    <!--                <a href="#">Kristine</a>-->
+    <!--                <a href="#">Aigars</a>-->
+    <!--                <a href="#">Inese</a>-->
+    <!--                <a href="#">Sergejs</a>-->
+    <!--                <a href="#">Vitalijs</a>-->
+    <!--                <a href="#">Svetlana</a>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
 
     <div>
-        <script>
-            /* When the user clicks on the button,
-            toggle between hiding and showing the dropdown content */
-            function myFunction() {
-                document.getElementById("myDropdown").classList.toggle("show");
-            }
+        <!--        <script>-->
+        <!--            /* When the user clicks on the button,-->
+        <!--            toggle between hiding and showing the dropdown content */-->
+        <!--            function myFunction() {-->
+        <!--                document.getElementById("myDropdown").classList.toggle("show");-->
+        <!--            }-->
 
-            // Close the dropdown if the user clicks outside of it
-            window.onclick = function (e) {
-                if (!e.target.matches('.dropbtn')) {
-                    var myDropdown = document.getElementById("myDropdown");
-                    if (myDropdown.classList.contains('show')) {
-                        myDropdown.classList.remove('show');
-                    }
-                }
-            }
-        </script>
+        <!--            // Close the dropdown if the user clicks outside of it-->
+        <!--            window.onclick = function (e) {-->
+        <!--                if (!e.target.matches('.dropbtn')) {-->
+        <!--                    var myDropdown = document.getElementById("myDropdown");-->
+        <!--                    if (myDropdown.classList.contains('show')) {-->
+        <!--                        myDropdown.classList.remove('show');-->
+        <!--                    }-->
+        <!--                }-->
+        <!--            }-->
+        <!--        </script>-->
     </div>
     <br/>
 
-    <form action="/options" method="post">
+    <form action="/options/create" method="post">
         <label for="car">Ievadi A/M marku un numuru</label><br/>
         <input type="text" name="car" id="car" size="40"/><br/>
         <br/>
@@ -216,15 +222,32 @@
         <br/>
         <br/>
         <br/>
-        <input type="submit" value="Pievienot"/>
+<!--        <input type="submit" value="Pievienot"/>-->
         <p>
 
-            <button type="submit" class="button" >Pievienot</button>
+            <button class="button" > Pievienot</button>
         </p>
 
         <p><textarea id="info" cols="60" rows="6" name="info">Papildus info: </textarea></p>
+    </form>
+    <form action="${pageContext.request.contextPath}/options/list" method="get">
+        <table>
+            <tr>
+                <th>Car</th>
+                <th>Klient</th>
+                <th>Manager</th>
 
+            </tr>
+            <c:forEach var="JobForm" items="${optionsList}">
+                <tr>
+                    <td>${JobForm.car}</td>
+                    <td>${JobForm.client}</td>
+                    <td>${JobForm.manager}</td>
+                </tr>
+            </c:forEach>
 
+        </table>
+        <button class="button">hi</button>
     </form>
 
     <br/>
