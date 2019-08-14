@@ -14,14 +14,14 @@ public class JobForm {
 
     @Column(name = "Manager")
     private String manager;
-
+    
     @Column(name = "Car")
     private String car;
 
     @Column(name = "sistem")
     private String sistem;
 
-    @Column(name = "Customer")
+    @Column(name = "Client")
     private String client;
 
     @Column(name = "INFO")
@@ -29,6 +29,20 @@ public class JobForm {
 
     @Column(name = "work")
     private String work;
+    @Column(name = "WorkDate")
+    private String workdate;
+
+    public String getCar() {
+        return car;
+    }
+
+    public String getWorkdate() {
+        return workdate;
+    }
+
+    public void setWorkdate(String workdate) {
+        this.workdate = workdate;
+    }
 
     public String getWork() {
 //        System.out.println(id);
@@ -98,6 +112,7 @@ public class JobForm {
                 ", client='" + client + '\'' +
                 ", info='" + info + '\'' +
                 ", work='" + work + '\'' +
+                ", workdate='" + workdate + '\'' +
                 '}';
     }
 }

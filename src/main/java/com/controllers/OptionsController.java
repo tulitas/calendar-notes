@@ -16,7 +16,7 @@ import java.util.List;
 //@RequestMapping(value = "/options", method = RequestMethod.GET)
 public class OptionsController {
     @Autowired
-    private JobformService jobformService;
+    private JobformService jobformService = new JobformServiceImpl();
 
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
     public String options(JobForm jobForm) {
@@ -24,13 +24,14 @@ public class OptionsController {
         return "redirect:/options";
     }
 
-    @RequestMapping(value = "/options/list", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/options", method = RequestMethod.GET)
 
     public String getOptionsPage(Model model) {
         List<JobForm> jobForms = jobformService.listContact();
         model.addAttribute("optionsList", jobForms);
         System.out.println(jobForms);
-        return "redirect:/options";
+        return "/options";
     }
 
     @RequestMapping(value = "/options")

@@ -126,7 +126,7 @@
         <li></li>
         <li></li>
         <li></li>
-        <li id="1"><a href="${pageContext.request.contextPath}/options"/>1</li>
+        <li><a href="${pageContext.request.contextPath}/options" > 1</a></li>
         <li>2</li>
         <li>3</li>
         <li>4</li>

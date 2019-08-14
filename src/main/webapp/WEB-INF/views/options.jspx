@@ -177,7 +177,7 @@
     </div>
     <br/>
 
-    <form action="/options/create" method="post">
+    <form action="${pageContext.request.contextPath}/options/create" method="post">
         <label for="car">Ievadi A/M marku un numuru</label><br/>
         <input type="text" name="car" id="car" size="40"/><br/>
         <br/>
@@ -219,35 +219,45 @@
                 Aigars
             </select></div>
 
-        <br/>
-        <br/>
-        <br/>
-<!--        <input type="submit" value="Pievienot"/>-->
-        <p>
+        <p><label for="date"> Выберите дату: </label><br/>
+            <input id="date" type="datetime-local" name="workdate"/>
 
-            <button class="button" > Pievienot</button>
         </p>
 
-        <p><textarea id="info" cols="60" rows="6" name="info">Papildus info: </textarea></p>
+        <br/>
+        <br/>
+        <br/>
+        <!--        <input type="submit" value="Pievienot"/>-->
+        <p>
+
+            <button class="button"> Pievienot</button>
+        </p>
+
+        <p><label for="info"></label>
+            <textarea id="info" cols="60" rows="6" name="info">Papildus info: </textarea></p>
     </form>
-    <form action="${pageContext.request.contextPath}/options/list" method="get">
+    <form action="${pageContext.request.contextPath}/options" method="get">
         <table>
             <tr>
-                <th>Car</th>
-                <th>Klient</th>
                 <th>Manager</th>
+                <th>Car</th>
+                <th>Client</th>
 
             </tr>
-            <c:forEach var="JobForm" items="${optionsList}">
+            <c:forEach var="JobForm" items="optionsList">
+
                 <tr>
+                    <td>${JobForm.manager}</td>
                     <td>${JobForm.car}</td>
                     <td>${JobForm.client}</td>
-                    <td>${JobForm.manager}</td>
+
+
                 </tr>
+
             </c:forEach>
 
         </table>
-        <button class="button">hi</button>
+        <!--        <button class="button">hi</button>-->
     </form>
 
     <br/>

@@ -27,7 +27,7 @@ public class JobformServiceImpl implements JobformService {
     @Transactional
     public List<JobForm> listContact() {
         System.out.println("hi 3");
-        System.out.println(jobformRepository.findAll());
+//        System.out.println(jobformRepository.findAll());
         return jobformRepository.findAll();
 
     }
