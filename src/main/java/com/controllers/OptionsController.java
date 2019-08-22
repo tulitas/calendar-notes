@@ -35,9 +35,9 @@ public class OptionsController {
         return "/options";
     }
 
-    @RequestMapping(value = "/options/delete/{id}")
+    @RequestMapping(value = "/options/delete", method = RequestMethod.GET)
     public String deleteItem(@PathVariable Integer id) {
-        jobformService.removeContact(id);
+         jobformService.removeContact(id);
 
         return "/options";
     }
