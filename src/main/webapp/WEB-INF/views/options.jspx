@@ -7,7 +7,7 @@
 -->
 <!--Vsplivajusee menu-->
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml" version="2.0"
-          xmlns:c="http://java.sun.com/jsp/jstl/core">
+          xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:h="http://java.sun.com/jsf/html">
     <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
     <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
 
@@ -124,7 +124,7 @@
             table {
                 position: absolute;
                 top: 200px;
-                left: 456px;
+                left: 355px;
             }
 
         </style>
@@ -237,19 +237,25 @@
             <textarea id="info" cols="60" rows="6" name="info">Papildus info: </textarea></p>
     </form>
     <form action="${pageContext.request.contextPath}/options" method="get">
-        <table>
+        <table style="word-wrap: break-word" width="300" border="8">
             <tr>
+                <th>Date</th>
                 <th>Manager</th>
                 <th>Car</th>
                 <th>Client</th>
+                <th>Info</th>
+                <th>Action</th>
 
             </tr>
-            <c:forEach var="JobForm" items="optionsList">
+            <c:forEach var="JobForm" items="${optionsList}">
 
                 <tr>
+                    <td>${JobForm.workdate}</td>
                     <td>${JobForm.manager}</td>
                     <td>${JobForm.car}</td>
                     <td>${JobForm.client}</td>
+                    <td>${JobForm.info}</td>
+                    <td><a href="/options/delete${JobForm.id}">Delete</a> </td>
 
 
                 </tr>

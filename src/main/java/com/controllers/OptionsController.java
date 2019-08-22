@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,7 +26,7 @@ public class OptionsController {
     }
 
 
-    @RequestMapping(value = "/options", method = RequestMethod.GET)
+    @RequestMapping(value = "/options")
 
     public String getOptionsPage(Model model) {
         List<JobForm> jobForms = jobformService.listContact();
@@ -34,8 +35,15 @@ public class OptionsController {
         return "/options";
     }
 
-    @RequestMapping(value = "/options")
-    public String options() {
-        return "options";
+    @RequestMapping(value = "/options/delete/{id}")
+    public String deleteItem(@PathVariable Integer id) {
+        jobformService.removeContact(id);
+
+        return "/options";
     }
+
+//    @RequestMapping(value = "/options")
+//    public String options() {
+//        return "options";
+//    }
 }

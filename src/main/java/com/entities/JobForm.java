@@ -29,6 +29,7 @@ public class JobForm {
 
     @Column(name = "work")
     private String work;
+
     @Column(name = "WorkDate")
     private String workdate;
 
