@@ -13,6 +13,7 @@ public class JobformDAOImpl implements JobformDAO {
     @Autowired
     private JobformRepository jobformRepository;
 
+    @Override
     public void addJobform(JobForm jobForm) {
         jobformRepository.save(jobForm);
 
@@ -24,11 +25,10 @@ public class JobformDAOImpl implements JobformDAO {
         return jobformRepository.findAll();
     }
 
+    @Override
     public void removeJobform(Integer id) {
-        JobForm jobForm = jobformRepository.findOne(id);
-        if (null != jobForm) {
-            jobformRepository.delete(jobForm);
-        }
+        System.out.println("delete test2 DAO");
+        this.jobformRepository.delete(id);
 
     }
 

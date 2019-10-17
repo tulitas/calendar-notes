@@ -10,6 +10,6 @@ public interface JobformService {
 
     List<JobForm> listContact();
 
-    JobForm removeContact(Integer id);
+    void removeContact(Integer id);
 
 }

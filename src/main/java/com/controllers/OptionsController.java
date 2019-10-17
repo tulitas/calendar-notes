@@ -1,7 +1,10 @@
 package com.controllers;
 
+import com.Models.JobformDAO;
 import com.Models.JobformService;
 import com.entities.JobForm;
+import com.repositories.JobformDAOImpl;
+import com.repositories.JobformRepository;
 import com.repositories.JobformServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
@@ -11,13 +14,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.ws.rs.DELETE;
 import java.util.List;
 
 @Controller
 //@RequestMapping(value = "/options", method = RequestMethod.GET)
 public class OptionsController {
     @Autowired
-    private JobformService jobformService = new JobformServiceImpl();
+    private JobformService jobformService;
 
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
     public String options(JobForm jobForm) {
@@ -35,15 +39,13 @@ public class OptionsController {
         return "/options";
     }
 
-    @RequestMapping(value = "/options/delete", method = RequestMethod.GET)
-    public String deleteItem(@PathVariable Integer id) {
-         jobformService.removeContact(id);
+    @RequestMapping(value = "/options/remove", method = RequestMethod.GET)
+    public String removeJobform(@PathVariable ("id") Integer id, Model model) {
+        System.out.println("test delete");
+        // jobformService.removeContact(id);
 
-        return "/options";
+        this.jobformService.removeContact(id);
+        return "redirect:/options";
     }
 
-//    @RequestMapping(value = "/options")
-//    public String options() {
-//        return "options";
-//    }
 }

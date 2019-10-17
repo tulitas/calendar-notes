@@ -86,7 +86,20 @@
                 padding: 8px;
             }
 
-            button {
+            .remove_button {
+                padding: 10px 15px;
+                font-size: 24px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+                color: #e60000;
+                background-color: #00008B;
+                border: none;
+                border-radius: 15px;
+                box-shadow: 0 9px #999;
+            }
+
+            .add_button {
 
                 padding: 15px 25px;
                 font-size: 24px;
@@ -230,13 +243,14 @@
         <!--        <input type="submit" value="Pievienot"/>-->
         <p>
 
-            <button class="button"> Pievienot</button>
+            <button class="add_button"> Pievienot</button>
         </p>
 
         <p><label for="info"></label>
             <textarea id="info" cols="60" rows="6" name="info">Papildus info: </textarea></p>
     </form>
     <form action="${pageContext.request.contextPath}/options" method="get">
+
         <table style="word-wrap: break-word" width="300" border="8">
             <tr>
                 <th>Date</th>
@@ -247,16 +261,23 @@
                 <th>Action</th>
 
             </tr>
+
             <c:forEach var="JobForm" items="${optionsList}">
 
+
                 <tr>
+
                     <td>${JobForm.workdate}</td>
                     <td>${JobForm.manager}</td>
                     <td>${JobForm.car}</td>
                     <td>${JobForm.client}</td>
                     <td>${JobForm.info}</td>
-                    <td><a href="/options/delete${JobForm.id}">Delete</a> </td>
-
+                    <!--                    <h:form action="${pageContext.request.contextPath}/remove{id}" method="get">-->
+<!--                    <td>-->
+<!--                        <button class="remove_button" > Delete</button>-->
+<!--                    </td>-->
+                    <td><a href="@{/op}" >Delete</a></td>
+                    <!--                    </h:form>-->
 
                 </tr>
 

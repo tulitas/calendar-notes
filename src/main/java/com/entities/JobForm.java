@@ -10,7 +10,7 @@ public class JobForm {
     @Id
     @Column(name = "ID")
     @GeneratedValue
-    private Long id;
+    private Integer id;
 
     @Column(name = "Manager")
     private String manager;
@@ -70,11 +70,11 @@ public class JobForm {
         this.info = info;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

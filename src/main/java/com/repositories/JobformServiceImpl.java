@@ -13,6 +13,7 @@ public class JobformServiceImpl implements JobformService {
     @Autowired
     private JobformRepository jobformRepository;
 
+    @Override
     @Transactional
     public void addContact(JobForm jobForm) {
         jobformRepository.save(jobForm);
@@ -21,18 +22,19 @@ public class JobformServiceImpl implements JobformService {
 
     }
 
+    @Override
     @Transactional
     public List<JobForm> listContact() {
         return jobformRepository.findAll();
 
     }
 
+
+    @Override
     @Transactional
-    public JobForm removeContact(Integer id) {
-        JobForm jobForm = jobformRepository.findOne(id);
-        if (null != jobForm) {
-            jobformRepository.delete(id);
-       }
-        return jobForm;
+    public void removeContact(Integer id) {
+        System.out.println("delete test 3 Jobform impl");
+        jobformRepository.delete(id);
+        jobformRepository.findAll();
     }
 }
