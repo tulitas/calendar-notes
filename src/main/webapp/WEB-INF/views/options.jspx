@@ -264,27 +264,20 @@
 
             <c:forEach var="JobForm" items="${optionsList}">
 
-
                 <tr>
-
                     <td>${JobForm.workdate}</td>
                     <td>${JobForm.manager}</td>
                     <td>${JobForm.car}</td>
                     <td>${JobForm.client}</td>
                     <td>${JobForm.info}</td>
-                    <!--                    <h:form action="${pageContext.request.contextPath}/remove{id}" method="get">-->
-<!--                    <td>-->
-<!--                        <button class="remove_button" > Delete</button>-->
-<!--                    </td>-->
-                    <td><a href="@{/op}" >Delete</a></td>
-                    <!--                    </h:form>-->
+                    <td><a href="${pageContext.request.contextPath}/options/delete">Delete</a></td>
+
 
                 </tr>
-
             </c:forEach>
-
         </table>
-        <!--        <button class="button">hi</button>-->
+
+
     </form>
 
     <br/>

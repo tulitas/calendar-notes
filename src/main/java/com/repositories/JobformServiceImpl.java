@@ -32,9 +32,12 @@ public class JobformServiceImpl implements JobformService {
 
     @Override
     @Transactional
-    public void removeContact(Integer id) {
+    public JobForm removeContact(Integer id) {
         System.out.println("delete test 3 Jobform impl");
-        jobformRepository.delete(id);
-        jobformRepository.findAll();
+        JobForm jobForm = jobformRepository.findOne(id);
+        if (null != jobForm) {
+            jobformRepository.delete(id);
+        }
+        return jobForm;
     }
 }

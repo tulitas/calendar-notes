@@ -21,7 +21,7 @@ import java.util.List;
 //@RequestMapping(value = "/options", method = RequestMethod.GET)
 public class OptionsController {
     @Autowired
-    private JobformService jobformService;
+    private JobformService jobformService = new JobformServiceImpl();
 
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
     public String options(JobForm jobForm) {
@@ -39,13 +39,13 @@ public class OptionsController {
         return "/options";
     }
 
-    @RequestMapping(value = "/options/remove", method = RequestMethod.GET)
-    public String removeJobform(@PathVariable ("id") Integer id, Model model) {
+    @RequestMapping(value = "/options/delete", method = RequestMethod.GET)
+    public String removeJobform(@PathVariable ("id") Integer id) {
         System.out.println("test delete");
         // jobformService.removeContact(id);
 
         this.jobformService.removeContact(id);
-        return "redirect:/options";
+        return "/options";
     }
 
 }

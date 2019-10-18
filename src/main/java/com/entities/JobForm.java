@@ -33,43 +33,6 @@ public class JobForm {
     @Column(name = "WorkDate")
     private String workdate;
 
-    public String getCar() {
-        return car;
-    }
-
-    public String getWorkdate() {
-        return workdate;
-    }
-
-    public void setWorkdate(String workdate) {
-        this.workdate = workdate;
-    }
-
-    public String getWork() {
-//        System.out.println(id);
-        return work;
-    }
-
-    public void setWork(String work) {
-        this.work = work;
-    }
-
-    public String getSistem() {
-        return sistem;
-    }
-
-    public void setSistem(String sistem) {
-        this.sistem = sistem;
-    }
-
-    public String getInfo() {
-        return info;
-    }
-
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -86,14 +49,21 @@ public class JobForm {
         this.manager = manager;
     }
 
-    public String getCar(String car) {
-        return this.car;
+    public String getCar() {
+        return car;
     }
 
     public void setCar(String car) {
         this.car = car;
     }
 
+    public String getSistem() {
+        return sistem;
+    }
+
+    public void setSistem(String sistem) {
+        this.sistem = sistem;
+    }
 
     public String getClient() {
         return client;
@@ -101,6 +71,30 @@ public class JobForm {
 
     public void setClient(String client) {
         this.client = client;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public String getWork() {
+        return work;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
+
+    public String getWorkdate() {
+        return workdate;
+    }
+
+    public void setWorkdate(String workdate) {
+        this.workdate = workdate;
     }
 
     @Override
