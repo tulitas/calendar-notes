@@ -258,6 +258,8 @@
                 <th>Car</th>
                 <th>Client</th>
                 <th>Info</th>
+                <th>Sistem</th>
+                <th>Work</th>
                 <th>Action</th>
 
             </tr>
@@ -265,12 +267,14 @@
             <c:forEach var="JobForm" items="${optionsList}">
 
                 <tr>
+                    <td>${JobForm.sistem}</td>
+                    <td>${JobForm.work}</td>
                     <td>${JobForm.workdate}</td>
                     <td>${JobForm.manager}</td>
                     <td>${JobForm.car}</td>
                     <td>${JobForm.client}</td>
                     <td>${JobForm.info}</td>
-                    <td><a href="${pageContext.request.contextPath}/options/delete">Delete</a></td>
+                    <td><a href="${pageContext.request.contextPath}/options/delete{id}">Delete</a></td>
 
 
                 </tr>

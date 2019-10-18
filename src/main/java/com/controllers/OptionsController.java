@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import javax.ws.rs.DELETE;
+
 import java.util.List;
 
 @Controller
@@ -39,7 +39,7 @@ public class OptionsController {
         return "/options";
     }
 
-    @RequestMapping(value = "/options/delete", method = RequestMethod.GET)
+    @RequestMapping(value = "/options/delete{id}", method = RequestMethod.GET)
     public String removeJobform(@PathVariable ("id") Integer id) {
         System.out.println("test delete");
         // jobformService.removeContact(id);

@@ -4,7 +4,7 @@ import com.Models.JobformDAO;
 import com.entities.JobForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
+import org.hibernate.SessionFactory;
 import java.util.List;
 
 @Repository
@@ -32,7 +32,7 @@ public class JobformDAOImpl implements JobformDAO {
         if (null != jobForm) {
             jobformRepository.delete(jobForm);
         }
+
+
     }
-
-
 }

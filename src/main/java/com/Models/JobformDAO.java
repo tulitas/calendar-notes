@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface JobformDAO {
 
-    void addJobform(JobForm jobForm);
+   public void addJobform(JobForm jobForm);
 
     List<JobForm> listJobform();
 
-    void removeJobform(Integer id);
+   public void removeJobform(Integer id);
 
 }
