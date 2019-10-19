@@ -8,7 +8,7 @@ public interface JobformDAO {
 
    public void addJobform(JobForm jobForm);
 
-    List<JobForm> listJobform();
+   public List<JobForm> listJobform();
 
    public void removeJobform(Integer id);
 

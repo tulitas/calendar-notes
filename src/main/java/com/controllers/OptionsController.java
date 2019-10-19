@@ -40,11 +40,10 @@ public class OptionsController {
     }
 
     @RequestMapping(value = "/options/delete{id}", method = RequestMethod.GET)
-    public String removeJobform(@PathVariable ("id") Integer id) {
-        System.out.println("test delete");
-        // jobformService.removeContact(id);
 
-        this.jobformService.removeContact(id);
+    public String removeJobform(@PathVariable Integer id) {
+        System.out.println(id);
+        jobformService.removeContact(id);
         return "/options";
     }
 
