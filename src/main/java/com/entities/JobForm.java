@@ -1,7 +1,8 @@
 package com.entities;
-
-import org.hibernate.validator.constraints.NotBlank;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.*;
 
 @Entity
@@ -9,12 +10,15 @@ import javax.persistence.*;
 public class JobForm {
     @Id
     @Column(name = "ID")
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
+
+    @Column(name = "CreateDate")
+    private String createdate;
 
     @Column(name = "Manager")
     private String manager;
-    
+
     @Column(name = "Car")
     private String car;
 
@@ -33,7 +37,17 @@ public class JobForm {
     @Column(name = "WorkDate")
     private String workdate;
 
-    public Integer getId() {
+
+
+    public String getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate;
+    }
+
+    public long getId() {
         return id;
     }
 
@@ -101,6 +115,7 @@ public class JobForm {
     public String toString() {
         return "JobForm{" +
                 "id=" + id +
+                ", createdate='" + createdate + '\'' +
                 ", manager='" + manager + '\'' +
                 ", car='" + car + '\'' +
                 ", sistem='" + sistem + '\'' +

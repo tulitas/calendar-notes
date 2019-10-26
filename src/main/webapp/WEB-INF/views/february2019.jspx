@@ -13,9 +13,17 @@
     <head>
 
         <style>
-            * {box-sizing: border-box;}
-            ul {list-style-type: none;}
-            body {font-family: Verdana, sans-serif;}
+            * {
+                box-sizing: border-box;
+            }
+
+            ul {
+                list-style-type: none;
+            }
+
+            body {
+                font-family: Verdana, sans-serif;
+            }
 
             .month {
                 padding: 70px 25px;
@@ -71,7 +79,7 @@
                 width: 13.6%;
                 text-align: center;
                 margin-bottom: 5px;
-                font-size:12px;
+                font-size: 12px;
                 color: #777;
             }
 
@@ -82,17 +90,26 @@
             }
 
             /* Add media queries for smaller screens */
-            @media screen and (max-width:720px) {
-                .weekdays li, .days li {width: 13.1%;}
+            @media screen and (max-width: 720px) {
+                .weekdays li, .days li {
+                    width: 13.1%;
+                }
             }
 
             @media screen and (max-width: 420px) {
-                .weekdays li, .days li {width: 12.5%;}
-                .days li .active {padding: 2px;}
+                .weekdays li, .days li {
+                    width: 12.5%;
+                }
+
+                .days li .active {
+                    padding: 2px;
+                }
             }
 
             @media screen and (max-width: 290px) {
-                .weekdays li, .days li {width: 12.2%;}
+                .weekdays li, .days li {
+                    width: 12.2%;
+                }
             }
         </style>
 
@@ -121,43 +138,46 @@
         <li>Sa</li>
         <li>Su</li>
     </ul>
+    <form action="/options/create" method="post">
+        <ul class="days">
 
-    <ul class="days">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li><a href="${pageContext.request.contextPath}/options" > 1</a></li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-        <li>9</li>
-        <li>10</li>
-        <li><span class="active">10</span></li>
-        <li>11</li>
-        <li>12</li>
-        <li>13</li>
-        <li>14</li>
-        <li>15</li>
-        <li>16</li>
-        <li>17</li>
-        <li>18</li>
-        <li>19</li>
-        <li>20</li>
-        <li>21</li>
-        <li>22</li>
-        <li>23</li>
-        <li>24</li>
-        <li>25</li>
-        <li>26</li>
-        <li>27</li>
-        <li>28</li>
-        <li>29</li>
-        <li>30</li>
-        <li>31</li>
-    </ul></body>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a href="/options">1</a></li>
+            <li><a href="/options">2</a></li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li><span class="active">10</span></li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+        </ul>
+    </form>
+    </body>
     </html>
 </jsp:root>

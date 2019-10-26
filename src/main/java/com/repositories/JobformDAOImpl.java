@@ -4,10 +4,12 @@ import com.Models.JobformDAO;
 import com.entities.JobForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.hibernate.SessionFactory;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Repository
+@Transactional
 public class JobformDAOImpl implements JobformDAO {
 
     @Autowired
@@ -22,11 +24,13 @@ public class JobformDAOImpl implements JobformDAO {
     @Override
     @SuppressWarnings("uncheked")
     public List<JobForm> listJobform() {
-        return jobformRepository.findAll();
+        return (List<JobForm>) jobformRepository.findAll();
     }
 
+
+
     @Override
-    public void removeJobform(Integer id) {
+    public void removeJobform(long id) {
         System.out.println("delete test2 DAO");
         JobForm jobForm = jobformRepository.findOne(id);
         if (null != jobForm) {

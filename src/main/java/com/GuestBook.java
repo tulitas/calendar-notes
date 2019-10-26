@@ -5,16 +5,22 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 
+
+
 @SpringBootApplication
-public class GuestBook extends SpringBootServletInitializer {
+public class GuestBook  {
 
     public static void main(String[] args) {
         SpringApplication.run(GuestBook.class, args)
                 .registerShutdownHook();
+
+
     }
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(GuestBook.class);
-    }
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//        return builder.sources(GuestBook.class);
+//    }
+
+
 }

@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface JobformService {
 
-    void addContact(JobForm contact);
+    void addJobForm(JobForm contact);
 
-    List<JobForm> listContact();
+    List<JobForm> listJobForm();
 
-    JobForm removeContact(Integer id);
+    void removeJobForm(long id);
 
-}
+    }
