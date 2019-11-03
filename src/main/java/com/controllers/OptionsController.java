@@ -13,8 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import javax.persistence.Entity;
-import javax.ws.rs.DELETE;
+//import javax.persistence.Entity;
+//import javax.ws.rs.DELETE;
 import java.util.List;
 
 @Controller

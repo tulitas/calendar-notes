@@ -36,7 +36,7 @@ public class JobformServiceImpl implements JobformService {
     @Transactional
     public void removeJobForm(long id) {
         System.out.println("delete test 3 Jobform impl");
-        JobForm jobForm = jobformRepository.findOne(id);
+        JobForm jobForm = jobformRepository.delete(id);
         if (null != jobForm) {
             jobformRepository.delete(id);
         }

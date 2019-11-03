@@ -1,5 +1,6 @@
 package com;
 
+//import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -35,8 +36,8 @@ public class DataConfig {
     @Resource
     private Environment env;
 
-    @Bean
-    public DataSource dataSource() {
+//    @Bean
+private DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         System.out.println("test 0,2");
 

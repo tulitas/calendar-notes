@@ -32,7 +32,7 @@ public class JobformDAOImpl implements JobformDAO {
     @Override
     public void removeJobform(long id) {
         System.out.println("delete test2 DAO");
-        JobForm jobForm = jobformRepository.findOne(id);
+        JobForm jobForm = jobformRepository.delete(id);
         if (null != jobForm) {
             jobformRepository.delete(jobForm);
         }
