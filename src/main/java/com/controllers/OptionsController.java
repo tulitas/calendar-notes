@@ -24,33 +24,33 @@ import java.util.List;
 @ComponentScan("com.repositories")
 //@RequestMapping(value = "/options", method = RequestMethod.GET)
 public class OptionsController {
-    @Autowired
+  @Autowired
 
-    private JobformService jobformService = new JobformServiceImpl();
+  private JobformService jobformService = new JobformServiceImpl();
 
-    @RequestMapping(value = "/options/create", method = RequestMethod.POST)
-    public String options(JobForm jobForm) {
-        jobformService.addJobForm(jobForm);
-        return "redirect:/options";
-    }
+  @RequestMapping(value = "/options/create", method = RequestMethod.POST)
+  public String options(JobForm jobForm) {
+    jobformService.addJobForm(jobForm);
+    return "redirect:/options";
+  }
 
 
-    @RequestMapping(value = "/options")
+  @RequestMapping(value = "/options")
 
-    public String getOptionsPage(Model model) {
-        List<JobForm> jobForms = jobformService.listJobForm();
-        model.addAttribute("optionsList", jobForms);
-        System.out.println(jobForms);
-        return "/options";
-    }
+  public String getOptionsPage(Model model) {
+    List<JobForm> jobForms = jobformService.listJobForm();
+    model.addAttribute("optionsList", jobForms);
+    System.out.println(jobForms);
+    return "/options";
+  }
 
-    @RequestMapping (value = "/options/delete{id}", method = RequestMethod.GET)
+  @RequestMapping(value = "/options/delete{id}", method = RequestMethod.GET)
 
-    public String removeJobform(@PathVariable ("id") long id) {
-        System.out.println(id);
+  public String removeJobform(@PathVariable("id") long id) {
+    System.out.println(id);
 
-        jobformService.removeJobForm(id);
-        return "redirect:/options";
-    }
+    jobformService.removeJobForm(id);
+    return "redirect:/options";
+  }
 
 }
