@@ -20,7 +20,7 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.entities")
-@PropertySource("classpath:app.properties")
+@PropertySource("classpath:application.properties")
 @EnableJpaRepositories("com.Models")
 
 public class DataConfig {
@@ -51,6 +51,7 @@ private DataSource dataSource() {
 
         dataSource.setPassword(env.getRequiredProperty(PROP_DATABASE_PASSWORD));
         System.out.println("test 1");
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
         return dataSource;
 
     }

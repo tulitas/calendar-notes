@@ -10,7 +10,7 @@ public interface JobformDAO {
 
     public List<JobForm> listJobform();
 
-    public void removeJobform(long id);
+    public void deleteJobform(long id);
 
 
 }

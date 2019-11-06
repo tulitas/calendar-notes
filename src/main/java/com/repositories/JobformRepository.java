@@ -12,5 +12,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface JobformRepository extends CrudRepository<JobForm, Long> {
 
 
-    JobForm delete(long id);
+
 }
