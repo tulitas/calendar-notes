@@ -1,24 +1,12 @@
 package com.controllers;
 
-import java.util.Collections;
-import java.util.Date;
-import java.util.Map;
-
-import com.entities.JobForm;
-import com.entities.JobForm;
-import com.repositories.JobformDAOImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
 public class SiteController {
-
-//    @Autowired
-//    private JobForm jobForm;
 
     @RequestMapping("/")
     public ModelAndView index() {
