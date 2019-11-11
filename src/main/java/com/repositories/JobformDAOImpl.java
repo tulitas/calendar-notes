@@ -10,10 +10,14 @@ import java.util.List;
 
 @Repository
 @Transactional
-public class JobformDAOImpl implements JobformDAO {
+public abstract class JobformDAOImpl implements JobformDAO {
+
+  private final JobformRepository jobformRepository;
 
   @Autowired
-  private JobformRepository jobformRepository;
+  public JobformDAOImpl(JobformRepository jobformRepository) {
+    this.jobformRepository = jobformRepository;
+  }
 
   @Override
   public void addJobform(JobForm jobForm) {
@@ -33,4 +37,6 @@ public class JobformDAOImpl implements JobformDAO {
     System.out.println("delete test2 DAO");
     jobformRepository.deleteById(id);
   }
+
+
 }
