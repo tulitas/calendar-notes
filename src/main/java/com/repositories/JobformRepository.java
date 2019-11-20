@@ -17,7 +17,7 @@ public interface JobformRepository extends CrudRepository <JobForm, Long> {
 
 
 
-    @Query(value = "select manager from jobform where manager = 'Agnese'", nativeQuery = true)
+    @Query(value = "select id, car, client, create_date, info, manager, sistem, work, work_date from jobform where work_date = '2019-11-13'", nativeQuery = true)
     List<JobForm> getAllByManager();
 
 }
