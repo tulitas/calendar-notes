@@ -13,4 +13,5 @@ public interface JobformDAO {
     public void deleteJobform(long id);
 
 
+    public List<JobForm> getAllByManager();
 }

@@ -12,9 +12,11 @@ public class Month2019Controller {
     return "january2019";
   }
 
-  @RequestMapping("/february2019")
+  @RequestMapping("/month/february/february2019")
   public String february2019() {
 
-    return "february2019";
+    return "/month/february/february2019";
   }
+
+
 }

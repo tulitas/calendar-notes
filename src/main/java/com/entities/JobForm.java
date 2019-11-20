@@ -4,12 +4,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "JOBFORM")
 public class JobForm {
     @Id
-    @Column(name = "ID")
+    @Column(name = "id")
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
 
@@ -35,6 +36,7 @@ public class JobForm {
     private String work;
 
     @Column(name = "WorkDate")
+    @NotNull
     private String workdate;
 
 

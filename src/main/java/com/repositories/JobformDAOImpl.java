@@ -34,9 +34,12 @@ public abstract class JobformDAOImpl implements JobformDAO {
 
   @Override
   public void deleteJobform(long id) {
-    System.out.println("delete test2 DAO");
     jobformRepository.deleteById(id);
   }
 
+  @Override
+  public List<JobForm> getAllByManager() {
+    return (List<JobForm>) jobformRepository.findAll();
+  }
 
 }

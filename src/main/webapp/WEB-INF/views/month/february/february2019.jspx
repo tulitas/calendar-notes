@@ -6,7 +6,8 @@
   To change this template use File | Settings | File Templates.
 -->
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
-          xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+          xmlns="http://www.w3.org/1999/xhtml" version="2.0" xmlns:form="http://www.springframework.org/tags/form"
+          xmlns:th="http://www.thymeleaf.org">
     <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
     <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
 
@@ -118,14 +119,14 @@
     </head>
     <body>
 
-    <h1>CSS Calendar</h1>
+    <h1>Sherlog Calendar</h1>
 
     <div class="month">
         <ul>
             <li class="prev">❮</li>
             <li class="next">❯</li>
             <li>
-                August<br></br>
+                February<br></br>
                 <span style="font-size:18px">2019</span>
             </li>
         </ul>
@@ -140,22 +141,21 @@
         <li>Sa</li>
         <li>Su</li>
     </ul>
-    <form action="/options/create" method="post">
+    <form action="${pageContext.request.contextPath}/options" method="get">
         <ul class="days">
 
             <li></li>
             <li></li>
             <li></li>
-            <li><a href="${pageContext.request.contextPath}/options">1</a></li>
-            <li><a href="/options">2</a></li>
-            <li>3</li>
+            <li>1</li>
+            <li><a href="${pageContext.request.contextPath}/options">2</a></li>
+            <li><a href="${pageContext.request.contextPath}/options">3</a> </li>
             <li>4</li>
             <li>5</li>
             <li>6</li>
             <li>7</li>
             <li>8</li>
             <li>9</li>
-            <li>10</li>
             <li><span class="active">10</span></li>
             <li>11</li>
             <li>12</li>

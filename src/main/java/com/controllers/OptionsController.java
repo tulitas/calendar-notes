@@ -2,12 +2,11 @@ package com.controllers;
 
 import com.Models.JobformService;
 import com.entities.JobForm;
-import com.repositories.JobformDAOImpl;
 import com.repositories.JobformServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,33 +23,44 @@ import java.util.List;
 @ComponentScan("com.repositories")
 //@RequestMapping(value = "/options", method = RequestMethod.GET)
 public class OptionsController {
-  @Autowired
+    @Autowired
 
-  private JobformService jobformService = new JobformServiceImpl();
+    private JobformService jobformService = new JobformServiceImpl();
 
-  @RequestMapping(value = "/options/create", method = RequestMethod.POST)
-  public String options(JobForm jobForm) {
-    jobformService.addJobForm(jobForm);
-    return "redirect:/options";
-  }
+
+    @RequestMapping(value = "/options/create", method = RequestMethod.POST)
+    public String options(JobForm jobForm) {
+        jobformService.addJobForm(jobForm);
+        return "redirect:/options";
+    }
 //fcc
 
-  @RequestMapping(value = "/options")
+    @RequestMapping(value = "/options")
 
-  public String getOptionsPage(Model model) {
-    List<JobForm> jobForms = jobformService.listJobForm();
-    model.addAttribute("optionsList", jobForms);
-    System.out.println(jobForms);
-    return "/options";
-  }
+    public String getAllByManager(Model model) {
+//        List<JobForm> jobForms = jobformService.listJobForm();
+//        model.addAttribute("optionsList", jobForms);
+        System.out.println("CONTR get all by manager");
+        List<JobForm> jobForms = jobformService.getAllByManager();
+        System.out.println(jobForms);
+        model.addAttribute("optionsList", jobForms);
 
-  @RequestMapping(value = "/options/delete{id}", method = RequestMethod.GET)
+        return "/options";
+    }
 
-  public String removeJobform(@PathVariable("id") long id) {
-    System.out.println(id);
+    @RequestMapping(value = "/options/delete{id}", method = RequestMethod.GET)
 
-    jobformService.removeJobForm(id);
-    return "redirect:/options";
-  }
+    public String removeJobform(@PathVariable("id") long id) {
+        System.out.println(id);
+
+        jobformService.removeJobForm(id);
+        return "redirect:/options";
+    }
+
+
+
+
+
+
 
 }

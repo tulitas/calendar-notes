@@ -8,8 +8,10 @@ public interface JobformService {
 
     void addJobForm(JobForm contact);
 
+
     List<JobForm> listJobForm();
 
     void removeJobForm(long id);
 
+    List<JobForm> getAllByManager();
     }
