@@ -9,36 +9,43 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public  class JobformServiceImpl implements JobformService {
-  @Autowired
-  private JobformRepository jobformRepository;
+public class JobformServiceImpl implements JobformService {
+    @Autowired
+    private JobformRepository jobformRepository;
 
-  @Override
-  @Transactional
-  public void addJobForm(JobForm jobForm) {
-    jobformRepository.save(jobForm);
-    System.out.println(jobForm);
+    @Override
+    @Transactional
+    public void addJobForm(JobForm jobForm) {
+        jobformRepository.save(jobForm);
+        System.out.println(jobForm);
 
 
-  }
+    }
 
-  @Override
-  @Transactional
-  public List<JobForm> listJobForm() {
-    System.out.println("IMPL");
-    return (List<JobForm>) jobformRepository.findAll();
+    @Override
+    @Transactional
+    public List<JobForm> listJobForm() {
+        System.out.println("IMPL");
+        return (List<JobForm>) jobformRepository.findAll();
 
-  }
-  @Override
-  @Transactional
-  public void removeJobForm(long id) {
-    System.out.println("delete test 3 Jobform impl");
-    jobformRepository.deleteById(id);
-  }
+    }
 
-  @Override
-  public List<JobForm> getAllByManager() {
-    System.out.println("Servis get all by manager");
-    return jobformRepository.getAllByManager();
-  }
+    @Override
+    @Transactional
+    public void removeJobForm(long id) {
+        System.out.println("delete test 3 Jobform impl");
+        jobformRepository.deleteById(id);
+    }
+
+    @Override
+    public List<JobForm> getAllByManager() {
+        System.out.println("Servis get all by manager");
+        return jobformRepository.getAllByDate();
+    }
+
+    @Override
+    public String getStatistics() {
+        System.out.println("impl get statistics");
+        return jobformRepository.getStatistics();
+    }
 }

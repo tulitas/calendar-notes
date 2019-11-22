@@ -1,0 +1,66 @@
+<!--
+  Created by IntelliJ IDEA.
+  User: SergejK
+  Date: 11/20/2019
+  Time: 4:27 PM
+  To change this template use File | Settings | File Templates.
+-->
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+          xmlns="http://www.w3.org/1999/xhtml" version="2.0"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+>
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:output doctype-root-element="html"
+                doctype-system="about:legacy-compat"
+                omit-xml-declaration="true"/>
+    <html>
+
+    <head>
+
+        <title>Statistics</title>
+    </head>
+
+    <body>
+    <img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90" height="50"/>
+    <h1>Statistics</h1>
+
+    <form  action="${pageContext.request.contextPath}/options/getstatistics">
+        <table style="top: 200px">
+            <tr>
+                <th>Montaz</th>
+
+            </tr>
+            <c:forEach var="OptionsController" items="${statistics}">
+                <tr>
+                    <td>
+                        ${OptionsController.getStatistics.stat}
+
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </form>
+    <div style="float: right">
+        <form action="${pageContext.request.contextPath}/options/getstatistics" method="get">
+            <p>
+                <label for="date"> Выберите месяц: </label><br/>
+                <input id="date" type="month" name="workdate"/>
+
+                <br/>
+                <button class="add_button"> Pievienot</button>
+
+            </p>
+        </form>
+    </div>
+
+    <div style="height: 200px; width: 100px; border: 3px dashed #e03c32; float: left">
+        <p>
+            <strong><a href="/">Years list</a></strong> <br/>
+            <strong><a href="/year2019">Month list</a></strong><br/>
+            <strong><a href="/statistics">Statistics</a></strong>
+
+        </p>
+    </div>
+    </body>
+    </html>
+</jsp:root>

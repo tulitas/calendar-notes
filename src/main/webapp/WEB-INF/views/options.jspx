@@ -216,13 +216,12 @@
             </p>
 
             <p><label for="info"></label>
-                <textarea id="info" cols="60" rows="6" name="info">Papildus info: </textarea></p>
+                <textarea style="left: 210px" id="info" cols="60" rows="6" name="info">info</textarea></p>
         </form>
         <form action="${pageContext.request.contextPath}/options" method="get">
 
             <table style="word-wrap: break-word"  border="7">
                 <tr>
-                    <th>ID</th>
                     <th>Date</th>
                     <th>Manager</th>
                     <th>Car</th>
@@ -236,7 +235,6 @@
                 <c:forEach var="JobForm" items="${optionsList}">
 
                     <tr>
-                        <td width="30">${JobForm.id}</td>
                         <td width="75">${JobForm.workdate}</td>
                         <td width="50">${JobForm.manager}</td>
                         <td width="50">${JobForm.car}</td>
@@ -256,7 +254,7 @@
         <p>
             <strong><a href="/">Years list</a></strong> <br/>
             <strong><a href="/year2019">Month list</a></strong><br/>
-            <strong><a href="/january2019">To 2019 year</a></strong>
+            <strong><a href="/statistics">Statistics</a></strong>
 
         </p>
     </div>

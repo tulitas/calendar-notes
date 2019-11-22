@@ -6,7 +6,6 @@ import com.repositories.JobformServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -57,10 +56,22 @@ public class OptionsController {
         return "redirect:/options";
     }
 
+    @RequestMapping(value = "/options/getstatistics")
+    public String getStatistics(Model model) {
+        System.out.println("get statistics");
 
-
-
-
-
+       String stat = jobformService.getStatistics();
+        model.addAttribute("statistics", stat);
+        System.out.println(stat);
+        return "redirect:/statistics";
+    }
 
 }
+
+
+
+
+
+
+
+

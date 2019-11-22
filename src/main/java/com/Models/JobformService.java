@@ -14,4 +14,6 @@ public interface JobformService {
     void removeJobForm(long id);
 
     List<JobForm> getAllByManager();
-    }
+
+    String getStatistics();
+}

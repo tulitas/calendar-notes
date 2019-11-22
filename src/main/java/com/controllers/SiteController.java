@@ -21,6 +21,11 @@ public class SiteController {
         return "year2019";
     }
 
+    @RequestMapping("/statistics")
+    public String statistics() {
+        return "statistics";
+    }
+
 //    @RequestMapping("/february2019")
 //    public String february2019() {
 //
