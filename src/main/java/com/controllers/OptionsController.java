@@ -57,11 +57,11 @@ public class OptionsController {
     }
 
     @RequestMapping(value = "/options/getstatistics")
-    public String getStatistics(Model model) {
+    public String getStatistics() {
         System.out.println("get statistics");
 
-       String stat = jobformService.getStatistics();
-        model.addAttribute("statistics", stat);
+       List<JobForm> stat = jobformService.getStatistics();
+
         System.out.println(stat);
         return "redirect:/statistics";
     }

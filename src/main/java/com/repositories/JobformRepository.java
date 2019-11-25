@@ -24,6 +24,6 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
 //    Integer getSatistics();
 
     @Query(value = "SELECT count(work) FROM jobform where work = 'Montaz'", nativeQuery = true)
-    String getStatistics();
+    List<JobForm> getStatistics();
 
 }

@@ -38,13 +38,13 @@ public class JobformServiceImpl implements JobformService {
     }
 
     @Override
-    public List<JobForm> getAllByManager() {
+    public List<JobForm> getAllByDate() {
         System.out.println("Servis get all by manager");
         return jobformRepository.getAllByDate();
     }
 
     @Override
-    public String getStatistics() {
+    public List<JobForm> getStatistics() {
         System.out.println("impl get statistics");
         return jobformRepository.getStatistics();
     }
