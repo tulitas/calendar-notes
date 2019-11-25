@@ -44,7 +44,7 @@ public class JobformServiceImpl implements JobformService {
     }
 
     @Override
-    public List<JobForm> getStatistics() {
+    public String getStatistics() {
         System.out.println("impl get statistics");
         return jobformRepository.getStatistics();
     }

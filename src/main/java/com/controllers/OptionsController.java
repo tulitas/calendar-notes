@@ -36,7 +36,7 @@ public class OptionsController {
 
     @RequestMapping(value = "/options")
 
-    public String getAllByManager(Model model) {
+    public String getAllByDate(Model model) {
 //        List<JobForm> jobForms = jobformService.listJobForm();
 //        model.addAttribute("optionsList", jobForms);
         System.out.println("CONTR get all by manager");
@@ -60,7 +60,7 @@ public class OptionsController {
     public String getStatistics() {
         System.out.println("get statistics");
 
-       List<JobForm> stat = jobformService.getStatistics();
+       String stat = jobformService.getStatistics();
 
         System.out.println(stat);
         return "redirect:/statistics";

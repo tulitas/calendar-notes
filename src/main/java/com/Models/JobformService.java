@@ -15,5 +15,5 @@ public interface JobformService {
 
     List<JobForm> getAllByDate();
 
-    List<JobForm> getStatistics();
+    String getStatistics();
 }

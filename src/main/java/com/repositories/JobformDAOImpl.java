@@ -38,7 +38,7 @@ public abstract class JobformDAOImpl implements JobformDAO {
   }
 
   @Override
-  public List<JobForm> getAllByManager() {
+  public List<JobForm> getAllByDate() {
     return (List<JobForm>) jobformRepository.findAll();
   }
 
