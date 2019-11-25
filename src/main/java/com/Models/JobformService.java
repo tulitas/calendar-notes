@@ -13,7 +13,7 @@ public interface JobformService {
 
     void removeJobForm(long id);
 
-    List<JobForm> getAllByManager();
+    List<JobForm> getAllByDate();
 
     String getStatistics();
 }

@@ -40,7 +40,7 @@ public class OptionsController {
 //        List<JobForm> jobForms = jobformService.listJobForm();
 //        model.addAttribute("optionsList", jobForms);
         System.out.println("CONTR get all by manager");
-        List<JobForm> jobForms = jobformService.getAllByManager();
+        List<JobForm> jobForms = jobformService.getAllByDate();
         System.out.println(jobForms);
         model.addAttribute("optionsList", jobForms);
 
