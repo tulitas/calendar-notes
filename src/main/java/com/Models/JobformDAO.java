@@ -13,7 +13,7 @@ public interface JobformDAO {
     public void deleteJobform(long id);
 
 
-    public List<JobForm> getAllByDate();
+    public List<JobForm> getAllByWorkdate(String work_date);
 
     void getStatistics();
 }

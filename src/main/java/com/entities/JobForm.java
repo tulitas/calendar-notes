@@ -1,4 +1,6 @@
 package com.entities;
+import org.springframework.web.bind.annotation.RequestMapping;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

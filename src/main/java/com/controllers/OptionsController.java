@@ -32,37 +32,27 @@ public class OptionsController {
         jobformService.addJobForm(jobForm);
         return "redirect:/options";
     }
-//fcc
+
 
     @RequestMapping(value = "/options")
-
-    public String getAllByDate(Model model) {
-//        List<JobForm> jobForms = jobformService.listJobForm();
-//        model.addAttribute("optionsList", jobForms);
-        System.out.println("CONTR get all by manager");
-        List<JobForm> jobForms = jobformService.getAllByDate();
-        System.out.println(jobForms);
+    public String getAllByWorkdate(Model model, String work_date) {
+        System.out.println("CONTR get all by work date");
+        List<JobForm> jobForms = jobformService.getAllByWorkdate(work_date);
         model.addAttribute("optionsList", jobForms);
-
         return "/options";
     }
 
     @RequestMapping(value = "/options/delete{id}", method = RequestMethod.GET)
-
     public String removeJobform(@PathVariable("id") long id) {
-        System.out.println(id);
-
         jobformService.removeJobForm(id);
         return "redirect:/options";
     }
 
     @RequestMapping(value = "/options/getstatistics")
-    public String getStatistics() {
-        System.out.println("get statistics");
-
-       String stat = jobformService.getStatistics();
-
-        System.out.println(stat);
+    public String getStatistics(Model model) {
+        String stat = jobformService.getStatistics();
+        model.addAttribute("statlist", stat);
+        System.out.println(model);
         return "redirect:/statistics";
     }
 

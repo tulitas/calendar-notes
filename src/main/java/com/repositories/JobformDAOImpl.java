@@ -31,14 +31,13 @@ public abstract class JobformDAOImpl implements JobformDAO {
     return (List<JobForm>) jobformRepository.findAll();
   }
 
-
   @Override
   public void deleteJobform(long id) {
     jobformRepository.deleteById(id);
   }
 
   @Override
-  public List<JobForm> getAllByDate() {
+  public List<JobForm> getAllByWorkdate(String work_date) {
     return (List<JobForm>) jobformRepository.findAll();
   }
 

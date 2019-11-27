@@ -21,25 +21,23 @@
     </head>
 
     <body>
+
     <img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90" height="50"/>
     <h1>Statistics</h1>
-    <form  action="${pageContext.request.contextPath}/options/getstatistics">
-        <table style="top: 200px">
+    <div style="float: bottom">
+        <table>
             <tr>
                 <th>Montaz</th>
 
             </tr>
 
-            <c:forEach var="OptionsController" items="${statistics}">
+            <c:forEach var="stat" items="${statlist}">
                 <tr>
-                    <td>
-                        ${OptionsController.getStatistics.stat}
-
-                    </td>
+                    <td><c:out value="${stat.model}"/></td>
                 </tr>
             </c:forEach>
         </table>
-    </form>
+    </div>
     <div style="float: right">
         <form action="${pageContext.request.contextPath}/options/getstatistics" method="get">
             <p>

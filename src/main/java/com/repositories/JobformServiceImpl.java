@@ -38,9 +38,9 @@ public class JobformServiceImpl implements JobformService {
     }
 
     @Override
-    public List<JobForm> getAllByDate() {
-        System.out.println("Servis get all by manager");
-        return jobformRepository.getAllByDate();
+    public List<JobForm> getAllByWorkdate(String work_date) {
+        System.out.println(work_date);
+        return jobformRepository.getAllByWorkdate(work_date);
     }
 
     @Override
