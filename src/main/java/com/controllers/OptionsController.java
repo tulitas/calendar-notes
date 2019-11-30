@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 //import javax.persistence.Entity;
 //import javax.ws.rs.DELETE;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/")
@@ -48,11 +49,11 @@ public class OptionsController {
         return "redirect:/options";
     }
 
-    @RequestMapping(value = "/options/getstatistics")
+        @RequestMapping(value = "/options/getstatistics")
     public String getStatistics(Model model) {
         String stat = jobformService.getStatistics();
         model.addAttribute("statlist", stat);
-        System.out.println(model);
+        System.out.println(stat);
         return "redirect:/statistics";
     }
 
