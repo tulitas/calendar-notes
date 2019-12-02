@@ -11,17 +11,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-//import javax.persistence.Entity;
-//import javax.ws.rs.DELETE;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 @RequestMapping("/")
 @Configuration
 
 @ComponentScan("com.repositories")
-//@RequestMapping(value = "/options", method = RequestMethod.GET)
 public class OptionsController {
     @Autowired
 
@@ -53,7 +49,7 @@ public class OptionsController {
     public String getStatistics(Model model) {
         String stat = jobformService.getStatistics();
         model.addAttribute("statlist", stat);
-        System.out.println(stat);
+        System.out.println(model);
         return "redirect:/statistics";
     }
 
