@@ -158,7 +158,7 @@
     <br/>
 
     <div style="float: right">
-        <form action="${pageContext.request.contextPath}/options/create" method="post">
+        <form action="${pageContext.request.contextPath}/options/create"  method="post">
             <label for="car">Ievadi A/M marku un numuru</label><br/>
             <input type="text" name="car" id="car" size="40"/><br/>
             <br/>

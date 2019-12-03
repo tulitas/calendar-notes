@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import java.util.List;
 
 @Controller
@@ -36,6 +37,7 @@ public class OptionsController {
         System.out.println("CONTR get all by work date");
         List<JobForm> jobForms = jobformService.getAllByWorkdate(work_date);
         model.addAttribute("optionsList", jobForms);
+        System.out.println(jobForms);
         return "/options";
     }
 
@@ -45,12 +47,12 @@ public class OptionsController {
         return "redirect:/options";
     }
 
-        @RequestMapping(value = "/options/getstatistics")
+    @RequestMapping(value = "/options/getstatistics")
     public String getStatistics(Model model) {
         String stat = jobformService.getStatistics();
         model.addAttribute("statlist", stat);
-        System.out.println(model);
-        return "redirect:/statistics";
+        System.out.println(stat);
+        return "statistics";
     }
 
 }
