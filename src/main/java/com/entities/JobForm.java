@@ -38,7 +38,7 @@ public class JobForm {
     private String work;
 
     @Column(name = "WorkDate")
-    @NotNull
+
     private String workdate;
 
 
@@ -55,7 +55,7 @@ public class JobForm {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 

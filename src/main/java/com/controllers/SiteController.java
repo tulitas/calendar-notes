@@ -24,24 +24,12 @@ public class SiteController {
         return "statistics";
     }
 
-//    @RequestMapping("/february2019")
-//    public String february2019() {
-//
-//        return "february2019";
-//    }
-//
-//
-//    @RequestMapping("/january2019")
-//    public String january2019() {
-//
-//        return "january2019";
-//    }
-
-
-//    @RequestMapping(method = RequestMethod.POST)
-//    public String createReview(@RequestParam String reviewText) {
-//        reviewRepository.save(new Review(reviewText, new Date()));
-//
-//        return "redirect:/";
-//    }
+    @RequestMapping("/addnew")
+    public String addNew() {
+        return "addnew";
+    }
+    @RequestMapping("/edit")
+    public String edit() {
+        return "edit";
+    }
 }

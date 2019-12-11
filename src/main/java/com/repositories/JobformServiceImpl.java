@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public class JobformServiceImpl implements JobformService {
+public  class JobformServiceImpl implements JobformService {
     @Autowired
     private JobformRepository jobformRepository;
 
@@ -25,7 +25,6 @@ public class JobformServiceImpl implements JobformService {
     @Override
     @Transactional
     public List<JobForm> listJobForm() {
-        System.out.println("IMPL");
         return (List<JobForm>) jobformRepository.findAll();
 
     }
@@ -33,19 +32,24 @@ public class JobformServiceImpl implements JobformService {
     @Override
     @Transactional
     public void removeJobForm(long id) {
-        System.out.println("delete test 3 Jobform impl");
         jobformRepository.deleteById(id);
     }
 
     @Override
     public List<JobForm> getAllByWorkdate(String work_date) {
-        System.out.println(work_date);
         return jobformRepository.getAllByWorkdate(work_date);
     }
 
     @Override
     public String getStatistics() {
-        System.out.println("impl get statistics");
         return jobformRepository.getStatistics();
     }
+
+    @Override
+    public List<JobForm> findById(long id) {
+        System.out.println("jsi");
+        return jobformRepository.findById(id);
+    }
+
+
 }

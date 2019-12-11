@@ -7,37 +7,6 @@
                 doctype-system="about:legacy-compat"
                 omit-xml-declaration="true"/>
 
-<!--    <html>-->
-<!--        <head>-->
-<!--            <title>GuestBoot Example</title>-->
-<!--        </head>-->
-<!--        <body>-->
-<!--        <style>-->
-<!--            body {-->
-<!--                background: beige  no-repeat fixed center;-->
-<!--            }-->
-<!--        </style>-->
-<!--            <h1>Post new review</h1>-->
-<!--            <form method="POST">-->
-<!--                <label>-->
-<!--                    <textarea name="reviewText" placeholder="Your review here"><jsp:text/></textarea>-->
-<!--                </label>-->
-<!--                <br/>-->
-<!--                <button type="submit">Submit</button>-->
-
-<!--            </form>-->
-<!--&lt;!&ndash;            <hr/>&ndash;&gt;-->
-<!--            <h1>Reviewss</h1>-->
-<!--            <c:forEach items="${reviews}" var="review">-->
-<!--                <div>-->
-<!--                    <c:out value="${review.reviewText}"/><br/>-->
-<!--                    <small><c:out value="${review.createDate}"/></small>-->
-<!--                </div>-->
-<!--                <br/>-->
-<!--            </c:forEach>-->
-<!--        </body>-->
-<!--    </html>-->
-
     <html>
     <head>
         <style>

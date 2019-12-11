@@ -56,8 +56,7 @@
     <div style="height: 200px; width: 100px; border: 3px dashed #e03c32; float: left">
         <p>
             <strong><a href="/">Years list</a></strong> <br/>
-            <strong><a href="/year2019">Month list</a></strong><br/>
-            <strong><a href="/statistics">Statistics</a></strong>
+            <strong><a href="/addnew">Add New</a></strong>
 
         </p>
     </div>

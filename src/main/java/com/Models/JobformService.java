@@ -16,4 +16,7 @@ public interface JobformService {
     List<JobForm> getAllByWorkdate(String work_date);
 
     String getStatistics();
+
+
+    List<JobForm> findById(long id);
 }
