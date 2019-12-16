@@ -158,6 +158,7 @@
                 <th>Info</th>
                 <th>Sistem</th>
                 <th>Work</th>
+                <th>Rezultats</th>
                 <th>Action</th>
             </tr>
 
@@ -171,6 +172,7 @@
                     <td width="50">${JobForm.info}</td>
                     <td width="50">${JobForm.sistem}</td>
                     <td width="50">${JobForm.work}</td>
+                    <td width="50">${JobForm.action}</td>
                     <td width="50"><a href="/options/delete${JobForm.id}">Delete</a></td>
                     <td width="50"><a href="/options/edit${JobForm.id}">Edit</a></td>
                 </tr>

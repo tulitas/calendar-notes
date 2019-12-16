@@ -26,7 +26,6 @@ public abstract class JobformDAOImpl implements JobformDAO {
   }
 
   @Override
-  @SuppressWarnings("uncheked")
   public List<JobForm> listJobform() {
     return (List<JobForm>) jobformRepository.findAll();
   }

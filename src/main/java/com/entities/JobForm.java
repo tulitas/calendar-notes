@@ -1,4 +1,5 @@
 package com.entities;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import javax.validation.constraints.NotNull;
 public class JobForm {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "CreateDate")
@@ -38,10 +39,18 @@ public class JobForm {
     private String work;
 
     @Column(name = "WorkDate")
-
     private String workdate;
 
+    @Column(name = "Action")
+    private String action;
 
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
 
     public String getCreatedate() {
         return createdate;
@@ -127,6 +136,7 @@ public class JobForm {
                 ", info='" + info + '\'' +
                 ", work='" + work + '\'' +
                 ", workdate='" + workdate + '\'' +
+                ", action='" + action + '\'' +
                 '}';
     }
 }

@@ -52,10 +52,9 @@
             <label for="car">Ievadi A/M marku un numuru</label><br/>
             <input type="text" name="car" id="car" size="40" /><br/>
             <br/>
+
             <label for="client">Ievadi klientu un tel.</label><br/>
             <input id="client" type="text" name="client" size="40"/>
-
-            <br/>
             <br/>
 
 
@@ -65,13 +64,17 @@
                 optimum
                 <option value="mini"/>
                 mini
-                <option value="comfort"/>
-                comfort
+                <option value="premium"/>
+                premium
+                <option value="minibasic"/>
+                mini basic
+                <option value="minibasicpluss"/>
+                mini basic pluss
             </select></div>
             <br/>
 
             <div><label for="work">Izvelejies darba veidu</label><br/>
-                <select id="work" name="work"> size="3" multiple="multiple"
+                <select id="work" name="work">
                     <option value="Montaz"/>
                     montaz
                     <option value="Remont"/>
@@ -82,11 +85,14 @@
             <br/>
 
             <div><label for="manager">Kas veic ierakstu</label><br/>
+
                 <select id="manager" name="manager"> size="3" multiple="multiple"
                     <option value="Agnese"/>
                     Agnese
                     <option value="Kristine"/>
                     Kristine
+                    <option value="Inese"/>
+                    Inese
                     <option value="Aigars"/>
                     Aigars
                 </select></div>
@@ -97,10 +103,10 @@
             </p>
 
             <br/>
-            <!--        <input type="submit" value="Pievienot"/>-->
 
-            <p><label for="info"></label>
-                <textarea style="left: 210px" id="info" cols="60" rows="6" name="info">info: </textarea></p>
+
+
+                <textarea style="left: 210px" id="info" cols="60" rows="6" name="info">info: </textarea>
 
             <p>
                 <button class="add_button"> Pievienot</button>

@@ -9,9 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
-public  class JobformServiceImpl implements JobformService {
-    @Autowired
+public class JobformServiceImpl implements JobformService {
+@Autowired
     private JobformRepository jobformRepository;
+
+
 
     @Override
     @Transactional
@@ -39,6 +41,8 @@ public  class JobformServiceImpl implements JobformService {
     public List<JobForm> getAllByWorkdate(String work_date) {
         return jobformRepository.getAllByWorkdate(work_date);
     }
+
+
 
     @Override
     public String getStatistics() {

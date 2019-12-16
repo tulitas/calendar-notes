@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -36,8 +35,6 @@ public class OptionsController {
     @RequestMapping(value = "/options")
     public String getAllByWorkdate(Model model, String work_date) {
         List<JobForm> jobForms = jobformService.getAllByWorkdate(work_date);
-//        ModelAndView modelAndView = new ModelAndView();
-//        System.out.println(modelAndView);
         model.addAttribute("optionsList", jobForms);
         return "/options";
     }
@@ -49,14 +46,15 @@ public class OptionsController {
         return "redirect:/options";
     }
 
-    @RequestMapping(value = "/options/getstatistics")
+        @RequestMapping(value = "/options/getstatistics")
     public String getStatistics(Model model) {
-        String stat = jobformService.getStatistics();
+      String stat = jobformService.getStatistics();
         model.addAttribute("statlist", stat);
-        System.out.println(stat);
+        System.out.println("work date is");
         return "statistics";
-    }
 
+
+    }
     @RequestMapping(value = "/options/edit{id}", method = RequestMethod.GET)
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
        List<JobForm> jobFormList = jobformService.findById(id);

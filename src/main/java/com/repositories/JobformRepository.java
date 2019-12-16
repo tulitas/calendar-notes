@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Repository
@@ -24,7 +23,7 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
 //    @Query(value = "select work_date from jobform where work_date like '%2019-11%'", nativeQuery = true)
 //    Integer getSatistics();
 
-    @Query(value = "SELECT count(work) FROM jobform where work = 'Montaz'", nativeQuery = true)
+   @Query(value = "SELECT count(work) FROM jobform where work = 'Montaz' ", nativeQuery = true)
     String getStatistics();
 
     List<JobForm> findById(long id);
