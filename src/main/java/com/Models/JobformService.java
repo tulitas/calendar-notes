@@ -8,7 +8,6 @@ public interface JobformService {
 
     void addJobForm(JobForm contact);
 
-
     List<JobForm> listJobForm();
 
     void removeJobForm(long id);
@@ -17,7 +16,7 @@ public interface JobformService {
 
     String getStatistics();
 
-
     List<JobForm> findById(long id);
+
 
 }

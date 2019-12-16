@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class yaersController {
     @RequestMapping("/years/2020/month/january/days/january")
-    public String january2019() {
+    public String january2020() {
 
         return "years/2020/month/january/days/january";
     }
@@ -16,6 +16,10 @@ public class yaersController {
 
         return "years/2020/month2020";
     }
+    @RequestMapping("/years/2020/month/february/days/february")
+    public String february2020() {
 
+        return "years/2020/month/february/days/february";
+    }
 
 }

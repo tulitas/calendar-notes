@@ -43,7 +43,7 @@
         <form action="${pageContext.request.contextPath}/options/getstatistics">
             <p>
                 <label for="date"> Выберите месяц: </label><br/>
-                <input id="date" type="month"/>
+                <input id="date" type="month" name="date"/>
 
                 <br/>
                 <button class="add_button"> Pievienot</button>

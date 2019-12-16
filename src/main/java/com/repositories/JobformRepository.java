@@ -18,15 +18,15 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
 
     //    @Query(value = "select id, car, client, create_date, info, manager, sistem, work, work_date " +
 //            "from jobform where work_date like '2019-11-13'", nativeQuery = true)
+
     List<JobForm> getAllByWorkdate(String work_date);
 
 //    @Query(value = "select work_date from jobform where work_date like '%2019-11%'", nativeQuery = true)
 //    Integer getSatistics();
 
-   @Query(value = "SELECT count(work) FROM jobform where work = 'Montaz' ", nativeQuery = true)
+    @Query(value = "SELECT count(work) FROM jobform where work='montaz' and work_date like '%2020-01%'", nativeQuery = true)
     String getStatistics();
 
     List<JobForm> findById(long id);
-
 
 }

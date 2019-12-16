@@ -3,6 +3,7 @@ package com.controllers;
 import com.Models.JobformService;
 import com.entities.JobForm;
 import com.repositories.JobformServiceImpl;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -39,25 +40,24 @@ public class OptionsController {
         return "/options";
     }
 
-
     @RequestMapping(value = "/options/delete{id}", method = RequestMethod.GET)
     public String removeJobform(@PathVariable("id") long id) {
         jobformService.removeJobForm(id);
         return "redirect:/options";
     }
 
-        @RequestMapping(value = "/options/getstatistics")
+    @RequestMapping(value = "/options/getstatistics")
     public String getStatistics(Model model) {
-      String stat = jobformService.getStatistics();
+        String stat = jobformService.getStatistics();
         model.addAttribute("statlist", stat);
-        System.out.println("work date is");
+        System.out.println("montaz by month " + stat);
         return "statistics";
 
-
     }
+
     @RequestMapping(value = "/options/edit{id}", method = RequestMethod.GET)
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
-       List<JobForm> jobFormList = jobformService.findById(id);
+        List<JobForm> jobFormList = jobformService.findById(id);
         model.addAttribute("user", jobFormList);
         System.out.println(jobFormList);
         return "edit";
