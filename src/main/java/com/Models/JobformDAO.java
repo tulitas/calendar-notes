@@ -15,7 +15,7 @@ public interface JobformDAO {
 
     public List<JobForm> getAllByWorkdate(String work_date);
 
-    String getStatistics();
+
 
 
 

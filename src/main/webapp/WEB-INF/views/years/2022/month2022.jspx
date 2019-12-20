@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: SergejK
+  Date: 25-Jul-19
+  Time: 15:46
+  To change this template use File | Settings | File Templates.
+-->
+
+
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
+    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
+    <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
+    <html>
+    <head><title>2022</title></head>
+    <head>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Sherlog Calendar</h1>
+    <table>
+        <tr>
+            <th>2022</th>
+
+        </tr>
+        <tr>
+            <!--            ssilka na janvar-->
+            <td><strong><a href="/years/2022/month/january/days/january">January</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/february/days/february">February</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/mart/days/mart">March</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/april/days/april">April</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/may/days/may">May</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/june/days/june">June</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/july/days/july">July</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/august/days/august">August</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/september/days/september">September</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/oktober/days/oktober">October</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/november/days/november">November</a></strong></td>
+
+        </tr>
+        <tr>
+            <td><strong><a href="/years/2022/month/december/days/december">Decenber</a></strong></td>
+
+        </tr>
+    </table>
+    <strong><a href="/">Back to first page</a></strong>
+    </body>
+    </html>
+</jsp:root>

@@ -21,7 +21,6 @@ public class JobformServiceImpl implements JobformService {
         jobformRepository.save(jobForm);
         System.out.println(jobForm);
 
-
     }
 
     @Override
@@ -42,17 +41,51 @@ public class JobformServiceImpl implements JobformService {
         return jobformRepository.getAllByWorkdate(work_date);
     }
 
-
-
-    @Override
-    public String getStatistics() {
-        return jobformRepository.getStatistics();
-    }
-
     @Override
     public List<JobForm> findById(long id) {
         System.out.println("jsi");
         return jobformRepository.findById(id);
+    }
+
+    @Override
+    public String getStatistics( String date2) {
+        return jobformRepository.getStatistics( date2);
+
+    }
+
+    @Override
+    public String getRemont(String date2) {
+        return jobformRepository.getRemont(date2);
+    }
+
+    @Override
+    public String getSnjatie(String date2) {
+        return jobformRepository.getSnjatie(date2);
+    }
+
+    @Override
+    public String getMinibasic(String date2) {
+        return jobformRepository.getMinibasic(date2);
+    }
+
+    @Override
+    public String getMinibasicpluss(String date2) {
+        return jobformRepository.getMinibasicplus(date2);
+    }
+
+    @Override
+    public String getOptimum(String date2) {
+        return jobformRepository.getOptimum(date2);
+    }
+
+    @Override
+    public String getMini(String date2) {
+        return jobformRepository.getMini(date2);
+    }
+
+    @Override
+    public String getPremium(String date2) {
+        return jobformRepository.getPremium(date2);
     }
 
 

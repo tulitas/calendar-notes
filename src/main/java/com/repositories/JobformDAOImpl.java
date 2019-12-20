@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 @Transactional
-public  class JobformDAOImpl implements JobformDAO {
+public class JobformDAOImpl implements JobformDAO {
 
   private final JobformRepository jobformRepository;
 
@@ -40,9 +40,6 @@ public  class JobformDAOImpl implements JobformDAO {
     return (List<JobForm>) jobformRepository.findAll();
   }
 
-  @Override
-  public String getStatistics() {
-   return jobformRepository.getStatistics();
-  }
+
 
 }

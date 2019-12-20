@@ -11,22 +11,36 @@ import java.util.List;
 
 @Repository
 public interface JobformRepository extends CrudRepository<JobForm, Long> {
-
-    //    @Query("select b from JobForm b where b.manager = Agnese")
-//    JobForm findByManager(@Param("manager") String manager);
-
-
-    //    @Query(value = "select id, car, client, create_date, info, manager, sistem, work, work_date " +
-//            "from jobform where work_date like '2019-11-13'", nativeQuery = true)
-
     List<JobForm> getAllByWorkdate(String work_date);
-
-//    @Query(value = "select work_date from jobform where work_date like '%2019-11%'", nativeQuery = true)
-//    Integer getSatistics();
-
-    @Query(value = "SELECT count(work) FROM jobform where work='montaz' and work_date like '%2020-01%'", nativeQuery = true)
-    String getStatistics();
 
     List<JobForm> findById(long id);
 
+    @Query(value = "SELECT count(work) FROM jobform where work = 'montaz' and  action = 'ja' and work_date like %:date2%", nativeQuery = true)
+    String getStatistics(String date2);
+
+    @Query(value = "SELECT count(work) FROM jobform where work = 'remont' and  action = 'ja' and work_date like %:date2%", nativeQuery = true)
+    String getRemont(String date2);
+
+    @Query(value = "SELECT count(work) FROM jobform where work = 'snjatie' and  action = 'ja' and work_date like %:date2%", nativeQuery = true)
+    String getSnjatie(String date2);
+
+    @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'minibasic' " +
+            "and  action = 'ja' and work = 'montaz'and work_date like %:date2%", nativeQuery = true)
+    String getMinibasic(String date2);
+
+    @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'minibasicpluss'" +
+            " and  action = 'ja' and  work = 'montaz'and work_date like %:date2%", nativeQuery = true)
+    String getMinibasicplus(String date2);
+
+    @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'optimum'" +
+            "and  action = 'ja' and  work = 'montaz'and work_date like %:date2%", nativeQuery = true)
+    String getOptimum(String date2);
+
+    @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'mini'" +
+            " and  action = 'ja' and work = 'montaz' and work_date like %:date2%", nativeQuery = true)
+    String getMini(String date2);
+
+    @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'premium' " +
+            "and action = 'ja' and work = 'montaz' and work_date like %:date2%", nativeQuery = true)
+    String getPremium(String date2);
 }

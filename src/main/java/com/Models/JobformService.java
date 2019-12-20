@@ -14,9 +14,23 @@ public interface JobformService {
 
     List<JobForm> getAllByWorkdate(String work_date);
 
-    String getStatistics();
-
     List<JobForm> findById(long id);
 
+    String getStatistics( String date2);
 
+
+    String getRemont(String date2);
+
+    String getSnjatie(String date2);
+
+    String getMinibasic(String date2);
+
+    String getMinibasicpluss(String date2);
+
+    String getOptimum(String date2);
+
+    String getMini(String date2);
+
+    String getPremium(String date2);
 }
+

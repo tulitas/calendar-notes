@@ -33,7 +33,7 @@
         </style>
     </head>
     <body>
-    <h1>Janvaris</h1>
+    <h1>Sherlog Calendar</h1>
     <table>
         <tr>
             <th>2020</th>
@@ -49,43 +49,43 @@
 
         </tr>
         <tr>
-            <td><strong><a href="/years/2020/month/january/january">March</a></strong></td>
+            <td><strong><a href="/years/2020/month/mart/days/mart">March</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="april2019">April</a></strong></td>
+            <td><strong><a href="/years/2020/month/april/days/april">April</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="may2019">May</a></strong></td>
+            <td><strong><a href="/years/2020/month/may/days/may">May</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="june2019">June</a></strong></td>
+            <td><strong><a href="/years/2020/month/june/days/june">June</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="july2019">July</a></strong></td>
+            <td><strong><a href="/years/2020/month/july/days/july">July</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="august2019">August</a></strong></td>
+            <td><strong><a href="/years/2020/month/august/days/august">August</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="september2019">September</a></strong></td>
+            <td><strong><a href="/years/2020/month/september/days/september">September</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="october2019">October</a></strong></td>
+            <td><strong><a href="/years/2020/month/oktober/days/oktober">October</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="november2019">Novenber</a></strong></td>
+            <td><strong><a href="/years/2020/month/november/days/november">November</a></strong></td>
 
         </tr>
         <tr>
-            <td><strong><a href="december2019">Decenber</a></strong></td>
+            <td><strong><a href="/years/2020/month/december/days/december">Decenber</a></strong></td>
 
         </tr>
     </table>

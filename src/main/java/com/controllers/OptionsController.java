@@ -3,7 +3,6 @@ package com.controllers;
 import com.Models.JobformService;
 import com.entities.JobForm;
 import com.repositories.JobformServiceImpl;
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,9 +20,13 @@ import java.util.List;
 
 @ComponentScan("com.repositories")
 public class OptionsController {
-    @Autowired
 
     private JobformService jobformService = new JobformServiceImpl();
+
+    @Autowired
+    public OptionsController(JobformService jobformService) {
+        this.jobformService = jobformService;
+    }
 
 
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
@@ -47,13 +50,29 @@ public class OptionsController {
     }
 
     @RequestMapping(value = "/options/getstatistics")
-    public String getStatistics(Model model) {
-        String stat = jobformService.getStatistics();
+
+    public String getStatistics(Model model, String date2) {
+
+        String stat = jobformService.getStatistics(date2);
+        String remont = jobformService.getRemont(date2);
+        String snjatie = jobformService.getSnjatie(date2);
+        String minibasic = jobformService.getMinibasic(date2);
+        String minibasicpluss = jobformService.getMinibasicpluss(date2);
+        String optimum = jobformService.getOptimum(date2);
+        String mini = jobformService.getMini(date2);
+        String premium = jobformService.getPremium(date2);
+        model.addAttribute("premium", premium);
+        model.addAttribute("mini", mini);
+        model.addAttribute("optimum", optimum);
+        model.addAttribute("minibasicpluss", minibasicpluss);
+        model.addAttribute("minibasic", minibasic);
         model.addAttribute("statlist", stat);
-        System.out.println("montaz by month " + stat);
+        model.addAttribute("remontList", remont);
+        model.addAttribute("snjatieList", snjatie);
         return "statistics";
 
     }
+
 
     @RequestMapping(value = "/options/edit{id}", method = RequestMethod.GET)
     public String showUpdateForm(@PathVariable("id") long id, Model model) {

@@ -172,9 +172,9 @@
                     <td width="50">${JobForm.info}</td>
                     <td width="50">${JobForm.sistem}</td>
                     <td width="50">${JobForm.work}</td>
-                    <td width="50">${JobForm.action}</td>
-                    <td width="50"><a href="/options/delete${JobForm.id}">Delete</a></td>
-                    <td width="50"><a href="/options/edit${JobForm.id}">Edit</a></td>
+                    <td width="50">${JobForm.action}  </td>
+                    <td width="50"><a style="background: tomato" href="/options/delete${JobForm.id}">Delete</a><br/><br/><a style="background: #3e8e41 " href="/options/edit${JobForm.id}">Edit</a></td>
+
                 </tr>
             </c:forEach>
         </table>

@@ -8,7 +8,7 @@
 
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
           xmlns="http://www.w3.org/1999/xhtml" version="2.0"
-          xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:th="http://www.springframework.org/tags/form"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
 >
     <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
     <jsp:output doctype-root-element="html"
@@ -24,17 +24,44 @@
     <body>
 
     <h1>Statistics</h1>
-    <div style="float: bottom">
+    <div>
         <table>
             <tr>
-                <th>Montaz</th>
-
-            </tr>
-
-            <tr>
+                <th>Montazi</th>
                 <td>
                     <c:out value="${statlist}"/>
-
+                </td>
+                <th>Minibasic</th>
+                <td>
+                    <c:out value="${minibasic}"/>
+                </td>
+                <th>Mini basic pluss</th>
+                <td>
+                    <c:out value="${minibasicpluss}"/>
+                </td>
+                <th>Optimum</th>
+                <td>
+                    <c:out value="${optimum}"/>
+                </td>
+                <th>Mini</th>
+                <td>
+                    <c:out value="${mini}"/>
+                </td>
+                <th>Premium</th>
+                <td>
+                    <c:out value="${premium}"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Remonti</th>
+                <td>
+                    <c:out value="${remontList}"/>
+                </td>
+            </tr>
+            <tr>
+                <th>Snjatie</th>
+                <td>
+                    <c:out value="${snjatieList}"/>
                 </td>
             </tr>
         </table>
@@ -43,7 +70,7 @@
         <form action="${pageContext.request.contextPath}/options/getstatistics">
             <p>
                 <label for="date"> Выберите месяц: </label><br/>
-                <input id="date" type="month" name="date"/>
+                <input id="date" type="month" name="date2"/>
 
                 <br/>
                 <button class="add_button"> Pievienot</button>
