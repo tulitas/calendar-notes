@@ -32,5 +32,7 @@ public interface JobformService {
     String getMini(String date2);
 
     String getPremium(String date2);
+
+    String getBusydays(String date2);
 }
 

@@ -23,6 +23,7 @@ public class OptionsController {
 
     private JobformService jobformService = new JobformServiceImpl();
 
+
     @Autowired
     public OptionsController(JobformService jobformService) {
         this.jobformService = jobformService;
@@ -61,6 +62,7 @@ public class OptionsController {
         String optimum = jobformService.getOptimum(date2);
         String mini = jobformService.getMini(date2);
         String premium = jobformService.getPremium(date2);
+        String busydays = jobformService.getBusydays(date2);
         model.addAttribute("premium", premium);
         model.addAttribute("mini", mini);
         model.addAttribute("optimum", optimum);
@@ -69,6 +71,7 @@ public class OptionsController {
         model.addAttribute("statlist", stat);
         model.addAttribute("remontList", remont);
         model.addAttribute("snjatieList", snjatie);
+        model.addAttribute("busydays", busydays);
         return "statistics";
 
     }
