@@ -5,11 +5,9 @@
   Time: 11:36 AM
   To change this template use File | Settings | File Templates.
 -->
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
-          xmlns="http://www.w3.org/1999/xhtml" version="2.0" xmlns:form="http://www.springframework.org/tags/form"
-          xmlns:th="http://www.thymeleaf.org" xmlns:c="http://java.sun.com/jsp/jstl/core">
-    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
-    <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<%@ page contentType="text/html;charset=UTF-8" %>
     <html>
     <head><title>Edit</title></head>
     <body>
@@ -92,4 +90,3 @@
 
     </body>
     </html>
-</jsp:root>
