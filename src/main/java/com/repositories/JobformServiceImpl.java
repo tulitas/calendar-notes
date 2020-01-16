@@ -89,8 +89,8 @@ public class JobformServiceImpl implements JobformService {
     }
 
     @Override
-    public String getBusydays(String date2) {
-        return null;
+    public String getJobsperdays(String date3) {
+        return jobformRepository.getJobsperdays(date3);
     }
 
 

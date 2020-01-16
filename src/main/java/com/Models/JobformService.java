@@ -33,6 +33,7 @@ public interface JobformService {
 
     String getPremium(String date2);
 
-    String getBusydays(String date2);
+
+    String getJobsperdays(String date3);
 }
 

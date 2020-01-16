@@ -45,4 +45,6 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
     String getPremium(String date2);
 
 
+    @Query(value = "SELECT count(work) FROM jobform where work is not null and work_date = :date3 ", nativeQuery = true)
+    String getJobsperdays(String date3);
 }
