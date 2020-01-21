@@ -38,8 +38,18 @@
                 optimum
                 <option value="mini"/>
                 mini
-                <option value="comfort"/>
-                comfort
+                <option value="premium"/>
+                premium
+                <option value="minibasic"/>
+                mini basic
+                <option value="minibasicpluss"/>
+                mini basic pluss
+                <option value="mapon"/>
+                mapon
+                <option value="igla"/>
+                igla
+                <option value="cita iekarta"/>
+                cita iekarta
             </select>
             </div>
             <br/>
@@ -48,11 +58,27 @@
                 <label for="work">Izvelejies darba veidu</label><br/>
                 <select id="work" name="work">
                     <option value="Montaz"/>
-                    montaz
+                    Montāža
+                    <option value="Peremontaz"/>
+                    Pārmontāža
+                    <option value="Demontaz"/>
+                    Demontāža
                     <option value="Remont"/>
-                    remont
-                    <option value="Snjatie"/>
-                    snjatie
+                    Remonts
+                    <option value="Zamena mesta"/>
+                    Vietas maiņa
+                    <option value="Downgrade"/>
+                    Downgrade
+                    <option value="Upgrade"/>
+                    Upgrade
+                    <option value="Pielikt GM"/>
+                    Pielikt GM
+                    <option value="Mainit GM"/>
+                    Mainit GM
+                    <option value="AKB Maina"/>
+                    AKB Maiņa
+                    <option value="Cita darbiba"/>
+                    Cita darbība
                 </select></div>
             <br/>
             <div>
@@ -66,6 +92,8 @@
                     Kristine
                     <option value="Aigars"/>
                     Aigars
+                    <option value="Inese"/>
+                    Inese
                 </select></div>
 
             <br/>
@@ -75,6 +103,12 @@
                     ja
                     <option value="ne"/>
                     ne
+                    <option value="parrakstijas"/>
+                    parrakstijas
+                    <option value="Izpildits"/>
+                    izpildits
+                    <option value="Nav izpildits"/>
+                    Nav izpildits
                 </select></div>
             <br/>
             <p>

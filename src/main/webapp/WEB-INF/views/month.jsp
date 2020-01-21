@@ -20,7 +20,7 @@
     }
 
     .month {
-      padding: 70px 25px;
+      padding: 25px 25px;
       width: 100%;
       background: #1abc9c;
       text-align: center;
@@ -62,9 +62,11 @@
     }
 
     .days {
+
       padding: 10px 0;
       background: #eee;
       margin: 0;
+
     }
 
     .days li {
@@ -82,6 +84,7 @@
       background: #1abc9c;
       color: white !important
     }
+
 
     /* Add media queries for smaller screens */
     @media screen and (max-width: 720px) {
@@ -113,11 +116,13 @@
 
 <h1>Sherlog Calendar</h1>
 
+<strong style="padding-right: 50px"><a href="/addnew">Add New</a></strong>
+
 <div class="month">
   <ul>
     <li class="prev"><a href="${previousMonth}">❮</a></li>
     <li class="next"><a href="${nextMonth}">❯</a></li>
-    <li>${month}<br></br>
+    <li>${month}<br>
       <span style="font-size:18px">${year}</span>
     </li>
   </ul>
@@ -135,9 +140,13 @@
 <ul class="days">
   <c:forEach var="day" items="${days}">
     <li>
+
       <c:if test="${day.dayNumber != null}">
-        <p>${day.additionalInformation}</p>
+        <div style="border: 1px solid black">
+        <p style="color: #3e8e41">${day.additionalInformation}</p>
+
         <a href="${pageContext.request.contextPath}/options?work_date=${day.href}">${day.dayNumber}</a>
+        </div>
       </c:if>
     </li>
   </c:forEach>

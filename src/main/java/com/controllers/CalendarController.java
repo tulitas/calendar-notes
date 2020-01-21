@@ -61,7 +61,7 @@ public class CalendarController {
 
 
             days.add(new CalendarDay(i, month.atDay(i).toString(), "ieraksti: " + busy));
-            System.out.println(date3);
+//            System.out.println(date3);
 
         }
 
