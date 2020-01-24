@@ -10,7 +10,7 @@ public class SiteController {
 
     @RequestMapping("/")
     public ModelAndView index() {
-        return new ModelAndView("site/index");
+        return new ModelAndView("index");
     }
 
     @RequestMapping("/year2019")
