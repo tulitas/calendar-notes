@@ -11,6 +11,7 @@ To change this template use File | Settings | File Templates.
 <html>
 <head>
     <style>
+
         button:hover {
 
             background-color: #3e8e41;
@@ -18,13 +19,13 @@ To change this template use File | Settings | File Templates.
 
         button:active {
 
+
             background-color: #3e8e41;
             box-shadow: 0 5px #666;
             transform: translateY(4px);
         }
 
         .add_button {
-
             padding: 15px 25px;
             font-size: 24px;
             text-align: center;
@@ -40,6 +41,7 @@ To change this template use File | Settings | File Templates.
         body {
             background: url("https://good-surf.ru/forum/urok/css/fon/images/big.jpg") no-repeat;
             background-size: 100%;
+
         }
 
 
@@ -65,18 +67,20 @@ To change this template use File | Settings | File Templates.
         }
 
         .topmenu > li {
+
             display: grid;
             margin-right: 20px;
             position: relative;
 
-            /*left: -550px;*/
+
         }
 
         .topmenu > li:last-child {
-            margin-right: 0;
+            margin-right: 20px;
         }
 
         a {
+
             display: block;
             padding: 10px 15px;
             text-decoration: none;
@@ -105,7 +109,7 @@ To change this template use File | Settings | File Templates.
 
         .four ul {
             background: #FFD7A7;
-
+            left: 50px;
         }
 
         .four .submenu {
@@ -132,128 +136,176 @@ To change this template use File | Settings | File Templates.
             border-bottom: 1px solid rgba(255, 255, 255, .3);
             color: white;
         }
+
+        input[type=text] {
+            border: 2px coral;
+            border-radius: 4px;
+            background: cadetblue;
+        }
+
+        select {
+            background: cadetblue;
+            border-radius: 4px;
+        }
+
+        input {
+
+            background: cadetblue;
+            border-radius: 4px;
+        }
+
+        textarea {
+
+            background: cadetblue;
+            border-radius: 4px;
+
+            top: 50%;
+        }
+
+        #wrapper {
+            max-width: 960px;
+            margin: 0;
+        }
+
+
+        aside {
+            float: left;
+            width: 250px;
+        }
+
+        section {
+            margin-left: 280px;
+            padding-bottom: 50px;
+        }
     </style>
-    <title>Title</title></head>
+    <title>Sherlog Calendar</title></head>
 <body>
-<img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90" height="50"/>
 
 
-<br/>
-<div style="float: right">
-    <form action="${pageContext.request.contextPath}/options/create" method="post">
-        <label for="car">Ievadi A/M marku un numuru</label><br/>
-        <input type="text" name="car" id="car" size="40"/><br/>
-        <br/>
-
-        <label for="client">Ievadi klientu un tel.</label><br/>
-        <input id="client" type="text" name="client" size="40"/>
-        <br/>
+<div id="wrapper">
+    <header>
+        <img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90"
+             height="50"/>
 
 
-        <label for="sistem">Izvelejies sistemu</label>
-        <div><select id="sistem" name="sistem"> size="3" multiple="multiple"
-            <option value="Optimum"/>
-            optimum
-            <option value="mini"/>
-            mini
-            <option value="premium"/>
-            premium
-            <option value="minibasic"/>
-            mini basic
-            <option value="minibasicpluss"/>
-            mini basic pluss
-            <option value="mapon"/>
-            mapon
-            <option value="igla"/>
-            igla
-            <option value="cita iekarta"/>
-            cita iekarta
-
-        </select></div>
-        <br/>
-
-        <div><label for="work">Izvelejies darba veidu</label><br/>
-            <select id="work" name="work">
-                <option value="Montaz"/>
-                Montāža
-                <option value="Peremontaz"/>
-                Pārmontāža
-                <option value="Demontaz"/>
-                Demontāža
-                <option value="Remont"/>
-                Remonts
-                <option value="Zamena mesta"/>
-                Vietas maiņa
-                <option value="Downgrade"/>
-                Downgrade
-                <option value="Upgrade"/>
-                Upgrade
-                <option value="Pielikt GM"/>
-                Pielikt GM
-                <option value="Mainit GM"/>
-                Mainit GM
-                <option value="AKB Maina"/>
-                AKB Maiņa
-                <option value="Cita darbiba"/>
-                Cita darbība
-            </select></div>
-        <br/>
-
-        <div><label for="manager">Kas veic ierakstu</label><br/>
-
-            <select id="manager" name="manager"> size="3" multiple="multiple"
-                <option value="Agnese"/>
-                Agnese
-                <option value="Kristine"/>
-                Kristine
-                <option value="Inese"/>
-                Inese
-                <option value="Aigars"/>
-                Aigars
-            </select></div>
-
-        <p><label for="date"> Выберите дату: </label><br/>
-            <input id="date" type="date" name="workdate"/>
-
-        </p>
-
-        <br/>
+    </header>
 
 
-        <textarea style="left: 210px" id="info" cols="60" rows="6" name="info">info: </textarea>
-
-        <p>
-            <button class="add_button"> Pievienot</button>
-        </p>
-
-    </form>
 </div>
 
-<br/>
-<%--<div style="height: 200px; width: 100px; border: 3px dashed #e03c32; float: left">--%>
-<%--<p>--%>
-<nav class="four">
+<div>
+    <aside>
 
-    <ul class="topmenu">
-        <li><a href="/">Home</a></li>
+        <nav class="four">
 
-        <li><a href="#">Menu<i class="fa fa-angle-down"></i></a>
-            <ul class="submenu">
-                <li><a href="/statistics">Statistika</a></li>
-                <li><a href="/addnew">Pievienot jaunu</a></li>
+            <ul class="topmenu">
+                <li><a href="/">Home</a></li>
+
+                <li><a href="#">Menu<i class="fa fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="/statistics">Statistika</a></li>
+                        <li><a href="/addnew">Pievienot jaunu</a></li>
+                    </ul>
+                </li>
+
             </ul>
-        </li>
-
-    </ul>
-</nav>
-
-
-</li>
-<%--<strong><a href="/">Years list</a></strong> <br/>--%>
-<%--<strong><a href="/statistics">Statistics</a></strong><br/>--%>
+        </nav>
+    </aside>
+</div>
+<br/>
 
 
-<%--</p>--%>
-<%--</div>--%>
+<div>
+    <section>
+        <form action="${pageContext.request.contextPath}/options/create" method="post">
+            <label for="car">Ievadi A/M marku un numuru</label><br/>
+            <input type="text" name="car" id="car" size="40"/><br/>
+            <br/>
+
+            <label for="client">Ievadi klientu un tel.</label><br/>
+            <input id="client" type="text" name="client" size="40"/>
+            <br/>
+
+
+            <label for="sistem">Izvelejies sistemu</label>
+            <div><select id="sistem" name="sistem"> size="3" multiple="multiple"
+                <option value="Optimum"/>
+                optimum
+                <option value="mini"/>
+                mini
+                <option value="premium"/>
+                premium
+                <option value="minibasic"/>
+                mini basic
+                <option value="minibasicpluss"/>
+                mini basic pluss
+                <option value="mapon"/>
+                mapon
+                <option value="igla"/>
+                igla
+                <option value="cita iekarta"/>
+                cita iekarta
+
+            </select></div>
+            <br/>
+
+            <div><label for="work">Izvelejies darba veidu</label><br/>
+                <select id="work" name="work">
+                    <option value="Montaz"/>
+                    Montāža
+                    <option value="Peremontaz"/>
+                    Pārmontāža
+                    <option value="Demontaz"/>
+                    Demontāža
+                    <option value="Remont"/>
+                    Remonts
+                    <option value="Zamena mesta"/>
+                    Vietas maiņa
+                    <option value="Downgrade"/>
+                    Downgrade
+                    <option value="Upgrade"/>
+                    Upgrade
+                    <option value="Pielikt GM"/>
+                    Pielikt GM
+                    <option value="Mainit GM"/>
+                    Mainit GM
+                    <option value="AKB Maina"/>
+                    AKB Maiņa
+                    <option value="Cita darbiba"/>
+                    Cita darbība
+                </select></div>
+            <br/>
+
+            <div><label for="manager">Kas veic ierakstu</label><br/>
+
+                <select id="manager" name="manager"> size="3" multiple="multiple"
+                    <option value="Agnese"/>
+                    Agnese
+                    <option value="Kristine"/>
+                    Kristine
+                    <option value="Inese"/>
+                    Inese
+                    <option value="Aigars"/>
+                    Aigars
+                </select></div>
+
+            <p><label for="date"> Выберите дату: </label><br/>
+                <input id="date" type="date" name="workdate"/>
+
+            </p>
+
+            <br/>
+
+
+            <textarea id="info" cols="60" rows="6" name="info">info: </textarea>
+
+            <p>
+                <button class="add_button"> Pievienot</button>
+            </p>
+
+        </form>
+    </section>
+</div>
+
 </body>
 </html>
