@@ -28,6 +28,7 @@ public class OptionsController {
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
     public String options(JobForm jobForm) {
         jobformService.addJobForm(jobForm);
+        System.out.println("ff");
         return "redirect:/options";
     }
 
@@ -66,7 +67,7 @@ public class OptionsController {
         model.addAttribute("statlist", stat);
         model.addAttribute("remontList", remont);
         model.addAttribute("snjatieList", snjatie);
-
+        System.out.println(date2);
         return "statistics";
 
     }

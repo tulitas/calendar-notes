@@ -17,6 +17,11 @@ To change this template use File | Settings | File Templates.
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
   <style>
+    body {
+      background: url("https://good-surf.ru/forum/urok/css/fon/images/big.jpg") no-repeat;
+      background-size: 100%;
+
+    }
     .navbar {
       overflow: hidden;
       background-color: #333;
