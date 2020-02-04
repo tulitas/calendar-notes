@@ -17,6 +17,7 @@ public class JobformDAOImpl implements JobformDAO {
   @Autowired
   public JobformDAOImpl(JobformRepository jobformRepository) {
     this.jobformRepository = jobformRepository;
+    System.out.print.ln("ghgh");
   }
 
   @Override
