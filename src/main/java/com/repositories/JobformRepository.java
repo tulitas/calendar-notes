@@ -15,7 +15,7 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
 
     List<JobForm> findById(long id);
 
-    @Query(value = "SELECT count(work) FROM jobform where work = 'montaz'  and work_date like %:date2%", nativeQuery = true)
+    @Query(value = "SELECT count(work) FROM jobform where work = 'montaz' and  action = 'ja' and work_date like %:date2%", nativeQuery = true)
     String getStatistics(String date2);
 
     @Query(value = "SELECT count(work) FROM jobform where work = 'remont' and  action = 'ja' and work_date like %:date2%", nativeQuery = true)
