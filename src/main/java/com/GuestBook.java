@@ -9,14 +9,16 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 @SpringBootApplication
 
 public class GuestBook extends SpringBootServletInitializer {
-  @Override
-  protected SpringApplicationBuilder configure(SpringApplicationBuilder applicationBuilder) {
-    return applicationBuilder.sources(GuestBook.class);
-  }
 
-  public static void main(String[] args) {
-    SpringApplication.run(GuestBook.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(GuestBook.class, args);
 
-  }
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder applicationBuilder) {
+        return applicationBuilder.sources(GuestBook.class);
+    }
+
 
 }
