@@ -218,9 +218,9 @@ To change this template use File | Settings | File Templates.
             <input type="text" name="ordernum" id="ordernum"><br>
 
             <label for="car"> A/M marka</label>
-            <label for="car_model" style="margin-left: 220px">A/M Modelis</label>
-            <label for="car_plate" style="margin-left: 80px"> A/M numurs</label>
-            <label for="car_year" style="margin-left: 75px">izlaiduma gads</label>  <br>
+            <label for="car_model" style="margin-left: 230px">A/M Modelis</label>
+            <label for="car_plate" style="margin-left: 100px"> A/M numurs</label>
+            <label for="car_year" style="margin-left: 90px">izlaiduma gads</label>  <br>
 
 
             <input type="text" name="car" id="car" size="40"/>
@@ -230,7 +230,7 @@ To change this template use File | Settings | File Templates.
             <br/>
 
             <label for="client">Vards Uzvards</label>
-            <label for="phone" style="margin-left: 200px">Klienta tel.</label><br/>
+            <label for="phone" style="margin-left: 220px">Klienta tel.</label><br/>
 
             <input id="client" type="text" name="client" size="40"/>
             <input id="phone" type="text" name="phone" size="40"/>
@@ -305,8 +305,16 @@ To change this template use File | Settings | File Templates.
                     Aigars
                 </select></div>
 
-            <p><label for="date"> Выберите дату: </label><br/>
+            <p><label for="date"> Datums </label>
+                <label for="time" style="margin-left: 140px">Laiks</label><br/>
                 <input id="date" type="date" name="workdate"/>
+                <select id="time" name="time" style="margin-left: 30px">
+                    <option></option>
+                    <option value="09:00">09:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="plus">plus</option>
+
+                </select>
 
             </p>
 

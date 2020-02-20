@@ -63,6 +63,17 @@ public class JobForm implements java.io.Serializable{
     @Column(name = " Car_plate")
     private String car_plate;
 
+    @Column(name = "Time")
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
     public long getId() {
         return id;
     }
@@ -219,6 +230,7 @@ public class JobForm implements java.io.Serializable{
                 ", car_model='" + car_model + '\'' +
                 ", car_year='" + car_year + '\'' +
                 ", car_plate='" + car_plate + '\'' +
+                ", time='" + time + '\'' +
                 '}';
     }
 }
