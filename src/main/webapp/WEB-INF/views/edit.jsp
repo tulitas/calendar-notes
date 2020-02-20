@@ -99,15 +99,12 @@
             <br/>
             <div><label for="action">Atbrauca vai ne</label><br/>
                 <select id="action" name="action">
-                    <option value="ja"/>
-                    ja
-                    <option value="ne"/>
-                    ne
+
                     <option value="parrakstijas"/>
                     parrakstijas
                     <option value="Izpildits"/>
                     izpildits
-                    <option value="Nav izpildits"/>
+                    <option value="Nav_izpildits"/>
                     Nav izpildits
                 </select></div>
             <br/>

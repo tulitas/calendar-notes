@@ -28,6 +28,7 @@ public class SiteController {
     public String addNew() {
         return "addnew";
     }
+
     @RequestMapping("/edit")
     public String edit() {
         return "edit";
