@@ -140,23 +140,19 @@ To change this template use File | Settings | File Templates.
         input[type=text] {
             border: 2px coral;
             border-radius: 4px;
-            background: cadetblue;
         }
 
         select {
-            background: cadetblue;
             border-radius: 4px;
         }
 
         input {
 
-            background: cadetblue;
             border-radius: 4px;
         }
 
         textarea {
 
-            background: cadetblue;
             border-radius: 4px;
 
             top: 50%;
@@ -218,17 +214,33 @@ To change this template use File | Settings | File Templates.
 <div>
     <section>
         <form action="${pageContext.request.contextPath}/options/create" method="post">
-            <label for="car">Ievadi A/M marku un numuru</label><br/>
-            <input type="text" name="car" id="car" size="40"/><br/>
+            <label for="ordernum">Liguma numurs</label><br>
+            <input type="text" name="ordernum" id="ordernum"><br>
+
+            <label for="car"> A/M marka</label>
+            <label for="car_model" style="margin-left: 220px">A/M Modelis</label>
+            <label for="car_plate" style="margin-left: 80px"> A/M numurs</label>
+            <label for="car_year" style="margin-left: 75px">izlaiduma gads</label>  <br>
+
+
+            <input type="text" name="car" id="car" size="40"/>
+            <input type="text" name="car_plate" id="car_plate"/>
+            <input type="text" id="car_model" name="car_model">
+            <input type="text" id="car_year" name="car_year">
             <br/>
 
-            <label for="client">Ievadi klientu un tel.</label><br/>
+            <label for="client">Vards Uzvards</label>
+            <label for="phone" style="margin-left: 200px">Klienta tel.</label><br/>
+
             <input id="client" type="text" name="client" size="40"/>
+            <input id="phone" type="text" name="phone" size="40"/>
             <br/>
 
 
             <label for="sistem">Izvelejies sistemu</label>
-            <div><select id="sistem" name="sistem"> size="3" multiple="multiple"
+            <label for="price" style="margin-left: 19px">Sistemas cena</label>
+            <div><select id="sistem" name="sistem">
+                <option/>
                 <option value="Optimum"/>
                 optimum
                 <option value="mini"/>
@@ -246,11 +258,14 @@ To change this template use File | Settings | File Templates.
                 <option value="cita iekarta"/>
                 cita iekarta
 
-            </select></div>
+            </select>
+            <input name="price" id="price" type="text" style="margin-left: 15px"/>
+            </div>
             <br/>
 
             <div><label for="work">Izvelejies darba veidu</label><br/>
                 <select id="work" name="work">
+                    <option/>
                     <option value="Montaz"/>
                     Montāža
                     <option value="Peremontaz"/>
@@ -279,6 +294,7 @@ To change this template use File | Settings | File Templates.
             <div><label for="manager">Kas veic ierakstu</label><br/>
 
                 <select id="manager" name="manager"> size="3" multiple="multiple"
+                    <option/>
                     <option value="Agnese"/>
                     Agnese
                     <option value="Kristine"/>
