@@ -32,6 +32,19 @@ public class OptionsController {
         return "redirect:/options";
     }
 
+    @RequestMapping(value = "/options/sms", method = RequestMethod.POST)
+    public String sms() {
+
+        Sms suti = new Sms();
+        suti.Savienojums();
+
+//        run();
+        return "/options";
+    }
+
+    private void run() {
+        System.out.println("suti sms");
+    }
 
     @RequestMapping(value = "/options")
     public String getAllByWorkdate(Model model, String work_date) {

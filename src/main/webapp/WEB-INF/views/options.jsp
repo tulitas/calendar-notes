@@ -19,6 +19,7 @@ To change this template use File | Settings | File Templates.
     <style>
         body {
             background: url("https://good-surf.ru/forum/urok/css/fon/images/big.jpg") no-repeat;
+
             background-size: 100%;
 
         }
@@ -32,7 +33,6 @@ To change this template use File | Settings | File Templates.
             padding: 14px 16px;
             text-decoration: none;
         }
-
 
 
         .navbar a:hover, .dropdown:hover :focus {
@@ -109,7 +109,7 @@ To change this template use File | Settings | File Templates.
             margin-right: 20px;
         }
 
-        .menu{
+        .menu {
 
             display: block;
             padding: 10px 15px;
@@ -166,7 +166,8 @@ To change this template use File | Settings | File Templates.
             border-bottom: 1px solid rgba(255, 255, 255, .3);
             color: white;
         }
-        .delete{
+
+        .delete {
 
             width: auto;
             padding: 5px 10px;
@@ -175,10 +176,12 @@ To change this template use File | Settings | File Templates.
             font-family: 'Lora', serif;
             /*transition: .5s linear;*/
         }
+
         aside {
             float: left;
             width: 250px;
         }
+
         section {
             margin-left: 280px;
             padding-bottom: 50px;
@@ -216,12 +219,18 @@ To change this template use File | Settings | File Templates.
     <table style="float: top" border="7">
         <tr>
             <th>Date</th>
-            <th>Manager</th>
-            <th>Car</th>
-            <th>Client</th>
-            <th>Info</th>
-            <th>Sistem</th>
+            <th>Order</th>
             <th>Work</th>
+            <th>Car</th>
+            <th>Sistem</th>
+
+            <th>Client</th>
+            <th>Manager</th>
+
+
+            <th>Info</th>
+
+
             <th>Rezultats</th>
             <th>Action</th>
         </tr>
@@ -229,16 +238,32 @@ To change this template use File | Settings | File Templates.
         <c:forEach var="jobForm" items="${optionsList}">
 
             <tr>
-                <td width="75">${jobForm.workdate}</td>
+                <td width="75">${jobForm.workdate}<br><b>${jobForm.time}</b></td>
+                <td width=auto>${jobForm.ordernum}</td>
+                <td width=auto>${jobForm.work}<br/><b>Pas: </b>${jobForm.worknote}</td>
+                <td width=auto><b>car: </b> ${jobForm.car}<br>
+                    <b>modelis: </b>${jobForm.car_model}<br>
+                    <b>V/N: </b>${jobForm.car_plate}<br>
+                    <b>gads: </b>${jobForm.car_year}</td>
+                <td width=auto><b>Pieslegums: </b>${jobForm.sistem}<br>
+                    <d><b>Cena: </b></d>${jobForm.price}</td>
+
+                <td width=auto><b>Vards: </b>${jobForm.client}<br>
+                    <b>tel.: </b>${jobForm.phone}</td>
                 <td width="50">${jobForm.manager}</td>
-                <td width="50">${jobForm.car}</td>
-                <td width="50">${jobForm.client}</td>
+
+
                 <td width="50">${jobForm.info}</td>
-                <td width="50">${jobForm.sistem}</td>
-                <td width="50">${jobForm.work}</td>
+
+
                 <td width="50">${jobForm.action} </td>
-                <td width="50"><a class="delete" style="background: tomato" href="/options/delete${jobForm.id}">Delete</a><br/>
-                    <br/><a class="delete" style="background: #3e8e41 " href="/options/edit${jobForm.id}">Edit</a></td>
+                <td width="50"><a class="delete" style="background: tomato"
+                                  href="/options/delete${jobForm.id}">Delete</a><br/>
+                    <br/><a class="delete" style="background: #3e8e41 " href="/options/edit${jobForm.id}">Edit</a>
+                    <form action="${pageContext.request.contextPath}/options/sms" method="post">
+                        <button class="sms">sms</button>
+                    </form>
+                </td>
 
             </tr>
         </c:forEach>

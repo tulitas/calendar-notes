@@ -144,15 +144,16 @@ To change this template use File | Settings | File Templates.
 
         select {
             border-radius: 4px;
+
         }
 
         input {
-
+            /*border: 2px gray;*/
             border-radius: 4px;
         }
 
         textarea {
-
+            border: 2px coral;
             border-radius: 4px;
 
             top: 50%;
@@ -218,9 +219,9 @@ To change this template use File | Settings | File Templates.
             <input type="text" name="ordernum" id="ordernum"><br>
 
             <label for="car"> A/M marka</label>
-            <label for="car_model" style="margin-left: 230px">A/M Modelis</label>
-            <label for="car_plate" style="margin-left: 100px"> A/M numurs</label>
-            <label for="car_year" style="margin-left: 90px">izlaiduma gads</label>  <br>
+            <label for="car_plate" style="margin-left: 240px"> A/M numurs</label>
+            <label for="car_model" style="margin-left: 100px">A/M Modelis</label>
+            <label for="car_year" style="margin-left: 70px">izlaiduma gads</label> <br>
 
 
             <input type="text" name="car" id="car" size="40"/>
@@ -259,11 +260,14 @@ To change this template use File | Settings | File Templates.
                 cita iekarta
 
             </select>
-            <input name="price" id="price" type="text" style="margin-left: 15px"/>
+                <input name="price" id="price" type="text" style="margin-left: 15px"/>
             </div>
             <br/>
 
-            <div><label for="work">Izvelejies darba veidu</label><br/>
+            <div><label for="work">Izvelejies darba veidu</label>
+
+                <label for="worknote" style="margin-left: 70px">Darba apraksts</label>
+                <br/>
                 <select id="work" name="work">
                     <option/>
                     <option value="Montaz"/>
@@ -288,7 +292,9 @@ To change this template use File | Settings | File Templates.
                     AKB Maiņa
                     <option value="Cita darbiba"/>
                     Cita darbība
-                </select></div>
+                </select>
+                <input name="worknote" id="worknote" style="margin-left: 100px"/>
+            </div>
             <br/>
 
             <div><label for="manager">Kas veic ierakstu</label><br/>
@@ -324,7 +330,9 @@ To change this template use File | Settings | File Templates.
             <textarea id="info" cols="60" rows="6" name="info">info: </textarea>
 
             <p>
+
                 <button class="add_button"> Pievienot</button>
+
             </p>
 
         </form>
