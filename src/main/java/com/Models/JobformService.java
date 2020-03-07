@@ -35,5 +35,14 @@ public interface JobformService {
 
 
     String getJobsperdays(String date3);
+
+
+    String getRemminibasic(String date2);
+
+    String getRemminibasicplus(String date2);
+
+    String getRemoptimum(String date2);
+
+    Integer getSumma(String date2);
 }
 

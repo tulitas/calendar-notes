@@ -93,5 +93,26 @@ public class JobformServiceImpl implements JobformService {
         return jobformRepository.getJobsperdays(date3);
     }
 
+    @Override
+    public String getRemminibasic(String date2) {
+        return jobformRepository.getRemminibasic(date2);
+    }
+
+    @Override
+    public String getRemminibasicplus(String date2) {
+        return jobformRepository.getRemminibasicplus(date2);
+    }
+
+    @Override
+    public String getRemoptimum(String date2) {
+
+        return jobformRepository.getRemoptimum(date2);
+    }
+
+    @Override
+    public Integer getSumma(String date2) {
+        return jobformRepository.getSumma(date2);
+    }
+
 
 }

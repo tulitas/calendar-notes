@@ -1,230 +1,259 @@
 <!--
-  Created by IntelliJ IDEA.
-  User: SergejK
-  Date: 11/20/2019
-  Time: 4:27 PM
-  To change this template use File | Settings | File Templates.
+Created by IntelliJ IDEA.
+User: SergejK
+Date: 11/20/2019
+Time: 4:27 PM
+To change this template use File | Settings | File Templates.
 -->
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
 
-    <html>
+<html>
 
-    <head>
-        <style>
-            body {
-                background: url("https://good-surf.ru/forum/urok/css/fon/images/big.jpg") no-repeat;
-                background-size: 100%;
+<head>
+    <style>
+        body {
+            background: url("https://good-surf.ru/forum/urok/css/fon/images/big.jpg") no-repeat;
+            background-size: 100%;
 
-            }
-            @import url(https://fonts.googleapis.com/css?family=Lora);
+        }
 
-
-            h2 {
-                font-family: monospace;
-                color: #606060;
-            }
-
-            nav {
-
-                width: 200px;
-                margin: 0 auto 30px;
-
-            }
-
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-            }
-
-            .topmenu > li {
-
-                display: grid;
-                margin-right: 20px;
-                position: relative;
+        @import url(https://fonts.googleapis.com/css?family=Lora);
 
 
-            }
+        h2 {
+            font-family: monospace;
+            color: #606060;
+        }
 
-            .topmenu > li:last-child {
-                margin-right: 20px;
-            }
+        nav {
 
-            a {
+            width: 200px;
+            margin: 0 auto 30px;
 
-                display: block;
-                padding: 10px 15px;
-                text-decoration: none;
-                outline: none;
-                font-family: 'Lora', serif;
-                transition: .5s linear;
-            }
+        }
 
-            .fa {
-                font-family: "FontAwesome";
-                color: inherit;
-                padding-left: 10px;
-            }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-            .submenu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                z-index: 10;
-                -webkit-transition: 0.5s ease-in-out;
-                -moz-transition: 0.5s ease-in-out;
-                -o-transition: 0.5s ease-in-out;
-                transition: 0.5s ease-in-out;
-            }
+        .topmenu > li {
 
-            .four ul {
-                background: #FFD7A7;
-                left: 50px;
-            }
-
-            .four .submenu {
-                -webkit-transform: scaleY(0);
-                -ms-transform: scaleY(0);
-                transform: scaleY(0);
-                -webkit-transform-origin: 0 0;
-                -ms-transform-origin: 0 0;
-                transform-origin: 0 0;
-                background: #FFAB51;
-            }
-
-            .four ul li:hover .submenu {
-                -webkit-transform: scaleY(1);
-                -ms-transform: scaleY(1);
-                transform: scaleY(1);
-            }
-
-            .four ul a {
-                color: #9B4222;
-            }
-
-            .submenu li a {
-                border-bottom: 1px solid rgba(255, 255, 255, .3);
-                color: white;
-            }
-            aside {
-                float: left;
-                width: 250px;
-            }
-            section {
-                margin-left: 280px;
-                padding-bottom: 50px;
-            }
-            #choosedate{
-                float: left ;
-                margin-top: 200px;
-                margin-left: 20px;
-
-            }
-
-        </style>
+            display: grid;
+            margin-right: 20px;
+            position: relative;
 
 
-    </head>
+        }
 
-    <body>
+        .topmenu > li:last-child {
+            margin-right: 20px;
+        }
 
-    <div id="wrapper">
-        <header>
-            <title>Statistics</title>
-            <img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90"
-                 height="50"/>
+        a {
+
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            outline: none;
+            font-family: 'Lora', serif;
+            transition: .5s linear;
+        }
+
+        .fa {
+            font-family: "FontAwesome";
+            color: inherit;
+            padding-left: 10px;
+        }
+
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+            -webkit-transition: 0.5s ease-in-out;
+            -moz-transition: 0.5s ease-in-out;
+            -o-transition: 0.5s ease-in-out;
+            transition: 0.5s ease-in-out;
+        }
+
+        .four ul {
+            background: #FFD7A7;
+            left: 50px;
+        }
+
+        .four .submenu {
+            -webkit-transform: scaleY(0);
+            -ms-transform: scaleY(0);
+            transform: scaleY(0);
+            -webkit-transform-origin: 0 0;
+            -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
+            background: #FFAB51;
+        }
+
+        .four ul li:hover .submenu {
+            -webkit-transform: scaleY(1);
+            -ms-transform: scaleY(1);
+            transform: scaleY(1);
+        }
+
+        .four ul a {
+            color: #9B4222;
+        }
+
+        .submenu li a {
+            border-bottom: 1px solid rgba(255, 255, 255, .3);
+            color: white;
+        }
+
+        aside {
+            float: left;
+            width: 250px;
+        }
+
+        section {
+            margin-left: 280px;
+            padding-bottom: 50px;
+        }
+
+        #choosedate {
+            float: left;
+            margin-top: 200px;
+            margin-left: 20px;
+
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+    </style>
 
 
-        </header>
+</head>
+
+<body>
+
+<div id="wrapper">
+    <header>
+        <title>Statistics</title>
+        <img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90"
+             height="50"/>
 
 
-    </div>
+    </header>
 
-    <div>
-        <aside>
 
-            <nav class="four">
+</div>
 
-                <ul class="topmenu">
-                    <li><a href="/">Home</a></li>
+<div>
+    <aside>
 
-                    <li><a href="#">Menu<i class="fa fa-angle-down"></i></a>
-                        <ul class="submenu">
-                            <li><a href="/statistics">Statistika</a></li>
-                            <li><a href="/addnew">Pievienot jaunu</a></li>
-                        </ul>
-                    </li>
+        <nav class="four">
 
-                </ul>
-            </nav>
-            <div id="choosedate">
-                <form action="${pageContext.request.contextPath}/options/getstatistics">
-                    <p>
-                        <label for="date" > Выберите месяц: </label><br/>
-                        <input id="date" type="month" name="date2" />
+            <ul class="topmenu">
+                <li><a href="/">Home</a></li>
 
-                        <br/>
-                        <button class="add_button"> Pievienot</button>
+                <li><a href="#">Menu<i class="fa fa-angle-down"></i></a>
+                    <ul class="submenu">
+                        <li><a href="/statistics">Statistika</a></li>
+                        <li><a href="/addnew">Pievienot jaunu</a></li>
+                    </ul>
+                </li>
 
-                    </p>
-                </form>
-            </div>
-        </aside>
-    </div>
-    <br/>
+            </ul>
+        </nav>
+        <div id="choosedate">
+            <form action="${pageContext.request.contextPath}/options/getstatistics">
+                <p>
+                    <label for="date"> Выберите месяц: </label><br/>
+                    <input id="date" type="month" name="date2"/>
 
+                    <br/>
+                    <button class="add_button"> Pievienot</button>
+
+                </p>
+            </form>
+        </div>
+    </aside>
+</div>
+<br/>
 
 
 <section>
     <h1>Statistics</h1>
     <div>
-        <table>
+        <table style="float: top" border="7" >
             <tr>
-                <th>Montazi</th>
-                <td>
-                    <c:out value="${statlist}"/>
-                </td>
-                <th>Minibasic</th>
-                <td>
-                    <c:out value="${minibasic}"/>
-                </td>
-                <th>Mini basic pluss</th>
-                <td>
-                    <c:out value="${minibasicpluss}"/>
-                </td>
-                <th>Optimum</th>
-                <td>
-                    <c:out value="${optimum}"/>
-                </td>
-                <th>Mini</th>
-                <td>
-                    <c:out value="${mini}"/>
-                </td>
-                <th>Premium</th>
-                <td>
-                    <c:out value="${premium}"/>
-                </td>
+                <th>Darba veids</th>
+
+                <td style="color: #9B4222 "><b>kopa</b></td>
+
+
+                <th style="color: #9B4222 ">Minibasic</th>
+                <th style="color: #9B4222 ">Mini basic pluss</th>
+                <th style="color: #9B4222 ">Optimum</th>
+                <th style="color: #9B4222 ">Mini</th>
+                <th style="color: #9B4222 ">Premium</th>
+                <th style="color: #9B4222 ">Mapon</th>
+                <th style="color: #9B4222 ">Igla</th>
+                <th style="color: #9B4222 ">Cita iekarta</th>
+                <th style="color: #9B4222 ">Summa</th>
+
+
+            </tr>
+
+            <tr>
+                <th style="color: #00008B">Montaza</th>
+                <td ><c:out value="${statlist}"/></td>
+                <td><c:out value="${minibasic}"/></td>
+                <td><c:out value="${minibasicpluss}"/></td>
+                <td><c:out value="${optimum}"/></td>
+                <td><c:out value="${mini}"/></td>
+                <td><c:out value="${premium}"/></td>
+
+                <td><c:out value="${summa}"/></td>
+
+
             </tr>
             <tr>
-                <th>Remonti</th>
-                <td>
-                    <c:out value="${remontList}"/>
-                </td>
+                <th style="color: #00008B">Demontaza</th>
+
+                <td><c:out value="${snjatieList}"/></td>
+
+
             </tr>
             <tr>
-                <th>Snjatie</th>
-                <td>
-                    <c:out value="${snjatieList}"/>
-                </td>
+                <th style="color: #00008B">Remonts</th>
+                <td><c:out value="${remontList}"/></td>
+                <td><c:out value="${remminibasic}"/></td>
+                <td><c:out value="${remminibasicplus}"/></td>
+                <td><c:out value="${remoptimum}"/></td>
+            </tr>
+            <tr>
+                <th style="color: #00008B">Upgrade</th>
+            </tr>
+            <tr>
+                <th style="color: #00008B">Downgrade</th>
+            </tr>
+            <tr>
+                <th style="color: #00008B">Pielikt GM</th>
+            </tr>
+            <tr>
+                <th style="color: #00008B">AKB Maina</th>
+            </tr>
+            <tr>
+                <th style="color: #00008B">Cita darbiba</th>
             </tr>
         </table>
     </div>
 </section>
 
 
-
-    </body>
-    </html>
+</body>
+</html>

@@ -47,4 +47,20 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
 
     @Query(value = "SELECT count(work) FROM jobform where work is not null and work_date = :date3 ", nativeQuery = true)
     String getJobsperdays(String date3);
+
+    @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'minibasic'" +
+            " and action = 'Izpildits' and work = 'remont' and work_date like %:date2%", nativeQuery = true)
+    String getRemminibasic(String date2);
+
+    @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'minibasicplus'" +
+            " and action = 'Izpildits' and work = 'remont' and work_date like %:date2%", nativeQuery = true)
+    String getRemminibasicplus(String date2);
+
+
+    @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'minibasicplus'" +
+            " and action = 'Izpildits' and work = 'remont' and work_date like %:date2%", nativeQuery = true)
+    String getRemoptimum(String date2);
+
+    @Query(value = "SELECT sum(price) FROM jobform where work = 'montaz' and work_date like %:date2%", nativeQuery = true)
+    Integer getSumma(String date2);
 }

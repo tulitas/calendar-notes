@@ -71,6 +71,7 @@ public class OptionsController {
         String optimum = jobformService.getOptimum(date2);
         String mini = jobformService.getMini(date2);
         String premium = jobformService.getPremium(date2);
+        Integer summa = jobformService.getSumma(date2);
 
         model.addAttribute("premium", premium);
         model.addAttribute("mini", mini);
@@ -80,7 +81,15 @@ public class OptionsController {
         model.addAttribute("statlist", stat);
         model.addAttribute("remontList", remont);
         model.addAttribute("snjatieList", snjatie);
-        System.out.println(date2);
+        model.addAttribute("summa", summa);
+
+        String remminibasic = jobformService.getRemminibasic(date2);
+        String remminibasicplus = jobformService.getRemminibasicplus(date2);
+        String remoptimum = jobformService.getRemoptimum(date2);
+
+        model.addAttribute("remminibasic", remminibasic);
+        model.addAttribute("remminibasicplus", remminibasicplus);
+        model.addAttribute("remoptimum", remoptimum);
         return "statistics";
 
     }
