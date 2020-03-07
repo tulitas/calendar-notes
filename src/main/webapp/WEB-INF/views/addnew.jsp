@@ -256,7 +256,7 @@ To change this template use File | Settings | File Templates.
                 mapon
                 <option value="igla"/>
                 igla
-                <option value="cita iekarta"/>
+                <option value="citaiekarta"/>
                 cita iekarta
 
             </select>

@@ -33,4 +33,9 @@ public class SiteController {
     public String edit() {
         return "edit";
     }
+
+    @RequestMapping("/create")
+    public String create() {
+        return "create";
+    }
 }

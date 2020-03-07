@@ -1,21 +1,13 @@
-<!--
-Created by IntelliJ IDEA.
-User: SergejK
-Date: 28-Jul-19
-Time: 09:06
-To change this template use File | Settings | File Templates.
--->
-<!--Vsplivajusee menu-->
-
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page contentType="text/html;charset=UTF-8" %>
-
+<%--
+  Created by IntelliJ IDEA.
+  User: SergejK
+  Date: 3/7/2020
+  Time: 11:53 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
     <style>
         body {
             background: url("https://good-surf.ru/forum/urok/css/fon/images/big.jpg") no-repeat;
@@ -186,10 +178,12 @@ To change this template use File | Settings | File Templates.
             margin-left: 280px;
             padding-bottom: 50px;
         }
+
         table {
             font-family: "Times New Roman";
             font-size: 18px;
             text-align: center;
+            margin-left: 50px;
         }
 
         th {
@@ -213,13 +207,40 @@ To change this template use File | Settings | File Templates.
         tr:hover td {
             background: #ccddff;
         }
-    </style>
 
+        #blink1 {
+            -webkit-animation: blink1 3s linear infinite;
+            animation: blink1 3s linear infinite;
+        }
+
+        @-webkit-keyframes blink1 {
+            0% {
+                color: rgba(34, 34, 34, 1);
+            }
+            50% {
+                color: rgba(34, 34, 34, 0);
+            }
+            100% {
+                color: rgba(34, 34, 34, 1);
+            }
+        }
+
+        @keyframes blink1 {
+            0% {
+                color: rgba(34, 34, 34, 1);
+            }
+            50% {
+                color: rgba(34, 34, 34, 0);
+            }
+            100% {
+                color: rgba(34, 34, 34, 1);
+            }
+        }
+
+    </style>
     <title>Title</title>
 </head>
 <body>
-
-
 <a><img src="https://www.sherloglatvia.com/wp-content/uploads/2016/06/logo.png" alt="sherlog" width="90"
         height="50"/></a>
 
@@ -241,63 +262,51 @@ To change this template use File | Settings | File Templates.
         </ul>
     </nav>
 </aside>
+<h1 id="blink1">Jus pievienojat ierakstu, parbaudiet
+    un neazmirstiet izmainit rezultatu uz PABEIGTS, kad darbs bus pabeigts!!!</h1>
 <div>
-    <table>
-        <tr>
-            <th>Date</th>
-            <th>Order</th>
-            <th>Work</th>
-            <th>Car</th>
-            <th>Sistem</th>
-
-            <th>Client</th>
-            <th>Manager</th>
-
-
-            <th>Info</th>
-
-
-            <th>Rezultats</th>
-            <th>Action</th>
-        </tr>
-
-        <c:forEach var="jobForm" items="${optionsList}">
-
+    <section>
+        <table>
             <tr>
-                <td width=auto><b>${jobForm.workdate}</b><br><b>${jobForm.time}</b></td>
-                <td width=auto>${jobForm.ordernum}</td>
-                <td width=auto>${jobForm.work}<br/><b>Pas: </b>${jobForm.worknote}</td>
-                <td width=auto><b>car: </b> ${jobForm.car}<br>
-                    <b>modelis: </b>${jobForm.car_model}<br>
-                    <b>V/N: </b>${jobForm.car_plate}<br>
-                    <b>gads: </b>${jobForm.car_year}</td>
-                <td width=auto><b>Pieslegums: </b>${jobForm.sistem}<br>
-                    <d><b>Cena: </b></d>${jobForm.price}</td>
-
-                <td width=auto><b>Vards: </b>${jobForm.client}<br>
-                    <b>tel.: </b>${jobForm.phone}</td>
-                <td width="50">${jobForm.manager}</td>
-
-
-                <td width="50">${jobForm.info}</td>
-
-
-                <td width="50">${jobForm.action} </td>
-                <td width="50"><a class="delete" style="background: tomato"
-                                  href="/options/delete${jobForm.id}">Delete</a><br/>
-                    <br/><a class="delete" style="background: #3e8e41 " href="/options/edit${jobForm.id}">Edit</a>
-                    <form action="${pageContext.request.contextPath}/options/sms" method="post">
-                        <button class="sms">sms</button>
-                    </form>
-                </td>
-
+                <th>Date</th>
+                <th>Order</th>
+                <th>Work</th>
+                <th>Car</th>
+                <th>Sistem</th>
+                <th>Client</th>
+                <th>Manager</th>
+                <th>Info</th>
+                <th>Action</th>
             </tr>
-        </c:forEach>
-    </table>
+            <c:forEach var="jobForm" items="${optionsList}">
 
+                <tr>
+                    <td width=auto><b>${jobForm.workdate}</b><br><b>${jobForm.time}</b></td>
+                    <td width=auto>${jobForm.ordernum}</td>
+                    <td width=auto>${jobForm.work}<br/><b>Pas: </b>${jobForm.worknote}</td>
+                    <td width=auto><b>car: </b> ${jobForm.car}<br>
+                        <b>modelis: </b>${jobForm.car_model}<br>
+                        <b>V/N: </b>${jobForm.car_plate}<br>
+                        <b>gads: </b>${jobForm.car_year}</td>
+                    <td width=auto><b>Pieslegums: </b>${jobForm.sistem}<br>
+                        <d><b>Cena: </b></d>
+                            ${jobForm.price}</td>
+
+                    <td width=auto><b>Vards: </b>${jobForm.client}<br>
+                        <b>tel.: </b>${jobForm.phone}</td>
+                    <td width="50">${jobForm.manager}</td>
+                    <td width="50">${jobForm.info}</td>
+                    <td width="50"><a class="delete" style="background: tomato"
+                                      href="/options/delete${jobForm.id}">Delete</a><br/>
+                        <br/><a class="delete" style="background: #3e8e41 " href="/options/edit${jobForm.id}">Edit</a>
+                        <form action="${pageContext.request.contextPath}/options/sms" method="post">
+                            <button class="sms">sms</button>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </section>
 </div>
-<br/>
-
-
 </body>
 </html>

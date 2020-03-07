@@ -114,5 +114,47 @@ public class JobformServiceImpl implements JobformService {
         return jobformRepository.getSumma(date2);
     }
 
+    @Override
+    public String getMapon(String date2) {
+        return jobformRepository.getMapon(date2);
+    }
+
+    @Override
+    public String getIgla(String date2) {
+        return jobformRepository.getIgla(date2);
+    }
+
+    @Override
+    public String getCitaiekarta(String date2) {
+        return jobformRepository.getCitaiekarta(date2);
+    }
+
+    @Override
+    public String getRemmini(String date2) {
+
+        return jobformRepository.getRemmini(date2);
+    }
+
+    @Override
+    public String getRempremium(String date2) {
+        return jobformRepository.getRempremium(date2);
+    }
+
+    @Override
+    public String getRemmapon(String date2) {
+        return jobformRepository.getRemmapon(date2);
+    }
+
+    @Override
+    public String getRemigla(String date2) {
+        return jobformRepository.getRemigla(date2);
+    }
+
+    @Override
+    public String getRemcitaiekarta(String date2) {
+
+        return jobformRepository.getRemcitaiekarta(date2);
+    }
+
 
 }

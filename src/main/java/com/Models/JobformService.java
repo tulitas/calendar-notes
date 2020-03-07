@@ -44,5 +44,21 @@ public interface JobformService {
     String getRemoptimum(String date2);
 
     Integer getSumma(String date2);
+
+    String getMapon(String date2);
+
+    String getIgla(String date2);
+
+    String getCitaiekarta(String date2);
+
+    String getRemmini(String date2);
+
+    String getRempremium(String date2);
+
+    String getRemmapon(String date2);
+
+    String getRemigla(String date2);
+
+    String getRemcitaiekarta(String date2);
 }
 

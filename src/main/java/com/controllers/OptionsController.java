@@ -28,8 +28,8 @@ public class OptionsController {
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
     public String options(JobForm jobForm) {
         jobformService.addJobForm(jobForm);
-        System.out.println("ff");
-        return "redirect:/options";
+
+        return "create";
     }
 
     @RequestMapping(value = "/options/sms", method = RequestMethod.POST)
@@ -71,8 +71,14 @@ public class OptionsController {
         String optimum = jobformService.getOptimum(date2);
         String mini = jobformService.getMini(date2);
         String premium = jobformService.getPremium(date2);
+        String pmapon = jobformService.getMapon(date2);
+        String igla = jobformService.getIgla(date2);
+        String citaiekarta = jobformService.getCitaiekarta(date2);
         Integer summa = jobformService.getSumma(date2);
 
+        model.addAttribute("citaiekarta", citaiekarta);
+        model.addAttribute("igla", igla);
+        model.addAttribute("mapon", pmapon);
         model.addAttribute("premium", premium);
         model.addAttribute("mini", mini);
         model.addAttribute("optimum", optimum);
@@ -86,10 +92,20 @@ public class OptionsController {
         String remminibasic = jobformService.getRemminibasic(date2);
         String remminibasicplus = jobformService.getRemminibasicplus(date2);
         String remoptimum = jobformService.getRemoptimum(date2);
+        String remmini = jobformService.getRemmini(date2);
+        String rempremium = jobformService.getRempremium(date2);
+        String remmapon = jobformService.getRemmapon(date2);
+        String remigla = jobformService.getRemigla(date2);
+        String remcitaiekarta = jobformService.getRemcitaiekarta(date2);
 
+        model.addAttribute("remmini", remmini);
         model.addAttribute("remminibasic", remminibasic);
         model.addAttribute("remminibasicplus", remminibasicplus);
         model.addAttribute("remoptimum", remoptimum);
+        model.addAttribute("rempremium", rempremium);
+        model.addAttribute("remmapon", remmapon);
+        model.addAttribute("remigla", remigla);
+        model.addAttribute("remcitaiekarta", remcitaiekarta);
         return "statistics";
 
     }

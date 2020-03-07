@@ -129,8 +129,31 @@ To change this template use File | Settings | File Templates.
         }
 
         table {
-            border-collapse: separate;
-            border-spacing: 10px;
+    font-family: "Times New Roman";
+            font-size: 18px;
+            text-align: center;
+        }
+
+        th {
+            font-size: 18px;
+            font-weight: normal;
+            background: #b9c9fe;
+            border-top: 4px solid #aabcfe;
+            border-bottom: 1px solid #fff;
+            color: #039;
+            padding: 8px;
+        }
+
+        td {
+            background: #e8edff;
+            border-bottom: 1px solid #fff;
+            color: #669;
+            border-top: 1px solid transparent;
+            padding: 8px;
+        }
+
+        tr:hover td {
+            background: #ccddff;
         }
     </style>
 
@@ -188,67 +211,75 @@ To change this template use File | Settings | File Templates.
 <section>
     <h1>Statistics</h1>
     <div>
-        <table style="float: top" border="7" >
+        <table>
             <tr>
                 <th>Darba veids</th>
 
-                <td style="color: #9B4222 "><b>kopa</b></td>
+                <th>Kopa</th>
 
 
-                <th style="color: #9B4222 ">Minibasic</th>
-                <th style="color: #9B4222 ">Mini basic pluss</th>
-                <th style="color: #9B4222 ">Optimum</th>
-                <th style="color: #9B4222 ">Mini</th>
-                <th style="color: #9B4222 ">Premium</th>
-                <th style="color: #9B4222 ">Mapon</th>
-                <th style="color: #9B4222 ">Igla</th>
-                <th style="color: #9B4222 ">Cita iekarta</th>
-                <th style="color: #9B4222 ">Summa</th>
+                <th>Minibasic</th>
+                <th>Minibasic pluss</th>
+                <th>Optimum</th>
+                <th>Mini</th>
+                <th>Premium</th>
+                <th>Mapon</th>
+                <th>Igla</th>
+                <th>Cita iekarta</th>
+                <th>Summa</th>
 
 
             </tr>
 
             <tr>
-                <th style="color: #00008B">Montaza</th>
-                <td ><c:out value="${statlist}"/></td>
+                <th>Montaza</th>
+                <td><c:out value="${statlist}"/></td>
                 <td><c:out value="${minibasic}"/></td>
                 <td><c:out value="${minibasicpluss}"/></td>
                 <td><c:out value="${optimum}"/></td>
                 <td><c:out value="${mini}"/></td>
                 <td><c:out value="${premium}"/></td>
-
+                <td><c:out value="${mapon}"/></td>
+                <td><c:out value="${igla}"/></td>
+                <td><c:out value="${citaiekarta}"/></td>
                 <td><c:out value="${summa}"/></td>
 
 
             </tr>
             <tr>
-                <th style="color: #00008B">Demontaza</th>
+                <th>Demontaza</th>
 
                 <td><c:out value="${snjatieList}"/></td>
 
 
             </tr>
             <tr>
-                <th style="color: #00008B">Remonts</th>
+                <th>Remonts</th>
                 <td><c:out value="${remontList}"/></td>
                 <td><c:out value="${remminibasic}"/></td>
                 <td><c:out value="${remminibasicplus}"/></td>
                 <td><c:out value="${remoptimum}"/></td>
+                <td><c:out value="${remmini}"/></td>
+                <td><c:out value="${rempremium}"/></td>
+                <td><c:out value="${remmapon}"/></td>
+                <td><c:out value="${remigla}"/></td>
+                <td><c:out value="${remcitaiekarta}"/></td>
+
             </tr>
             <tr>
-                <th style="color: #00008B">Upgrade</th>
+                <th>Upgrade</th>
             </tr>
             <tr>
-                <th style="color: #00008B">Downgrade</th>
+                <th>Downgrade</th>
             </tr>
             <tr>
-                <th style="color: #00008B">Pielikt GM</th>
+                <th>Pielikt GM</th>
             </tr>
             <tr>
-                <th style="color: #00008B">AKB Maina</th>
+                <th>AKB Maina</th>
             </tr>
             <tr>
-                <th style="color: #00008B">Cita darbiba</th>
+                <th>Cita darbiba</th>
             </tr>
         </table>
     </div>
