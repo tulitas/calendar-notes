@@ -14,6 +14,7 @@ class Sms {
         System.out.println("hi");
         try {
             Socket socket = new Socket("192.168.6.80", 5038);
+            System.out.println("1");
             out = new PrintStream(socket.getOutputStream());
             in = new ParallelScanner(new Scanner(socket.getInputStream()));
             in.start();
@@ -26,6 +27,7 @@ class Sms {
     }
 
     private void connection(Socket socket, PrintStream out, ParallelScanner in) {
+        System.out.println("hi2");
         out.print("Action: login" + "\r\nUsername: apiuser" + "\r\nSecret: apipass" + "\r\n\r\n");
         while (in.hasNext()) {
             String line = in.nextLine();

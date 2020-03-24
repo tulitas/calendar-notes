@@ -95,4 +95,7 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
     @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'citaiekarta'" +
             "and  action = 'Nodots' and  work = 'montaz'and work_date like %:date2%", nativeQuery = true)
     String getRemcitaiekarta(String date2);
+
+
+
 }

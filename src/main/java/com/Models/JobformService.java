@@ -60,5 +60,7 @@ public interface JobformService {
     String getRemigla(String date2);
 
     String getRemcitaiekarta(String date2);
+
+
 }
 

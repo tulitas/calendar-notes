@@ -1,7 +1,9 @@
 package com.controllers;
 
 import com.Models.JobformService;
+import com.Models.ManagersNameService;
 import com.entities.JobForm;
+import com.entities.Managers_name;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +20,7 @@ import java.util.List;
 public class OptionsController {
 
     private JobformService jobformService;
-
+    private ManagersNameService managersNameService;
 
     @Autowired
     public OptionsController(JobformService jobformService) {
@@ -59,8 +61,15 @@ public class OptionsController {
         return "redirect:/options";
     }
 
-    @RequestMapping(value = "/options/getstatistics")
+    @RequestMapping(value = "/options/getManagers", method = RequestMethod.GET)
+    public String getManagers(Model model) {
+        List<Managers_name> allManagers = managersNameService.getAllManagers();
+        model.addAttribute("allManagersList", allManagers);
+        System.out.println(allManagers);
+        return "redirect/options";
+    }
 
+    @RequestMapping(value = "/options/getstatistics")
     public String getStatistics(Model model, String date2) {
 
         String stat = jobformService.getStatistics(date2);
