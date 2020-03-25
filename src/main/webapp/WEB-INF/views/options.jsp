@@ -186,6 +186,7 @@ To change this template use File | Settings | File Templates.
             margin-left: 280px;
             padding-bottom: 50px;
         }
+
         table {
             font-family: "Times New Roman";
             font-size: 18px;
@@ -242,6 +243,8 @@ To change this template use File | Settings | File Templates.
     </nav>
 </aside>
 <div>
+
+
     <table>
         <tr>
             <th>Date</th>
@@ -264,7 +267,8 @@ To change this template use File | Settings | File Templates.
         <c:forEach var="jobForm" items="${optionsList}">
 
             <tr>
-                <td width=auto><b>${jobForm.workdate}</b><br><b>${jobForm.time}</b></td>
+                <td width=auto><b>${jobForm.workdate}</b><br><b>${jobForm.time}
+                </b></td>
                 <td width=auto>${jobForm.ordernum}</td>
                 <td width=auto>${jobForm.work}<br/><b>Pas: </b>${jobForm.worknote}</td>
                 <td width=auto><b>car: </b> ${jobForm.car}<br>
@@ -272,12 +276,12 @@ To change this template use File | Settings | File Templates.
                     <b>V/N: </b>${jobForm.car_plate}<br>
                     <b>gads: </b>${jobForm.car_year}</td>
                 <td width=auto><b>Pieslegums: </b>${jobForm.sistem}<br>
-                    <d><b>Cena: </b></d>${jobForm.price}</td>
+                    <d><b>Cena: </b></d>
+                        ${jobForm.price}</td>
 
                 <td width=auto><b>Vards: </b>${jobForm.client}<br>
                     <b>tel.: </b>${jobForm.phone}</td>
                 <td width="50">${jobForm.manager}</td>
-
 
                 <td width="50">${jobForm.info}</td>
 
@@ -293,6 +297,7 @@ To change this template use File | Settings | File Templates.
 
             </tr>
         </c:forEach>
+
     </table>
 
 </div>

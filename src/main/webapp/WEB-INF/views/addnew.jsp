@@ -327,7 +327,7 @@ To change this template use File | Settings | File Templates.
             <br/>
 
 
-                <textarea id="info" cols="60" rows="6" name="info">info: ${allManagersName.allManagers}</textarea>
+                <textarea id="info" cols="60" rows="6" name="info">info: </textarea>
 
             <p>
 

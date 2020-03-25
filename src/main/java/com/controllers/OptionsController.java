@@ -23,8 +23,9 @@ public class OptionsController {
     private ManagersNameService managersNameService;
 
     @Autowired
-    public OptionsController(JobformService jobformService) {
+    public OptionsController(JobformService jobformService, ManagersNameService managersNameService) {
         this.jobformService = jobformService;
+        this.managersNameService = managersNameService;
     }
 
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
@@ -50,8 +51,11 @@ public class OptionsController {
 
     @RequestMapping(value = "/options")
     public String getAllByWorkdate(Model model, String work_date) {
+
         List<JobForm> jobForms = jobformService.getAllByWorkdate(work_date);
         model.addAttribute("optionsList", jobForms);
+
+
         return "/options";
     }
 
@@ -61,13 +65,15 @@ public class OptionsController {
         return "redirect:/options";
     }
 
-    @RequestMapping(value = "/options/getManagers", method = RequestMethod.GET)
-    public String getManagers(Model model) {
-        List<Managers_name> allManagers = managersNameService.getAllManagers();
-        model.addAttribute("allManagersList", allManagers);
-        System.out.println(allManagers);
-        return "redirect/options";
-    }
+//    @RequestMapping(value = "/options/getManagers")
+//
+//    public String getManagers(Model model) {
+//        System.out.println("managers");
+//        List<Managers_name> allManagers = managersNameService.getAllManagers();
+//        model.addAttribute("allManagersList", allManagers);
+//        System.out.println(model);
+//        return "redirect/options";
+//    }
 
     @RequestMapping(value = "/options/getstatistics")
     public String getStatistics(Model model, String date2) {

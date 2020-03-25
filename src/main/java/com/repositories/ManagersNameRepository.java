@@ -9,6 +9,8 @@ import java.util.List;
 
 @Repository
 public interface ManagersNameRepository extends CrudRepository<Managers_name, Long> {
+
 @Query(value = "SELECT count(name) from Managers_name ")
     List<Managers_name> getAllManagers();
+
 }

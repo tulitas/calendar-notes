@@ -8,8 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class ManagersNameServiceImpl implements ManagersNameService {
+    private final ManagersNameRepository managersNameRepository;
+
     @Autowired
-    private ManagersNameRepository managersNameRepository;
+    public ManagersNameServiceImpl(ManagersNameRepository managersNameRepository) {
+        this.managersNameRepository = managersNameRepository;
+    }
+
     @Override
     public List<Managers_name> getAllManagers() {
         return managersNameRepository.getAllManagers();
