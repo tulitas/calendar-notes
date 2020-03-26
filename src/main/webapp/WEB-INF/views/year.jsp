@@ -14,7 +14,7 @@ To change this template use File | Settings | File Templates.
 <html>
 <head><title>Year ${year}</title></head>
 <head>
-  <h1>jhgjhgjgjh</h1>
+  <h1></h1>
   <style>
     table {
       font-family: arial, sans-serif;
@@ -51,6 +51,7 @@ To change this template use File | Settings | File Templates.
     </tr>
   </c:forEach>
 </table>
+
 <strong><a href="/">Back to first page</a></strong>
 </body>
 </html>

@@ -210,7 +210,9 @@ To change this template use File | Settings | File Templates.
     </aside>
 </div>
 <br/>
+<c:forEach items="${allManagersList}" var="managers">
 
+</c:forEach>
 
 <div>
     <section>

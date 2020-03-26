@@ -69,9 +69,8 @@ public class OptionsController {
 //
 //    public String getManagers(Model model) {
 //        System.out.println("managers");
-//        List<Managers_name> allManagers = managersNameService.getAllManagers();
-//        model.addAttribute("allManagersList", allManagers);
-//        System.out.println(model);
+//        List<Managers_name> name = managersNameService.getAllManagers();
+//        model.addAttribute("managers", name);
 //        return "redirect/options";
 //    }
 

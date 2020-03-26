@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/addnew")
+@RequestMapping("/managers")
 public class ManagersController {
     private String name;
     private ManagersNameService managersNameService;
@@ -21,9 +21,10 @@ public class ManagersController {
         this.managersNameService = managersNameService;
     }
 
-    @RequestMapping(value = "/managers")
+    @RequestMapping(value = "/name")
 
     public String getManagers(Model model) {
+
         System.out.println("managers");
         List<Managers_name> allManagers = managersNameService.getAllManagers();
         model.addAttribute("allManagersList", allManagers);

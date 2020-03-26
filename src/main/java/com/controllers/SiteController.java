@@ -13,9 +13,9 @@ public class SiteController {
         return new ModelAndView("index");
     }
 
+
     @RequestMapping("/year2019")
     public String year2019() {
-
         return "year2019";
     }
 
