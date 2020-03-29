@@ -145,7 +145,7 @@
         <div style="border: 1px solid black">
         <p style="color: #3e8e41">${day.additionalInformation}</p>
 
-        <a href="${pageContext.request.contextPath}/options?work_date=${day.href}">${day.dayNumber}</a>
+        <a href="${pageContext.request.contextPath}/options?workDate=${day.href}">${day.dayNumber}</a>
         </div>
       </c:if>
     </li>

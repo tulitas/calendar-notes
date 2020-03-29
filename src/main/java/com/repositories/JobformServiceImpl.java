@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Service
@@ -38,8 +39,8 @@ public class JobformServiceImpl implements JobformService {
     }
 
     @Override
-    public List<JobForm> getAllByWorkdate(String work_date) {
-        return jobformRepository.getAllByWorkdate(work_date);
+    public List<JobForm> getAllByWorkdate(String workDate) {
+        return jobformRepository.getAllByWorkdate(workDate);
     }
 
     @Override
@@ -158,6 +159,32 @@ public class JobformServiceImpl implements JobformService {
     }
 
 
+
+    @Override
+    public List<String> getNotArrived(String workDate) {
+        System.out.println("ku: " + workDate);
+        return jobformRepository.getNotArrived(workDate);
+    }
+
+    @Override
+    public List<String> getRewNextDate(String workDate) {
+        return jobformRepository.getRewNextDate(workDate);
+    }
+
+    @Override
+    public List<String> getPerformed(String workDate) {
+        return jobformRepository.getPerformed(workDate);
+    }
+
+    @Override
+    public List<String> getInTooday(String workDate) {
+        return jobformRepository.getInDay(workDate);
+    }
+
+    @Override
+    public List<String> getArrived(String workDate) {
+        return jobformRepository.getArrived(workDate);
+    }
 
 
 }

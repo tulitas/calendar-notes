@@ -214,6 +214,7 @@ To change this template use File | Settings | File Templates.
         tr:hover td {
             background: #ccddff;
         }
+
     </style>
 
     <title>Title</title>
@@ -241,6 +242,27 @@ To change this template use File | Settings | File Templates.
 
         </ul>
     </nav>
+    </br>
+    <c:forEach items="${inTooday}" var="intooday">
+        <p>Šodien : ${inTooday}</p>
+    </c:forEach>
+
+    <c:forEach items="${notArrived}" var="notarrived">
+        <p>Vel nav darbibas: ${notArrived}</p>
+    </c:forEach>
+
+    <c:forEach items="${arrived}" var="Arrived">
+    <p>Atbrauca : ${arrived}</p>
+    </c:forEach>
+    <c:forEach items="${rewNextDate}" var="nextDate">
+        <p>Parrakstijas : ${rewNextDate}</p>
+    </c:forEach>
+
+    <c:forEach items="${performed}" var="performed">
+        <p>Nodoti : ${performed}</p>
+    </c:forEach>
+
+
 </aside>
 <div>
 

@@ -11,7 +11,8 @@ import java.util.List;
 
 @Repository
 public interface JobformRepository extends CrudRepository<JobForm, Long> {
-    List<JobForm> getAllByWorkdate(String work_date);
+
+    List<JobForm> getAllByWorkdate(String workDate);
 
     List<JobForm> findById(long id);
 
@@ -61,7 +62,8 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
             " and action = 'Nodots' and work = 'remont' and work_date like %:date2%", nativeQuery = true)
     String getRemoptimum(String date2);
 
-    @Query(value = "SELECT sum(price) FROM jobform where work = 'montaz' and work_date like %:date2%", nativeQuery = true)
+    @Query(value = "SELECT sum(price) FROM jobform where work = 'montaz' and work_date like %:date2%",
+            nativeQuery = true)
     Integer getSumma(String date2);
 
     @Query(value = "SELECT count(sistem) FROM jobform where sistem = 'mapon'" +
@@ -97,5 +99,18 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
     String getRemcitaiekarta(String date2);
 
 
+    @Query(value = "SELECT count(work) from jobform where work_date = :workDate and action is null", nativeQuery = true)
+    List<String> getNotArrived(String workDate);
 
+    @Query(value = "SELECT count(work) from jobform where work_date = :workDate and action = 'parrakstijas'", nativeQuery = true)
+    List<String> getRewNextDate(String workDate);
+
+    @Query(value = "select count(work) from jobform where work_date = :workDate and action = 'nodots'", nativeQuery = true)
+    List<String> getPerformed(String workDate);
+
+    @Query(value = "select count(work) from jobform where work_date = :workDate", nativeQuery = true)
+    List<String> getInDay(String workDate);
+
+    @Query(value = "select count(work) from jobform where work_date = :workDate and action = 'atbrauca'", nativeQuery = true)
+    List<String> getArrived(String workDate);
 }

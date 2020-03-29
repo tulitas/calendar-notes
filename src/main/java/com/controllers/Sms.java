@@ -10,6 +10,7 @@ class Sms {
     private static PrintStream out;
     private makeSms makeSms = new makeSms();
 
+
     void Savienojums() {
         try {
             Socket socket = new Socket("192.168.6.80", 5038);
@@ -17,32 +18,44 @@ class Sms {
             in = new ParallelScanner(new Scanner(socket.getInputStream()));
             in.start();
 
-            connection(socket, out, in);
+
+            String line = in.nextLine();
+            if (line.equals("Asterisk Call Manager/1.1")) {
+                System.out.println("connected");
+                connection();
+
+            } else {
+                System.out.println("No cennection");
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
     }
 
-    private void connection(Socket socket, PrintStream out, ParallelScanner in) {
+    private void connection() {
+
         out.print("Action: login" + "\r\nUsername: apiuser" + "\r\nSecret: apipass" + "\r\n\r\n");
-        System.out.println(0.1);
+        readFromDevice();
+
+
+    }
+
+    private void readFromDevice() {
+        System.out.println(1);
         while (in.hasNext()) {
-            System.out.println(0.2);
             String line = in.nextLine();
-            System.out.println(1);
+            System.out.println(line);
             if (line.equals("Message: Authentication accepted")) {
-                System.out.println("Connected");
-                sendSms();
+                System.out.println("davaj");
+
             }
         }
-    }
-
-    private void sendSms() {
-
-        System.out.println("hello Sergej");
 
 
     }
+
+
 
 }

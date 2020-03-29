@@ -12,7 +12,7 @@ public interface JobformService {
 
     void removeJobForm(long id);
 
-    List<JobForm> getAllByWorkdate(String work_date);
+    List<JobForm> getAllByWorkdate(String workDate);
 
     List<JobForm> findById(long id);
 
@@ -62,5 +62,16 @@ public interface JobformService {
     String getRemcitaiekarta(String date2);
 
 
+
+
+    List<String> getNotArrived(String workDate);
+
+    List<String> getRewNextDate(String workDate);
+
+    List<String> getPerformed(String workDate);
+
+    List<String> getInTooday(String workDate);
+
+    List<String> getArrived(String workDate);
 }
 

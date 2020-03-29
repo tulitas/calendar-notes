@@ -50,20 +50,38 @@ public class OptionsController {
     }
 
     @RequestMapping(value = "/options")
-    public String getAllByWorkdate(Model model, String work_date) {
+    public String getAllByWorkdate(Model model, String workDate) {
 
-        List<JobForm> jobForms = jobformService.getAllByWorkdate(work_date);
+        List<JobForm> jobForms = jobformService.getAllByWorkdate(workDate);
         model.addAttribute("optionsList", jobForms);
 
+        List<String> inToodayCount = jobformService.getInTooday(workDate);
+        List<String> notArrivedCount = jobformService.getNotArrived(workDate);
+        List<String> rewritingNextDateCount = jobformService.getRewNextDate(workDate);
+        List<String> performedCount = jobformService.getPerformed(workDate);
+        List<String> arrivedCount = jobformService.getArrived(workDate);
 
-        return "/options";
+
+
+        model.addAttribute("inTooday", inToodayCount);
+        model.addAttribute("performed", performedCount);
+        model.addAttribute("rewNextDate", rewritingNextDateCount);
+        model.addAttribute("notArrived", notArrivedCount);
+        model.addAttribute("arrived", arrivedCount);
+        System.out.println(performedCount + "my");
+        if (performedCount.contains("2")) {
+            System.out.println(2);
+        }
+            return "/options";
+
     }
 
     @RequestMapping(value = "/options/delete{id}", method = RequestMethod.GET)
     public String removeJobform(@PathVariable("id") long id) {
         jobformService.removeJobForm(id);
-        return "redirect:/options";
+        return "/options";
     }
+
 
 //    @RequestMapping(value = "/options/getManagers")
 //
@@ -89,6 +107,7 @@ public class OptionsController {
         String igla = jobformService.getIgla(date2);
         String citaiekarta = jobformService.getCitaiekarta(date2);
         Integer summa = jobformService.getSumma(date2);
+
 
         model.addAttribute("citaiekarta", citaiekarta);
         model.addAttribute("igla", igla);

@@ -297,7 +297,7 @@ To change this template use File | Settings | File Templates.
                 </select>
                 <input name="worknote" id="worknote" style="margin-left: 100px"/>
             </div>
-            <br/>
+
 
             <div><label for="manager">Kas veic ierakstu</label><br/>
 
@@ -328,8 +328,8 @@ To change this template use File | Settings | File Templates.
 
             <br/>
 
-
-                <textarea id="info" cols="60" rows="6" name="info">info: </textarea>
+            <label for="info" title="Papildus info"> Papildus info</label><br/>
+                <textarea id="info" cols="60" rows="6" name="info"> </textarea>
 
             <p>
 

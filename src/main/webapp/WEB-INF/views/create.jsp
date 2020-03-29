@@ -282,7 +282,7 @@
 
                 <tr>
                     <td width=auto><b>${jobForm.workdate}</b><br><b>${jobForm.time}</b></td>
-                    <td width=auto>${jobForm.ordernum}</td>
+                    <td width=auto><b>Nr.</b>${jobForm.ordernum}</td>
                     <td width=auto>${jobForm.work}<br/><b>Pas: </b>${jobForm.worknote}</td>
                     <td width=auto><b>car: </b> ${jobForm.car}<br>
                         <b>modelis: </b>${jobForm.car_model}<br>
