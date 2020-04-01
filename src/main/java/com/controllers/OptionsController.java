@@ -3,7 +3,6 @@ package com.controllers;
 import com.Models.JobformService;
 import com.Models.ManagersNameService;
 import com.entities.JobForm;
-import com.entities.Managers_name;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

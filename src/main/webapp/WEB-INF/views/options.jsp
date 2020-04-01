@@ -215,6 +215,33 @@ To change this template use File | Settings | File Templates.
             background: #ccddff;
         }
 
+        #blink1 {
+            -webkit-animation: blink1 3s linear infinite;
+            animation: blink1 3s linear infinite;
+        }
+        @-webkit-keyframes blink1 {
+            0% {
+                color: rgba(34, 34, 34, 1);
+            }
+            50% {
+                color: rgba(34, 34, 34, 0);
+            }
+            100% {
+                color: rgba(34, 34, 34, 1);
+            }
+        }
+
+        @keyframes blink1 {
+            0% {
+                color: rgba(34, 34, 34, 1);
+            }
+            50% {
+                color: rgba(34, 34, 34, 0);
+            }
+            100% {
+                color: rgba(34, 34, 34, 1);
+            }
+        }
     </style>
 
     <title>Title</title>
@@ -248,11 +275,11 @@ To change this template use File | Settings | File Templates.
     </c:forEach>
 
     <c:forEach items="${notArrived}" var="notarrived">
-        <p>Vel nav darbibas: ${notArrived}</p>
+        <p id="blink1">Vel nav darbibas: ${notArrived}</p>
     </c:forEach>
 
     <c:forEach items="${arrived}" var="Arrived">
-    <p>Atbrauca : ${arrived}</p>
+        <p>Atbrauca : ${arrived}</p>
     </c:forEach>
     <c:forEach items="${rewNextDate}" var="nextDate">
         <p>Parrakstijas : ${rewNextDate}</p>
