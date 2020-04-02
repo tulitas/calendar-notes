@@ -1,10 +1,21 @@
 package com.SmsMaker;
 
- class MakeSms {
+
+import com.config.DataBaseConnectionForSms;
+
+import java.sql.SQLException;
+
+public class MakeSms {
+    private DataBaseConnectionForSms dataBaseConnectionForSms = new DataBaseConnectionForSms();
+
+    public void Run() throws SQLException, ClassNotFoundException {
+        dataBaseConnectionForSms.Connect();
+    }
+
 
     private String rememberSms = ("hello");
 
-    public String getRememberSms() {
+    String getRememberSms() {
         return rememberSms;
     }
 

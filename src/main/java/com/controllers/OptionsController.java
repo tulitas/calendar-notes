@@ -1,6 +1,7 @@
 package com.controllers;
 
 import com.Models.JobformService;
+import com.SmsMaker.MakeSms;
 import com.SmsMaker.SmsConnect;
 import com.entities.JobForm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -32,12 +34,16 @@ public class OptionsController {
         return "create";
     }
 
-    @RequestMapping(value = "/options/sms", method = RequestMethod.POST)
-    public String sms() {
+    @RequestMapping(value = "/options/sms{id}", method = RequestMethod.POST)
+    public String sms(@PathVariable("id") long id, Model model) {
 
         SmsConnect suti = new SmsConnect();
         suti.Savienojums();
 
+
+
+//        MakeSms makeSms = new MakeSms();
+//        makeSms.Run();
 
         return "/options";
     }
@@ -59,13 +65,12 @@ public class OptionsController {
         List<String> arrivedCount = jobformService.getArrived(workDate);
 
 
-
         model.addAttribute("inTooday", inToodayCount);
         model.addAttribute("performed", performedCount);
         model.addAttribute("rewNextDate", rewritingNextDateCount);
         model.addAttribute("notArrived", notArrivedCount);
         model.addAttribute("arrived", arrivedCount);
-            return "/options";
+        return "/options";
 
     }
 
@@ -74,7 +79,6 @@ public class OptionsController {
         jobformService.removeJobForm(id);
         return "/options";
     }
-
 
 
     @RequestMapping(value = "/options/getstatistics")
@@ -140,7 +144,6 @@ public class OptionsController {
 
     @RequestMapping(value = "/options/edit{id}", method = RequestMethod.POST)
     public String updateUser(@PathVariable("id") long id, @Valid JobForm jobForm, BindingResult result, Model model) {
-        System.out.println("update jobform " + model);
         if (result.hasErrors()) {
             jobForm.setId(id);
 
