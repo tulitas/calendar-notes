@@ -129,7 +129,7 @@ To change this template use File | Settings | File Templates.
         }
 
         table {
-    font-family: "Times New Roman";
+            font-family: "Times New Roman";
             font-size: 18px;
             text-align: center;
         }
@@ -268,6 +268,7 @@ To change this template use File | Settings | File Templates.
             </tr>
             <tr>
                 <th>Upgrade</th>
+                <td><c:out value="${upgardes}"/></td>
             </tr>
             <tr>
                 <th>Downgrade</th>

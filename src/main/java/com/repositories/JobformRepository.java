@@ -113,4 +113,7 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
 
     @Query(value = "select count(work) from jobform where work_date = :workDate and action = 'atbrauca'", nativeQuery = true)
     List<String> getArrived(String workDate);
+
+    @Query(value = "SELECT count(work) from jobform where work = 'upgrade' and work_date like %:date2%", nativeQuery = true)
+    String getUpgrades(String date2);
 }

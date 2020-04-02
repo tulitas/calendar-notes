@@ -1,95 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  Created by IntelliJ IDEA.
-  User: SergejK
-  Date: 25-Jul-19
-  Time: 15:46
-  To change this template use File | Settings | File Templates.
--->
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--&lt;!&ndash;-->
+  <!--Created by IntelliJ IDEA.-->
+  <!--User: SergejK-->
+  <!--Date: 25-Jul-19-->
+  <!--Time: 15:46-->
+  <!--To change this template use File | Settings | File Templates.-->
+<!--&ndash;&gt;-->
 
 
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml" version="2.0">
-    <jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>
-    <jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>
-    <html>
-    <head><title>2020</title></head>
-    <head>
-        <style>
-            table {
-                font-family: arial, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
-            }
+<!--<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" xmlns="http://www.w3.org/1999/xhtml" version="2.0">-->
+    <!--<jsp:directive.page contentType="text/html" pageEncoding="UTF-8"/>-->
+    <!--<jsp:output doctype-root-element="html" doctype-system="about:legacy-compat" omit-xml-declaration="true"/>-->
+    <!--<html>-->
+    <!--<head><title>2020</title></head>-->
+    <!--<head>-->
+        <!--<style>-->
+            <!--table {-->
+                <!--font-family: arial, sans-serif;-->
+                <!--border-collapse: collapse;-->
+                <!--width: 100%;-->
+            <!--}-->
 
-            td, th {
-                border: 1px solid #dddddd;
-                text-align: left;
-                padding: 8px;
-            }
+            <!--td, th {-->
+                <!--border: 1px solid #dddddd;-->
+                <!--text-align: left;-->
+                <!--padding: 8px;-->
+            <!--}-->
 
-            tr:nth-child(even) {
-                background-color: #dddddd;
-            }
-        </style>
-    </head>
-    <body>
-    <h1>Sherlog Calendar</h1>
-    <table>
-        <tr>
-            <th>2020</th>
+            <!--tr:nth-child(even) {-->
+                <!--background-color: #dddddd;-->
+            <!--}-->
+        <!--</style>-->
+    <!--</head>-->
+    <!--<body>-->
+    <!--<h1>Sherlog Calendar</h1>-->
+    <!--<table>-->
+        <!--<tr>-->
+            <!--<th>2020</th>-->
 
-        </tr>
-        <tr>
-            <!--            ssilka na janvar-->
-            <td><strong><a href="/years/2020/month/january/days/january">January</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--&lt;!&ndash;            ssilka na janvar&ndash;&gt;-->
+            <!--<td><strong><a href="/years/2020/month/january/days/january">January</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/february/days/february">February</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/february/days/february">February</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/mart/days/mart">March</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/mart/days/mart">March</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/april/days/april">April</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/april/days/april">April</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/may/days/may">May</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/may/days/may">May</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/june/days/june">June</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/june/days/june">June</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/july/days/july">July</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/july/days/july">July</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/august/days/august">August</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/august/days/august">August</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/september/days/september">September</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/september/days/september">September</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/oktober/days/oktober">October</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/oktober/days/oktober">October</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/november/days/november">November</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/november/days/november">November</a></strong></td>-->
 
-        </tr>
-        <tr>
-            <td><strong><a href="/years/2020/month/december/days/december">Decenber</a></strong></td>
+        <!--</tr>-->
+        <!--<tr>-->
+            <!--<td><strong><a href="/years/2020/month/december/days/december">Decenber</a></strong></td>-->
 
-        </tr>
-    </table>
-    <strong><a href="/">Back to first page</a></strong>
-    </body>
-    </html>
-</jsp:root>
+        <!--</tr>-->
+    <!--</table>-->
+    <!--<strong><a href="/">Back to first page</a></strong>-->
+    <!--</body>-->
+    <!--</html>-->
+<!--</jsp:root>-->

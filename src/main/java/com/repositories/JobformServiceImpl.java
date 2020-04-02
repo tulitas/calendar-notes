@@ -10,7 +10,7 @@ import java.util.List;
 
 @Service
 public class JobformServiceImpl implements JobformService {
-private final JobformRepository jobformRepository;
+    private final JobformRepository jobformRepository;
 
     @Autowired
     public JobformServiceImpl(JobformRepository jobformRepository) {
@@ -51,8 +51,8 @@ private final JobformRepository jobformRepository;
     }
 
     @Override
-    public String getStatistics( String date2) {
-        return jobformRepository.getStatistics( date2);
+    public String getStatistics(String date2) {
+        return jobformRepository.getStatistics(date2);
 
     }
 
@@ -160,10 +160,8 @@ private final JobformRepository jobformRepository;
     }
 
 
-
     @Override
     public List<String> getNotArrived(String workDate) {
-        System.out.println("ku: " + workDate);
         return jobformRepository.getNotArrived(workDate);
     }
 
@@ -185,6 +183,11 @@ private final JobformRepository jobformRepository;
     @Override
     public List<String> getArrived(String workDate) {
         return jobformRepository.getArrived(workDate);
+    }
+
+    @Override
+    public String getUpgrades(String date2) {
+        return jobformRepository.getUpgrades(date2);
     }
 
 

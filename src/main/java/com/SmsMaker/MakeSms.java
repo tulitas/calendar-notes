@@ -1,6 +1,6 @@
-package com.controllers;
+package com.SmsMaker;
 
- class makeSms {
+ class MakeSms {
 
     private String rememberSms = ("hello");
 
@@ -14,7 +14,7 @@ package com.controllers;
 
     @Override
     public String toString() {
-        return "makeSms{" +
+        return "MakeSms{" +
                 "rememberSms='" + rememberSms + '\'' +
                 '}';
     }

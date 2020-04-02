@@ -288,6 +288,9 @@ To change this template use File | Settings | File Templates.
     <c:forEach items="${performed}" var="performed">
         <p>Nodoti : ${performed}</p>
     </c:forEach>
+    <c:forEach items="${rezult}" var="rezult">
+        <p>test : ${rezult}</p>
+    </c:forEach>
 
 
 </aside>

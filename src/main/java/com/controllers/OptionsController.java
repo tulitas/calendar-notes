@@ -1,7 +1,7 @@
 package com.controllers;
 
 import com.Models.JobformService;
-import com.Models.ManagersNameService;
+import com.SmsMaker.SmsConnect;
 import com.entities.JobForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,12 +19,10 @@ import java.util.List;
 public class OptionsController {
 
     private JobformService jobformService;
-    private ManagersNameService managersNameService;
 
     @Autowired
-    public OptionsController(JobformService jobformService, ManagersNameService managersNameService) {
+    public OptionsController(JobformService jobformService) {
         this.jobformService = jobformService;
-        this.managersNameService = managersNameService;
     }
 
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
@@ -37,10 +35,10 @@ public class OptionsController {
     @RequestMapping(value = "/options/sms", method = RequestMethod.POST)
     public String sms() {
 
-        Sms suti = new Sms();
+        SmsConnect suti = new SmsConnect();
         suti.Savienojums();
 
-//        run();
+
         return "/options";
     }
 
@@ -67,10 +65,6 @@ public class OptionsController {
         model.addAttribute("rewNextDate", rewritingNextDateCount);
         model.addAttribute("notArrived", notArrivedCount);
         model.addAttribute("arrived", arrivedCount);
-        System.out.println(performedCount + "my");
-        if (performedCount.contains("2")) {
-            System.out.println(2);
-        }
             return "/options";
 
     }
@@ -82,14 +76,6 @@ public class OptionsController {
     }
 
 
-//    @RequestMapping(value = "/options/getManagers")
-//
-//    public String getManagers(Model model) {
-//        System.out.println("managers");
-//        List<Managers_name> name = managersNameService.getAllManagers();
-//        model.addAttribute("managers", name);
-//        return "redirect/options";
-//    }
 
     @RequestMapping(value = "/options/getstatistics")
     public String getStatistics(Model model, String date2) {
@@ -129,7 +115,9 @@ public class OptionsController {
         String remmapon = jobformService.getRemmapon(date2);
         String remigla = jobformService.getRemigla(date2);
         String remcitaiekarta = jobformService.getRemcitaiekarta(date2);
+        String upgrades = jobformService.getUpgrades(date2);
 
+        model.addAttribute("upgardes", upgrades);
         model.addAttribute("remmini", remmini);
         model.addAttribute("remminibasic", remminibasic);
         model.addAttribute("remminibasicplus", remminibasicplus);
@@ -147,7 +135,6 @@ public class OptionsController {
     public String showUpdateForm(@PathVariable("id") long id, Model model) {
         List<JobForm> jobFormList = jobformService.findById(id);
         model.addAttribute("user", jobFormList);
-        System.out.println(jobFormList);
         return "edit";
     }
 

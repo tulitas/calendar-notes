@@ -73,5 +73,7 @@ public interface JobformService {
     List<String> getInTooday(String workDate);
 
     List<String> getArrived(String workDate);
+
+    String getUpgrades(String date2);
 }
 
