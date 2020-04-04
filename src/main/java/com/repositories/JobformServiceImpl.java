@@ -190,8 +190,8 @@ public class JobformServiceImpl implements JobformService {
     }
 
     @Override
-    public String findByIdOnly(long id) {
-        return jobformRepository.getByIdOnly(id);
+    public String findByIdOnlyPhone(long id) {
+        return jobformRepository.getByIdOnlyPhone(id);
     }
 
     @Override
@@ -214,6 +214,16 @@ public class JobformServiceImpl implements JobformService {
     @Override
     public String getEnotherWork(String date2) {
         return jobformRepository.getEnotherWork(date2);
+    }
+
+    @Override
+    public String findByIdOnlyName(long id) {
+        return jobformRepository.getByIdOnlyName(id);
+    }
+
+    @Override
+    public String findByIdOnlyCar(long id) {
+        return jobformRepository.getByIdOnlyCar(id);
     }
 
 

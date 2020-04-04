@@ -118,7 +118,7 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
     String getUpgrades(String date2);
 
     @Query(value = "SELECT phone from jobform where id = :id" , nativeQuery = true)
-    String getByIdOnly(long id);
+    String getByIdOnlyPhone(long id);
 
     @Query(value = "SELECT count(work) from jobform where work = 'downgrade' and work_date like %:date2%", nativeQuery = true)
     String getDowngrades(String date2);
@@ -131,4 +131,10 @@ public interface JobformRepository extends CrudRepository<JobForm, Long> {
 
     @Query(value = "SELECT count(work) from jobform where work = 'cita darbiba' and work_date like %:date2%", nativeQuery = true)
     String getEnotherWork(String date2);
+
+    @Query(value = "SELECT client from jobform where id = :id" , nativeQuery = true)
+    String getByIdOnlyName(long id);
+
+    @Query(value = "SELECT car  from jobform where id = :id" , nativeQuery = true)
+    String getByIdOnlyCar(long id);
 }

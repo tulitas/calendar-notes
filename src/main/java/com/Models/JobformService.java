@@ -76,7 +76,7 @@ public interface JobformService {
 
     String getUpgrades(String date2);
 
-    String findByIdOnly(long id);
+    String findByIdOnlyPhone(long id);
 
     String getDowngrades(String date2);
 
@@ -85,5 +85,9 @@ public interface JobformService {
     String getAkbChange(String date2);
 
     String getEnotherWork(String date2);
+
+    String findByIdOnlyName(long id);
+
+    String findByIdOnlyCar(long id);
 }
 

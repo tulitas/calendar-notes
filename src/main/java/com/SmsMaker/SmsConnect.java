@@ -11,7 +11,9 @@ public class SmsConnect extends TimerTask {
     private static ParallelScanner in;
     private static PrintStream out;
     private static Socket socket;
-    private String rememberSms;
+    private String rememberSmsCustomerPhone;
+    private String rememberSmsCustomerName;
+    private String remerberSmsCustomerCar;
     private Date date = new Date();
     private SimpleDateFormat formatForDate = new SimpleDateFormat("ddMMyy,HHmm");
     private SimpleDateFormat formatDate = new SimpleDateFormat("dd.MM.yy,HH:mm:ss");
@@ -56,8 +58,8 @@ public class SmsConnect extends TimerTask {
     }
 
     public void Savienojums() {
-      String  rememberSms1 = "Action: smscommand\r\ncommand: gsm send sms 2 " + rememberSms
-                + " \"12345 status\" " + "\r\n\r\n";
+      String  rememberSms1 = "Action: smscommand\r\ncommand: gsm send sms 2 " + rememberSmsCustomerPhone + " "
+                + rememberSmsCustomerName + " " + remerberSmsCustomerCar + "\r\n\r\n";
         System.out.println(rememberSms1);
         try {
             socket = new Socket("192.168.6.80", 5038);
@@ -85,7 +87,7 @@ public class SmsConnect extends TimerTask {
             String line = in.nextLine();
             while (in.hasNext()) {
                 if (line.equals("Message: Authentication accepted")) {
-                    System.out.println(rememberSms+ "otpravil");
+                    System.out.println(rememberSmsCustomerPhone + "otpravil");
                     socket.close();
                     System.out.println("soedinenie zakrito");
 //                return;
@@ -98,18 +100,36 @@ public class SmsConnect extends TimerTask {
 
     }
 
-    private String getRememberSms() {
-        return rememberSms;
+    private String getRememberSmsCustomerPhone() {
+        return rememberSmsCustomerPhone;
     }
 
-    public void setRememberSms(String rememberSms) {
-        this.rememberSms = rememberSms;
+    public void setRememberSmsCustomerPhone(String rememberSmsCustomerPhone) {
+        this.rememberSmsCustomerPhone = rememberSmsCustomerPhone;
+    }
+
+    public String getRememberSmsCustomerName() {
+        return rememberSmsCustomerName;
+    }
+
+    public void setRememberSmsCustomerName(String rememberSmsCustomerName) {
+        this.rememberSmsCustomerName = rememberSmsCustomerName;
+    }
+
+    public String getRemerberSmsCustomerCar() {
+        return remerberSmsCustomerCar;
+    }
+
+    public void setRemerberSmsCustomerCar(String remerberSmsCustomerCar) {
+        this.remerberSmsCustomerCar = remerberSmsCustomerCar;
     }
 
     @Override
     public String toString() {
         return "SmsConnect{" +
-                "rememberSms='" + rememberSms + '\'' +
+                "rememberSmsCustomerPhone='" + rememberSmsCustomerPhone + '\'' +
+                ", rememberSmsCustomerName='" + rememberSmsCustomerName + '\'' +
+                ", remerberSmsCustomerCar='" + remerberSmsCustomerCar + '\'' +
                 '}';
     }
 }

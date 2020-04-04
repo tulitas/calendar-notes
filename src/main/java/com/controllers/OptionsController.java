@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
-import java.sql.SQLException;
 import java.util.List;
 
 @Controller
@@ -20,8 +19,11 @@ import java.util.List;
 public class OptionsController {
 
     private JobformService jobformService;
-    private String customerForSms;
+    private String customerPhoneForSms;
+    private String customerNameForSms;
+    private String customerCarForSms;
     @Autowired
+
     public OptionsController(JobformService jobformService) {
         this.jobformService = jobformService;
     }
@@ -45,10 +47,17 @@ public class OptionsController {
 
         //        model.addAttribute("user", jobFormList);
 
-        customerForSms = jobformService.findByIdOnly(id);
+        customerPhoneForSms = jobformService.findByIdOnlyPhone(id);
+        customerNameForSms = jobformService.findByIdOnlyName(id);
+        customerCarForSms = jobformService.findByIdOnlyCar(id);
+
         SmsConnect smsConnect = new SmsConnect();
-        smsConnect.setRememberSms(customerForSms);
-        System.out.println(customerForSms + ", " + smsConnect );
+
+        smsConnect.setRemerberSmsCustomerCar(customerCarForSms);
+        smsConnect.setRememberSmsCustomerPhone(customerPhoneForSms);
+        smsConnect.setRememberSmsCustomerName(customerNameForSms);
+
+        System.out.println(customerPhoneForSms + ", " + customerNameForSms + " , " + customerCarForSms);
         smsConnect.Savienojums();
         return "/options";
     }
@@ -168,18 +177,27 @@ public class OptionsController {
         return "addnew";
     }
 
-    public String getCustomerForSms() {
-        return customerForSms;
+    public String getCustomerPhoneForSms() {
+        return customerPhoneForSms;
     }
 
-    public void setCustomerForSms(String customerForSms) {
-        this.customerForSms = customerForSms;
+    public void setCustomerPhoneForSms(String customerPhoneForSms) {
+        this.customerPhoneForSms = customerPhoneForSms;
+    }
+
+    public String getCustomerNameForSms() {
+        return customerNameForSms;
+    }
+
+    public void setCustomerNameForSms(String customerNameForSms) {
+        this.customerNameForSms = customerNameForSms;
     }
 
     @Override
     public String toString() {
         return "OptionsController{" +
-                "customerForSms='" + customerForSms + '\'' +
+                "customerPhoneForSms='" + customerPhoneForSms + '\'' +
+                ", customerNameForSms='" + customerNameForSms + '\'' +
                 '}';
     }
 }
