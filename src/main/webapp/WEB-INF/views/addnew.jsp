@@ -174,6 +174,11 @@ To change this template use File | Settings | File Templates.
             margin-left: 280px;
             padding-bottom: 50px;
         }
+
+
+        /*,.*/
+
+
     </style>
     <title>Sherlog Calendar</title></head>
 <body>
@@ -206,6 +211,8 @@ To change this template use File | Settings | File Templates.
                 </li>
 
             </ul>
+
+
         </nav>
     </aside>
 </div>
@@ -270,15 +277,13 @@ To change this template use File | Settings | File Templates.
                 <br/>
                 <select id="work" name="work">
                     <option/>
-                    <option value="Montaz"/>
+                    <option value="Montaza"/>
                     Montāža
-                    <option value="Peremontaz"/>
-                    Pārmontāža
-                    <option value="Demontaz"/>
+                    <option value="Demontaza"/>
                     Demontāža
                     <option value="Remont"/>
                     Remonts
-                    <option value="Zamena mesta"/>
+                    <option value="Vietas maina"/>
                     Vietas maiņa
                     <option value="Downgrade"/>
                     Downgrade
@@ -327,7 +332,7 @@ To change this template use File | Settings | File Templates.
             <br/>
 
             <label for="info" title="Papildus info"> Papildus info</label><br/>
-                <textarea id="info" cols="60" rows="6" name="info"> </textarea>
+            <textarea id="info" cols="60" rows="6" name="info"> </textarea>
 
             <p>
 

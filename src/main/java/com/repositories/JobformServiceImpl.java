@@ -46,7 +46,6 @@ public class JobformServiceImpl implements JobformService {
 
     @Override
     public List<JobForm> findById(long id) {
-        System.out.println("jsi");
         return jobformRepository.findById(id);
     }
 
@@ -188,6 +187,33 @@ public class JobformServiceImpl implements JobformService {
     @Override
     public String getUpgrades(String date2) {
         return jobformRepository.getUpgrades(date2);
+    }
+
+    @Override
+    public String findByIdOnly(long id) {
+        return jobformRepository.getByIdOnly(id);
+    }
+
+    @Override
+    public String getDowngrades(String date2) {
+        return jobformRepository.getDowngrades(date2);
+
+    }
+
+    @Override
+    public String getAddGm(String date2) {
+
+        return jobformRepository.getaddGm(date2);
+    }
+
+    @Override
+    public String getAkbChange(String date2) {
+        return jobformRepository.getakbCange(date2);
+    }
+
+    @Override
+    public String getEnotherWork(String date2) {
+        return jobformRepository.getEnotherWork(date2);
     }
 
 

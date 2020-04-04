@@ -272,15 +272,21 @@ To change this template use File | Settings | File Templates.
             </tr>
             <tr>
                 <th>Downgrade</th>
+                <td><c:out value="${downgrade}"/></td>
+
             </tr>
             <tr>
                 <th>Pielikt GM</th>
+                <td><c:out value="${addgm}"/></td>
+
             </tr>
             <tr>
                 <th>AKB Maina</th>
+                <td><c:out value="${akbchange}"/></td>
             </tr>
             <tr>
                 <th>Cita darbiba</th>
+                <td><c:out value="${anotherwork}"/></td>
             </tr>
         </table>
     </div>

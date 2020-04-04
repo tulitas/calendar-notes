@@ -285,6 +285,7 @@ To change this template use File | Settings | File Templates.
             <label for="manager">Kas veic ierakstu</label><br/>
 
             <select id="manager" name="manager">
+                <option/>
                 <option value="Agnese"/>
                 Agnese
                 <option value="Kristine"/>

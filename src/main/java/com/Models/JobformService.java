@@ -75,5 +75,15 @@ public interface JobformService {
     List<String> getArrived(String workDate);
 
     String getUpgrades(String date2);
+
+    String findByIdOnly(long id);
+
+    String getDowngrades(String date2);
+
+    String getAddGm(String date2);
+
+    String getAkbChange(String date2);
+
+    String getEnotherWork(String date2);
 }
 

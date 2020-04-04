@@ -1,32 +1,31 @@
-package com.SmsMaker;
-
-
-import com.config.DataBaseConnectionForSms;
-
-import java.sql.SQLException;
-
-public class MakeSms {
-    private DataBaseConnectionForSms dataBaseConnectionForSms = new DataBaseConnectionForSms();
-
-    public void Run() throws SQLException, ClassNotFoundException {
-        dataBaseConnectionForSms.Connect();
-    }
-
-
-    private String rememberSms = ("hello");
-
-    String getRememberSms() {
-        return rememberSms;
-    }
-
-    public void setRememberSms(String rememberSms) {
-        this.rememberSms = rememberSms;
-    }
-
-    @Override
-    public String toString() {
-        return "MakeSms{" +
-                "rememberSms='" + rememberSms + '\'' +
-                '}';
-    }
-}
+//package com.SmsMaker;
+//
+//
+//import com.controllers.OptionsController;
+//
+//public class MakeSms {
+//
+//    private OptionsController optionsController = new OptionsController();
+//
+//    private String rememberSms = optionsController.getCustomerForSms();
+//
+//    String getRememberSms() {
+//
+//
+//
+//        return rememberSms;
+//    }
+//
+//    public void setRememberSms(String rememberSms) {
+//
+//        this.rememberSms = rememberSms;
+//        System.out.println(rememberSms  + "set");
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "MakeSms{" +
+//                "rememberSms='" + rememberSms + '\'' +
+//                '}';
+//    }
+//}

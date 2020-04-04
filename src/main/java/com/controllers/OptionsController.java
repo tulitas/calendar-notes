@@ -1,7 +1,6 @@
 package com.controllers;
 
 import com.Models.JobformService;
-import com.SmsMaker.MakeSms;
 import com.SmsMaker.SmsConnect;
 import com.entities.JobForm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +20,14 @@ import java.util.List;
 public class OptionsController {
 
     private JobformService jobformService;
-
+    private String customerForSms;
     @Autowired
     public OptionsController(JobformService jobformService) {
         this.jobformService = jobformService;
+    }
+
+    public OptionsController() {
+
     }
 
     @RequestMapping(value = "/options/create", method = RequestMethod.POST)
@@ -34,17 +37,19 @@ public class OptionsController {
         return "create";
     }
 
-    @RequestMapping(value = "/options/sms{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/options/sms{id}", method = RequestMethod.GET)
     public String sms(@PathVariable("id") long id, Model model) {
 
-        SmsConnect suti = new SmsConnect();
-        suti.Savienojums();
+//        SmsConnect suti = new SmsConnect();
+//        suti.Savienojums();
 
+        //        model.addAttribute("user", jobFormList);
 
-
-//        MakeSms makeSms = new MakeSms();
-//        makeSms.Run();
-
+        customerForSms = jobformService.findByIdOnly(id);
+        SmsConnect smsConnect = new SmsConnect();
+        smsConnect.setRememberSms(customerForSms);
+        System.out.println(customerForSms + ", " + smsConnect );
+        smsConnect.Savienojums();
         return "/options";
     }
 
@@ -120,7 +125,15 @@ public class OptionsController {
         String remigla = jobformService.getRemigla(date2);
         String remcitaiekarta = jobformService.getRemcitaiekarta(date2);
         String upgrades = jobformService.getUpgrades(date2);
+        String downgrade = jobformService.getDowngrades(date2);
+        String addGm = jobformService.getAddGm(date2);
+        String akbChange = jobformService.getAkbChange(date2);
+        String enotherWork = jobformService.getEnotherWork(date2);
 
+        model.addAttribute("anotherwork", enotherWork);
+        model.addAttribute("akbchange", akbChange);
+        model.addAttribute("addgm", addGm);
+        model.addAttribute("downgrade", downgrade);
         model.addAttribute("upgardes", upgrades);
         model.addAttribute("remmini", remmini);
         model.addAttribute("remminibasic", remminibasic);
@@ -155,6 +168,20 @@ public class OptionsController {
         return "addnew";
     }
 
+    public String getCustomerForSms() {
+        return customerForSms;
+    }
+
+    public void setCustomerForSms(String customerForSms) {
+        this.customerForSms = customerForSms;
+    }
+
+    @Override
+    public String toString() {
+        return "OptionsController{" +
+                "customerForSms='" + customerForSms + '\'' +
+                '}';
+    }
 }
 
 

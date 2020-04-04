@@ -105,11 +105,20 @@ To change this template use File | Settings | File Templates.
 
         }
 
+        .topmenu > li {
+
+            display: grid;
+            margin-right: 20px;
+            position: relative;
+
+
+        }
+
         .topmenu > li:last-child {
             margin-right: 20px;
         }
 
-        .menu {
+        a {
 
             display: block;
             padding: 10px 15px;
@@ -177,6 +186,17 @@ To change this template use File | Settings | File Templates.
             /*transition: .5s linear;*/
         }
 
+        .sms {
+            background-color: #FFD7A7;
+            width: auto;
+            padding: 5px 20px;
+            color: #00008B;
+            text-decoration: none;
+
+            outline: none;
+            font-family: 'Lora', serif;
+        }
+
         aside {
             float: left;
             width: 250px;
@@ -219,6 +239,7 @@ To change this template use File | Settings | File Templates.
             -webkit-animation: blink1 3s linear infinite;
             animation: blink1 3s linear infinite;
         }
+
         @-webkit-keyframes blink1 {
             0% {
                 color: rgba(34, 34, 34, 1);
@@ -275,7 +296,7 @@ To change this template use File | Settings | File Templates.
     </c:forEach>
 
     <c:forEach items="${notArrived}" var="notarrived">
-        <p id="blink1">Vel nav darbibas: ${notArrived}</p>
+        <p id="blink1">Vel nav apstradati: ${notArrived}</p>
     </c:forEach>
 
     <c:forEach items="${arrived}" var="Arrived">
@@ -304,14 +325,9 @@ To change this template use File | Settings | File Templates.
             <th>Work</th>
             <th>Car</th>
             <th>Sistem</th>
-
             <th>Client</th>
             <th>Manager</th>
-
-
             <th>Info</th>
-
-
             <th>Rezultats</th>
             <th>Action</th>
         </tr>
@@ -341,8 +357,8 @@ To change this template use File | Settings | File Templates.
                 <td width="50">${jobForm.action} </td>
                 <td width="50"><a class="delete" style="background: tomato"
                                   href="/options/delete${jobForm.id}">Delete</a><br/>
-                    <br/><a class="delete" style="background: #3e8e41 " href="/options/edit${jobForm.id}">Edit</a>
-                    <form action="${pageContext.request.contextPath}/options/sms" method="post">
+                    <a class="delete" style="background: #3e8e41 " href="/options/edit${jobForm.id}">Edit</a>
+                    <form action="${pageContext.request.contextPath}/options/sms${jobForm.id}"><br/>
                         <button class="sms">sms</button>
                     </form>
                 </td>
