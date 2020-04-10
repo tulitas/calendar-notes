@@ -57,14 +57,11 @@ public class OptionsController {
         smsConnect.setRememberSmsCustomerPhone(customerPhoneForSms);
         smsConnect.setRememberSmsCustomerName(customerNameForSms);
 
-        System.out.println(customerPhoneForSms + ", " + customerNameForSms + " , " + customerCarForSms);
         smsConnect.Savienojums();
         return "/options";
     }
 
-    private void run() {
-        System.out.println("suti sms");
-    }
+
 
     @RequestMapping(value = "/options")
     public String getAllByWorkdate(Model model, String workDate) {

@@ -48,28 +48,31 @@ public class SmsConnect extends TimerTask {
 
         };
         Timer timer = new Timer(true);
-        timer.scheduleAtFixedRate(timerTask, 0, 10 * 1000);
+        timer.scheduleAtFixedRate(timerTask, 0, 10 * 500);
         System.out.println("na4al vipolnenie");
         try {
-            Thread.sleep(20000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     public void Savienojums() {
-      String  rememberSms1 = "Action: smscommand\r\ncommand: gsm send sms 2 " + rememberSmsCustomerPhone + " "
-                + rememberSmsCustomerName + " " + remerberSmsCustomerCar + "\r\n\r\n";
-        System.out.println(rememberSms1);
+//
+//        System.out.println(rememberSms1);
+
         try {
+
             socket = new Socket("192.168.6.80", 5038);
             out = new PrintStream(socket.getOutputStream());
             in = new ParallelScanner(new Scanner(socket.getInputStream()));
             in.start();
+            enterPass();
+//            readFromDevice();
             runTimer();
 
-            out.print("Action: login" + "\r\nUsername: apiuser" + "\r\nSecret: apipass" + "\r\n\r\n");
-            readFromDevice();
+//
+
 
 
         } catch (IOException e) {
@@ -78,19 +81,34 @@ public class SmsConnect extends TimerTask {
 
     }
 
+    private void enterPass() throws IOException {
+        out.print("Action: login" + "\r\nUsername: apiuser" + "\r\nSecret: apipass" + "\r\n\r\n");
+        readFromDevice();
+    }
+
 
     private void readFromDevice() throws IOException {
-
+        String  rememberSms1 = "Action: smscommand\r\ncommand: gsm send sms 2 " + rememberSmsCustomerPhone + " "
+                + rememberSmsCustomerName  + " " + remerberSmsCustomerCar + " 1" + "\r\n\r\n";
+        System.out.println(rememberSms1);
         try {
 
 
             String line = in.nextLine();
             while (in.hasNext()) {
                 if (line.equals("Message: Authentication accepted")) {
-                    System.out.println(rememberSmsCustomerPhone + "otpravil");
+
+                    out.print(rememberSms1);
+
                     socket.close();
                     System.out.println("soedinenie zakrito");
-//                return;
+break;
+                }
+                if (line.equals("Status: 1")){
+                    System.out.println("Sms Sendet" + "\n");
+                }
+                if (line.equals("Status: 0")){
+                    System.out.println("Send error");
                 }
             }
         } catch
