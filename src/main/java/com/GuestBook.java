@@ -11,7 +11,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-
+@EntityScan
+@EnableJpaRepositories
 public class GuestBook extends SpringBootServletInitializer {
 
     public static void main(String[] args) {

@@ -12,8 +12,9 @@
     <groupId>name.alexkosarev.tutorials</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>1.0.0</version>
-    <packaging>war</packaging>
     <name>spring-boot-starter-parent</name>
+    <packaging>war</packaging>
+
 
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -39,7 +40,7 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>${servlet-api.version}</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
         </dependency>
 
 
@@ -93,12 +94,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <!--<exclusions>-->
-                <!--<exclusion>-->
-                    <!--<groupId>org.junit.vintage</groupId>-->
-                    <!--<artifactId>junit-vintage-engine</artifactId>-->
-                <!--</exclusion>-->
-            <!--</exclusions>-->
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>
